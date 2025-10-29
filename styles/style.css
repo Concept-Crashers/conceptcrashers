@@ -1692,86 +1692,91 @@ header .navBtn button:hover::before {
 .team-card {
   min-width: 240px;
   max-width: 280px;
-  background: var(--background-primary);
-  padding: 24px 18px 20px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+  padding: 30px 20px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 6px 22px rgba(2,20,36,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: visible;
-  border: 1px solid rgba(56,189,248,0.08);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  transition: all 0.3s ease;
 }
 
 .team-card .avatar {
-  width: 100px; /* increased from 84px */
+  width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 8px;
-  border: 3px solid rgba(56,189,248,0.15);
+  border: 3px solid rgba(56, 189, 248, 0.3);
+  transition: all 0.3s ease;
 }
 
 .avatar-wrap {
   position: relative;
-  width: 100px; /* match new avatar size */
+  width: 100px;
   height: 100px;
   margin-bottom: 8px;
 }
 
 .exp-badge {
-  /* position the experience badge below the avatar, small and subtle */
   position: relative;
-  background: linear-gradient(90deg, #38bdf8 0%, #8b5cf6 100%);
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 20px;
   display: inline-flex;
   gap: 6px;
   align-items: center;
-  font-size: 0.7rem;
-  box-shadow: 0 4px 12px rgba(56,189,248,0.18);
-  margin-bottom: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
 }
 
 .exp-badge i { 
   font-size: 0.7rem;
-  color: #fff;
+  color: #38bdf8;
 }
 
-/* Hover glow + lift */
+/* Hover effects - clean and subtle */
 .team-card:hover {
-  transform: translateY(-10px) scale(1.025);
-  transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms cubic-bezier(.2,.9,.3,1);
-  box-shadow: 0 18px 48px rgba(56,189,248,0.2), 0 8px 28px rgba(8, 8, 36, 0.55);
-  border-color: rgba(56,189,248,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.team-card:hover .avatar {
+  border-color: rgba(56, 189, 248, 0.6);
+  transform: scale(1.05);
+}
+
+.team-card:hover .exp-badge {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.5);
 }
 
 /* Focus state for keyboard accessibility */
 .team-card:focus-visible {
-  outline: 3px solid rgba(56,189,248,0.6);
+  outline: 2px solid rgba(56, 189, 248, 0.6);
   outline-offset: 4px;
-  transform: translateY(-10px) scale(1.025);
-  box-shadow: 0 18px 48px rgba(56,189,248,0.3), 0 8px 28px rgba(8, 8, 36, 0.55);
+  transform: translateY(-8px);
 }
 
-/* glowing outline using pseudo-element */
+/* Remove the glowing pseudo-element */
 .team-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  pointer-events: none;
-  /* subtle inner glow to enhance depth */
-  box-shadow: 0 0 28px rgba(56,189,248,0.06) inset;
+  display: none;
 }
 
 .team-socials {
   display: flex;
   gap: 10px;
-  margin-top: 16px; /* increased from 14px for better spacing */
+  margin-top: 16px;
 }
 
 .team-socials a {
@@ -1779,57 +1784,55 @@ header .navBtn button:hover::before {
   height: 36px;
   display: inline-grid;
   place-items: center;
-  background: rgba(56,189,248,0.08);
+  background: rgba(56, 189, 248, 0.1);
   border-radius: 8px;
-  color: #fff; /* icons white for better contrast */
-  transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  transition: all 0.3s ease;
 }
 
 .team-socials a:hover {
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(56,189,248,0.25);
-  background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(139,92,246,0.2));
-  color: #fff;
+  transform: translateY(-3px);
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #60d5ff;
 }
 
 /* Focus state for social icons */
 .team-socials a:focus-visible {
-  outline: 2px solid rgba(56,189,248,0.8);
-  outline-offset: 3px;
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(56,189,248,0.35);
+  outline: 2px solid rgba(56, 189, 248, 0.6);
+  outline-offset: 2px;
 }
 
 .team-socials a i { 
   font-size: 0.95rem;
-  color: #fff;
 }
 
 /* improve contrast for small screens */
 @media (max-width: 480px) {
-  .exp-badge { font-size: 0.6rem; padding: 3px 8px; }
-  .team-card { padding: 18px 14px 16px; }
+  .exp-badge { font-size: 0.65rem; padding: 5px 10px; }
+  .team-card { padding: 24px 16px; }
 }
 
 .team-card h4 {
-  margin: 6px 0 4px;
+  margin: 8px 0 4px;
   color: var(--text-primary);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 .team-card .role {
-  color: #bfcfe8; /* slightly brighter than default secondary */
-  font-size: 0.85em;
-  margin-top: 4px; /* added separation from name */
+  color: rgba(156, 163, 175, 0.9);
+  font-size: 0.875rem;
+  margin-top: 4px;
   margin-bottom: 8px;
 }
 
 .team-card .bio {
-  font-size: 0.85em;
-  color: #9fb0cc; /* slightly brighter muted copy */
+  font-size: 0.875rem;
+  color: rgba(148, 163, 184, 0.8);
   margin-top: 6px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* Animation: we'll translate the track left by 50% (we duplicate content to create seamless loop) */
@@ -3263,6 +3266,14 @@ footer .footer-column p a:hover {
     flex: 1;
     min-width: 130px;
   }
+
+  .contact-item span {
+    font-size: 0.85em;
+  }
+
+  .trust-badges {
+    flex-wrap: wrap;
+  }
 }
 
 /* ========================================== */
@@ -3540,6 +3551,45 @@ footer {
 .subscribe-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Quick Contact */
+.quick-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(56, 189, 248, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.contact-item i {
+  color: var(--accent-color);
+  font-size: 1rem;
+  min-width: 20px;
+}
+
+.contact-item span {
+  font-size: 0.9em;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .trust-badges {
