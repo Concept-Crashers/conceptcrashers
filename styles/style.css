@@ -3153,6 +3153,25 @@ header .navBtn button:hover::before {
   .team-card { padding: 18px 15px 16px; }
   .team-card .avatar { width: 80px; height: 80px; }
   .avatar-wrap { width: 80px; height: 80px; }
+  
+  /* Location section icons */
+  .card-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+    font-size: 1rem;
+  }
+  
+  .card-icon i {
+    font-size: 1rem !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
 }
 
 .team-card h4 {
@@ -4405,6 +4424,10 @@ footer .footer-column p a:hover {
 .card-icon {
   width: 55px;
   height: 55px;
+  min-width: 55px;
+  min-height: 55px;
+  max-width: 55px;
+  max-height: 55px;
   background: var(--gradient-primary);
   border-radius: 12px;
   display: flex;
@@ -4414,6 +4437,15 @@ footer .footer-column p a:hover {
   color: white;
   flex-shrink: 0;
   box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+  aspect-ratio: 1 / 1;
+}
+
+.card-icon i {
+  font-size: 1.3rem !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 .location-card:first-child .card-icon {
@@ -4600,7 +4632,20 @@ footer .footer-column p a:hover {
   .card-icon {
     width: 50px;
     height: 50px;
-    font-size: 1.2rem;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    font-size: 1.1rem;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .card-icon i {
+    font-size: 1.1rem !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
   }
   
   .map-container {
