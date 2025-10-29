@@ -1,0 +1,1162 @@
+/* =========================================== */
+/* STEP 2: LAPTOPS / SMALLER DESKTOPS         */
+/* @media screen and (max-width: 1199px)     */
+/* This applies to screens UP TO 1199px wide. */
+/* =========================================== */
+@media screen and (max-width: 1199px) {
+  /* .home{background-color: yellow;} */
+
+  #header {
+    /* background-color: red; */
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    height: 70px;
+  }
+
+  .navBtn button {
+    /* display:; */
+    width: 130px;
+  }
+
+  .home001 h1 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .hero-text {
+    font-size: 0.9em;
+    width: 300px;
+  }
+
+  .home002 img {
+    width: 350px;
+    height: 300px;
+  }
+
+  .Team {
+    min-height: 100vh;
+    /* background-color: red; */
+    padding: 200px 50px;
+  }
+}
+/* =========================================== */
+/* STEP 3: MEDIUM TABLETS / LAPTOPS           */
+/* @media screen and (max-width: 991px)      */
+/* =========================================== */
+@media screen and (max-width: 991px) {
+  .fa-bars {
+    color: white;
+    font-size: 35px;
+    display: flex !important;
+  }
+
+  #header {
+    padding: 20px 50px;
+    height: 75px;
+  }
+
+  .navLinks,
+  .navBtn {
+    display: none;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .home {
+    padding: 50px;
+    /* background-color: pink; */
+    flex-direction: column;
+  }
+
+  .home001 h1 {
+    font-size: 60px;
+    line-height: 80px;
+  }
+
+  .hero-text {
+    font-size: 1.2em;
+    width: 100%;
+    /* width: 300px; */
+  }
+
+  .home002 img {
+    width: 600px;
+    height: 500px;
+  }
+
+  .btns button {
+    width: 150px;
+    height: 50px;
+    font-size: 1.1em;
+  }
+
+  .testimonials {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+  }
+  .column {
+    flex: 1; /* flex-1: Each column takes equal width */
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    /* width: 330px; */
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: center;
+  }
+
+  .testimonials-columns-container .inner-flex-wrapper {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    display: block; /* Display as flex to hold two columns */
+    padding: 1rem; /* Padding for the columns */
+  }
+
+  .left-section {
+    width: 500px;
+    /* background-color: purple; */
+  }
+
+  .testimonials-columns-container {
+    /* background-color: blue; */
+    width: 500px;
+  }
+
+  .contact-container {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Blog1 {
+    flex-direction: column;
+  }
+
+  .Blog002 {
+    flex-direction: column;
+  }
+
+  /* .BlogCards {
+        grid-template-columns: repeat(1, minmax(500px, 1fr));
+    } */
+
+  .Blog003 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    place-items: center;
+    gap: 20px;
+    /* background-color: red; */
+  }
+
+  .BlogCard {
+    width: 100%;
+  }
+
+  .BlogCard .pic {
+    width: 500px;
+  }
+
+  .services {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services img {
+    width: 500px;
+  }
+
+  .sub-title {
+    width: 500px;
+  }
+
+  .serviceCard001 {
+    width: 500px;
+    /* background-color: red; */
+  }
+
+  .serviceCard001 .paragraph {
+    /* color: red; */
+    width: 500px;
+    /* background-color: blue; */
+  }
+
+  .serviceCard-grid p {
+    /* background-color: red; */
+    padding: 0px 0px 0 30px;
+    /* text-wrap: balance; */
+    width: 450px;
+  }
+
+  .aboutcard h3 {
+    text-align: center;
+    /* background-color: red; */
+    width: 400px;
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+  }
+
+  .serviceCard-grid h3 {
+    text-align: center;
+  }
+
+  .serviceCards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px));
+    /* justify-content: center; */
+    /* place-items: center; */
+    gap: 20px;
+    /* background-color: red; */
+    width: 500px;
+  }
+
+  .serviceCards {
+    width: 100%;
+    /* background-color: purple;  */
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;  */
+  }
+
+  .serviceCard-grid {
+    width: 500px;
+  }
+
+  .about001 {
+    grid-template-columns: 500px;
+  }
+
+  .aboutBtn button {
+    float: left;
+    font-size: 0.9em;
+  }
+
+  counter-container {
+    flex-direction: column;
+  }
+
+  .main001 {
+    height: 100%;
+    /* margin-bottom: 0px; */
+    /* background-color: red; */
+  }
+
+  .about-main002 {
+    /* background-color: red; */
+    margin-top: 70px;
+    text-align: left;
+    /* float: left; */
+  }
+
+  .about-main002 > p {
+    width: 400px;
+    /* background-color: blue; */
+  }
+
+  .about-main002 > h3 {
+    /* color: blue; */
+    width: 400px;
+  }
+
+  .counter-container {
+    width: 400px;
+    /* background-color: red; */
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .counter-container .counter-card:nth-child(2) {
+    color: var(--text-accent);
+    margin-top: 0px;
+  }
+
+  .about001 img {
+    width: 500px;
+  }
+
+  #preloader {
+    /* background: blue; */
+    width: 100vw;
+  }
+}
+
+/* =========================================== */
+/* STEP 4: SMALL TABLETS / LANDSCAPE PHONES   */
+/* @media screen and (max-width: 767px)      */
+/* =========================================== */
+@media screen and (max-width: 768px) {
+
+
+
+  .fa-bars {
+    color: white;
+    font-size: 30px;
+    display: flex !important;
+  }
+
+  .home {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 150px;
+  }
+
+  .home001 h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .hero-text {
+    font-size: 1.2em;
+    width: 100%;
+    /* width: 300px; */
+  }
+
+  .home002 img {
+    width: 500px;
+    height: 400px;
+  }
+
+  .btns button {
+    width: 150px;
+    height: 50px;
+    font-size: 1.1em;
+  }
+
+  .about001 {
+    grid-template-columns: 500px;
+  }
+
+  .aboutBtn button {
+    float: left;
+    font-size: 0.9em;
+  }
+
+  counter-container {
+    flex-direction: column;
+  }
+
+  .main001 {
+    height: 100%;
+    /* margin-bottom: 0px; */
+    /* background-color: red; */
+  }
+
+  .about-main002 {
+    /* background-color: red; */
+    margin-top: 70px;
+    text-align: left;
+    /* float: left; */
+  }
+
+  .about-main002 > p {
+    width: 400px;
+    /* background-color: blue; */
+  }
+
+  .about-main002 > h3 {
+    /* color: blue; */
+    width: 400px;
+  }
+
+  .counter-container {
+    width: 400px;
+    /* background-color: red; */
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .counter-container .counter-card:nth-child(2) {
+    color: var(--text-accent);
+    margin-top: 0px;
+  }
+
+  .about001 img {
+    width: 500px;
+  }
+
+  .services {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services img {
+    width: 500px;
+  }
+
+  .sub-title {
+    width: 500px;
+  }
+
+  .serviceCard001 {
+    width: 500px;
+    /* background-color: red; */
+  }
+
+  .serviceCard001 .paragraph {
+    /* color: red; */
+    width: 500px;
+    /* background-color: blue; */
+  }
+
+  .serviceCard-grid p {
+    /* background-color: green; */
+    padding: 0px 0px 0 30px;
+    /* text-wrap: balance; */
+    width: 450px;
+  }
+
+  .aboutcard h3 {
+    text-align: center;
+    /* background-color: violet; */
+    width: 400px;
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+  }
+
+  .serviceCard-grid h3 {
+    text-align: center;
+  }
+
+  .serviceCards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px));
+    /* justify-content: center; */
+    /* place-items: center; */
+    gap: 20px;
+    /* background-color: red; */
+    width: 500px;
+  }
+
+  .serviceCards {
+    width: 100%;
+    /* background-color: yellow;  */
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;  */
+  }
+
+  .serviceCard-grid {
+    width: 500px;
+    /* background-color: green; */
+  }
+
+  .Blog1 {
+    flex-direction: column;
+  }
+
+  .Blog002 {
+    flex-direction: column;
+  }
+
+  /* .BlogCards {
+        grid-template-columns: repeat(1, minmax(500px, 1fr));
+    } */
+
+  .Blog003 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    place-items: center;
+    gap: 20px;
+    /* background-color: red; */
+  }
+
+  .BlogCard {
+    width: 100%;
+  }
+
+  .BlogCard .pic {
+    width: 500px;
+  }
+
+  .contact-container {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonials {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+  }
+  .column {
+    flex: 1; /* flex-1: Each column takes equal width */
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    /* width: 330px; */
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: center;
+  }
+
+  .testimonials-columns-container .inner-flex-wrapper {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    display: block; /* Display as flex to hold two columns */
+    padding: 1rem; /* Padding for the columns */
+  }
+
+  .left-section {
+    width: 500px;
+    /* background-color: purple; */
+  }
+
+  .testimonials-columns-container {
+    /* background-color: blue; */
+    width: 500px;
+  }
+
+  #main-contents {
+    /* Changed from .main-content to #main-content */
+    /* margin: 1rem auto; */
+    width: 100%; /* Adjusted for mobile view */
+  }
+  .map-section {
+    width: 95%;
+  }
+  .map-section iframe {
+    height: 300px; /* Adjust map height for smaller screens */
+  }
+  footer .footer-grid {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .bottom-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .bottom-footer .copyright,
+  .bottom-footer .footer-links {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  .main-content-text p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  #preloader {
+    /* background: blue; */
+    width: 100vw;
+  }
+}
+
+/* =========================================== */
+/* STEP 5: MOBILE PHONES                      */
+/* @media screen and (max-width: 575px)      */
+/* =========================================== */
+@media screen and (max-width: 575px) {
+
+
+  .hero::before {
+  width: 10%;
+}
+
+  /* Wrapper Div for Navbar */
+.nav-wrapper {
+  width: 100%;
+  /* background-color: red; */
+  position: fixed;
+  top: 70px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Navbar Core Container */
+.navbar {
+  padding: 1rem;
+  color: white;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.fa-house-user,
+.fa-address-card,
+.fa-servicestack,
+.fa-arrows-spin,
+.fa-newspaper,
+.fa-people-group,
+.fa-phone{
+  font-size: 25px;
+  background-image: var(--gradient-accent);
+  /* Orange to Peach */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* For WebKit browsers */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* For older WebKit browsers */
+  margin-right: 10px;
+}
+
+/* Brand / Logo */
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--background-light);
+  height: 92vh;
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: 100%;
+  padding-left: 30px;
+}
+
+/* Navigation Links */
+.nav-menu li a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  /* border-top: 1px solid #1e2749; */
+  /* transition: background 0.3s ease; */
+}
+
+.nav-menu li a:hover {
+  background-color: #1e2749;
+}
+
+/* Call-to-Action Button */
+.cta-btn {
+  width: 150px;
+  background: var(--gradient-primary);
+  border-radius: 50px;
+  margin-top: 0.5rem;
+  color: white;
+  /* text-align: center; */
+  padding-left: 30px !important;
+}
+
+
+  .about {
+    overflow: hidden;
+  }
+
+  .navLinks,
+  .navBtn {
+    display: none;
+  }
+
+  .contact-form {
+    padding-top: 40px;
+    /* padding-top: 40px 0px 20px 20px; */
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); */
+  }
+
+  .send-message-btn {
+    font-size: 0.85em;
+  }
+
+  .icon {
+    display: grid;
+    place-items: center;
+  }
+
+  .aboutcard h3 {
+    /* text-align: center; */
+    margin-left: 40px;
+  }
+
+  .fa-bars {
+    color: white;
+    font-size: 30px;
+    display: flex !important;
+  }
+
+  #header {
+    /* background-color: red; */
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px;
+    height: 70px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .home {
+    width: 100%;
+    min-height: 110vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    /* justify-content: space-around; */
+    /* background-color: #fff; */
+  }
+
+  .home001 h1 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .hero-text {
+    font-size: 0.9em;
+    width: 300px;
+  }
+
+  .home002 img {
+    width: 330px;
+    height: 300px;
+  }
+
+  .btns button {
+    width: 130px;
+    font-size: 0.8em;
+  }
+
+  .hero::before {
+    left: 35%;
+    width: 100px;
+  }
+
+  /* About section  starts here*/
+
+  .about001 {
+    grid-template-columns: 300px;
+  }
+
+  #About img {
+    width: 300px;
+  }
+
+  #About h3 {
+    font-weight: 400;
+  }
+
+  .heading {
+    font-size: 25px;
+  }
+
+  .counter-card div {
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  .main001 {
+    height: 100%;
+  }
+
+  .counter-card {
+    width: 100%;
+  }
+
+  .counter-container {
+    flex-direction: column;
+  }
+
+  .counter-container .counter-card:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .aboutBtn button {
+    float: left;
+    font-size: 0.9em;
+  }
+
+  .aboutcard p {
+    /* color: blue; */
+    width: 100%;
+  }
+
+  .about-main002 {
+    height: 100%;
+    margin-top: 70px;
+  }
+
+  .about-main002 h3 {
+    width: 100%;
+  }
+
+  .about-main002 p {
+    width: 100%;
+  }
+
+  .about-main003 {
+    margin-top: 80px;
+  }
+
+  .about-main002 > p {
+    width: 250px;
+    /* background-color: blue; */
+  }
+
+  .about-main002 > h3 {
+    /* color: blue; */
+    width: 250px;
+  }
+
+  .aboutcard h3 {
+    text-align: center;
+    /* background-color: red; */
+    width: 200px;
+    margin: 0;
+  }
+
+  .counter-container {
+    width: 300px;
+    /* background-color: red; */
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .counter-container .counter-card:nth-child(2) {
+    color: var(--text-accent);
+    margin-top: 0px;
+  }
+
+  .about001 img {
+    width: 300px;
+  }
+
+  /* services section */
+
+  .services {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .serviceCards {
+    width: 300px;
+    /* background-color: purple; */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .sub-title {
+    width: 300px;
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  .services img {
+    width: 300px;
+  }
+
+  .serviceCard001 {
+    width: 300px;
+    /* background-color: red; */
+  }
+
+  .serviceCards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px));
+    justify-content: center;
+    /* align-items: center; */
+    /* place-items: center; */
+    gap: 20px;
+    /* background-color: purple; */
+    width: 300px;
+  }
+
+  .serviceCard-grid {
+    width: 300px;
+    /* background-color: green; */
+  }
+
+  .serviceCard-grid h3 {
+    text-align: center;
+  }
+
+  .serviceCard-grid p {
+    font-size: 0.8em;
+    width: 100%;
+    color: var(--text-secondary);
+    width: 1005;
+  }
+
+  .serviceCard001 .paragraph {
+    /* color: red; */
+    width: 300px;
+  }
+
+  .serviceCard-grid {
+    width: 300px;
+  }
+
+  .serviceCard-grid p {
+    /* background-color: red; */
+    padding: 5px;
+    /* text-wrap: balance; */
+    width: 270px;
+    /* text-align: justify; */
+  }
+
+  .serviceCard-grid {
+    width: 300px;
+  }
+
+  .serviceCard-grid {
+    width: 300px;
+  }
+
+  /* dev process */
+
+  .process {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .process h1 {
+    width: 300px;
+    font-size: 1.5em;
+  }
+
+  .ourProcess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    /* background-color: red; */
+  }
+
+  /* blogs */
+  .BlogCards {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+
+  .Blog002 {
+    flex-direction: column;
+  }
+
+  .Blog2 {
+    /* background-color: red; */
+    width: 300px;
+  }
+
+  .whyChooseUs {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Blog1 {
+    flex-direction: column;
+  }
+
+  .Blog001 h1 {
+    font-size: 1.5em;
+  }
+
+  .BlogCard {
+    width: 300px;
+  }
+
+  .Blog003 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    gap: 20px;
+    /* background-color: red; */
+  }
+
+  .BlogCard .pic {
+    width: 300px;
+  }
+
+  .Team {
+    /* background-color:red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Team h1 {
+    width: 300px;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
+  .Team h2 {
+    font-size: 1em;
+    width: 300px;
+  }
+
+  .Team .para {
+    /* width: 100%; */
+    /* background-color: yellow; */
+    width: 300px;
+    margin: 0;
+  }
+
+  .flexing {
+    flex-direction: column;
+  }
+
+  /* testimonial section */
+
+  .testimonials {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+  }
+  .column {
+    flex: 1; /* flex-1: Each column takes equal width */
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    /* width: 330px; */
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: center;
+  }
+
+  .testimonials-columns-container .inner-flex-wrapper {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    display: block; /* Display as flex to hold two columns */
+    padding: 1rem; /* Padding for the columns */
+  }
+
+  .left-section {
+    width: 300px;
+    /* background-color: purple; */
+  }
+
+  .testimonials-columns-container {
+    /* background-color: blue; */
+    width: 300px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 10px;
+    background-color: var(--background-light); /* Input background */
+    border: 1px solid var(--accent-color); /* Input border color */
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #preloader {
+    /* background: blue; */
+    width: 100vw;
+  }
+
+  .loading-text {
+    width: 300px;
+    height: 40px;
+    /* background-color: red; */
+    font-size: 1em;
+  }
+
+  #main-contents {
+    width: 100%;
+  }
+
+  .main-content-text p {
+    font-size: 0.8em;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  .footer-form {
+    width: 300px;
+  }
+
+  .find-us-overlay {
+    top: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.8em;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 180%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    100% {
+      border-color: #00ffff;
+    }
+  }
+}
