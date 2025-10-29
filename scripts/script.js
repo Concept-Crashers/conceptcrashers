@@ -574,3 +574,47 @@ if (menuIcon && navMenu) {
         });
     });
 }
+
+// Team carousel initialization: duplicate items and start infinite scroll
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        const track = document.getElementById('teamTrack');
+        if (!track) return;
+
+        const container = track.parentElement;
+
+        // Duplicate children until the track is at least twice the container width
+        const ensureClones = () => {
+            const containerWidth = container.getBoundingClientRect().width || window.innerWidth;
+            let total = track.scrollWidth;
+            let safety = 0;
+            while (total < containerWidth * 2 && safety < 12) {
+                Array.from(track.children).forEach(child => track.appendChild(child.cloneNode(true)));
+                total = track.scrollWidth;
+                safety++;
+            }
+        };
+
+        // Start after a short delay to allow images/layout to settle
+        setTimeout(() => {
+            ensureClones();
+
+            const speed = 3500; // px per second
+            const width = track.scrollWidth;
+            const duration = Math.max(12, Math.round(width / speed));
+            track.style.setProperty('--team-scroll-duration', duration + 's');
+            track.classList.add('scrolling');
+
+            // Pause on hover for accessibility/UX
+            container.addEventListener('mouseenter', () => track.classList.add('pause'));
+            container.addEventListener('mouseleave', () => track.classList.remove('pause'));
+
+            // Respect reduced motion preference
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                track.classList.remove('scrolling');
+            }
+        }, 300);
+    } catch (e) {
+        console.error('Error initializing team carousel', e);
+    }
+});

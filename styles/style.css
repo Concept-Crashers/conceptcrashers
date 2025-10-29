@@ -949,6 +949,168 @@ header .navBtn button {
   margin-top: 30px;
 }
 
+/* Team carousel styles */
+.team-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.team-track {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  /* we'll animate transform on this element */
+  will-change: transform;
+}
+
+.team-card {
+  min-width: 240px;
+  max-width: 280px;
+  background: var(--background-primary);
+  padding: 24px 18px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 22px rgba(2,20,36,0.5);
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(56,189,248,0.08);
+}
+
+.team-card .avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 3px solid rgba(56,189,248,0.15);
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 8px;
+}
+
+.exp-badge {
+  /* position the experience badge below the avatar, small and subtle */
+  position: relative;
+  background: linear-gradient(90deg, #38bdf8 0%, #8b5cf6 100%);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.7rem;
+  box-shadow: 0 4px 12px rgba(56,189,248,0.18);
+  margin-bottom: 10px;
+}
+
+.exp-badge i { 
+  font-size: 0.7rem;
+  color: #fff;
+}
+
+/* Hover glow + lift */
+.team-card:hover {
+  transform: translateY(-10px) scale(1.025);
+  transition: transform 240ms cubic-bezier(.2,.9,.3,1), box-shadow 240ms cubic-bezier(.2,.9,.3,1);
+  box-shadow: 0 18px 48px rgba(56,189,248,0.2), 0 8px 28px rgba(8, 8, 36, 0.55);
+  border-color: rgba(56,189,248,0.2);
+}
+
+/* glowing outline using pseudo-element */
+.team-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  /* subtle inner glow to enhance depth */
+  box-shadow: 0 0 28px rgba(56,189,248,0.06) inset;
+}
+
+.team-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.team-socials a {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(56,189,248,0.08);
+  border-radius: 8px;
+  color: #fff; /* icons white for better contrast */
+  transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
+}
+
+.team-socials a:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 26px rgba(56,189,248,0.25);
+  background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(139,92,246,0.2));
+  color: #fff;
+}
+
+.team-socials a i { 
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* improve contrast for small screens */
+@media (max-width: 480px) {
+  .exp-badge { font-size: 0.6rem; padding: 3px 8px; }
+  .team-card { padding: 18px 14px 16px; }
+}
+
+.team-card h4 {
+  margin: 6px 0 4px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.team-card .role {
+  color: #bfcfe8; /* slightly brighter than default secondary */
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
+
+.team-card .bio {
+  font-size: 0.85em;
+  color: #9fb0cc; /* slightly brighter muted copy */
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+/* Animation: we'll translate the track left by 50% (we duplicate content to create seamless loop) */
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.team-track.scrolling {
+  animation: scrollLeft var(--team-scroll-duration, 30s) linear infinite;
+}
+
+.team-carousel:hover .team-track.scrolling,
+.team-track.scrolling.pause {
+  animation-play-state: paused;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .team-card { min-width: 200px; max-width: 220px; }
+  .team-track { gap: 12px; }
+}
+
 .flex001 {
   width: 50%;
   height: 400px;
