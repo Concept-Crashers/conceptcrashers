@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Mobile Touch/Swipe Interactions for Cards
 document.addEventListener('DOMContentLoaded', () => {
+    // Horizontal scroll removed - cards now stack vertically on mobile
+    /*
     const cardsContainer = document.querySelector('.BlogCards');
     if (!cardsContainer) return;
     
@@ -212,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const walk = (x - startX) * 2;
         cardsContainer.scrollLeft = scrollLeft - walk;
     });
+    */
 });
 
 // Mobile: Tap to flip cards

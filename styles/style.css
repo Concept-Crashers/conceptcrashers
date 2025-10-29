@@ -1553,18 +1553,19 @@ header .navBtn button:hover::before {
 
 .BlogCards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-content: center;
   margin-top: 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
+/* Remove the centered 4th card rule since we now have 2 columns */
 .BlogCards .blogCard:nth-child(4) {
-  grid-column: 2 / 3;
+  grid-column: auto;
 }
 
 @media (max-width: 768px) {
@@ -1575,7 +1576,7 @@ header .navBtn button:hover::before {
   }
   
   .BlogCards .blogCard:nth-child(4) {
-    grid-column: 1 / 2;
+    grid-column: auto;
   }
 }
 
@@ -1638,11 +1639,17 @@ header .navBtn button:hover::before {
   justify-content: center;
   width: 70px;
   height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 70px;
+  max-height: 70px;
   background: rgba(56, 189, 248, 0.15);
   border-radius: 50%;
   margin: 0 auto 20px;
   border: 1px solid rgba(56, 189, 248, 0.3);
   transition: all 0.3s ease;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .blogCard:hover .iconz {
@@ -2298,6 +2305,11 @@ header .navBtn button:hover::before {
   .iconz {
     width: 55px;
     height: 55px;
+    min-width: 55px;
+    min-height: 55px;
+    max-width: 55px;
+    max-height: 55px;
+    aspect-ratio: 1 / 1;
   }
   
   .fa-handshake,
@@ -2359,16 +2371,17 @@ header .navBtn button:hover::before {
     font-size: 0.95rem;
   }
   
-  /* Mobile: Cards in swipeable container */
+  /* Mobile: Cards stacked vertically, no horizontal scroll */
   .BlogCards {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 15px;
-    padding: 0 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    gap: 20px;
+    padding: 0 20px;
     margin-top: 30px;
+    width: 100%;
   }
   
   .BlogCards::-webkit-scrollbar {
@@ -2376,8 +2389,10 @@ header .navBtn button:hover::before {
   }
   
   .blogCard {
-    min-width: 90%;
-    scroll-snap-align: center;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    scroll-snap-align: none;
     flex-shrink: 0;
   }
   
@@ -3014,6 +3029,11 @@ header .navBtn button:hover::before {
   .iconz {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    aspect-ratio: 1 / 1;
   }
   
   .fa-handshake,
@@ -3041,9 +3061,14 @@ header .navBtn button:hover::before {
   }
   
   .BlogCards {
-    min-width: 95%;
-    gap: 12px;
-    padding: 0 10px 15px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .blogCard {
+    width: 100%;
+    min-width: 100%;
   }
   
   .flip-card-back h4 {
