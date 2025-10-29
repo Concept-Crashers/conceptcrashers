@@ -1692,7 +1692,7 @@ header .navBtn button:hover::before {
 .team-card {
   min-width: 240px;
   max-width: 280px;
-  background: linear-gradient(135deg, rgba(8, 47, 73, 0.95) 0%, rgba(6, 78, 119, 0.9) 100%);
+  background: #0a192f;
   padding: 24px 18px 20px;
   border-radius: 16px;
   display: flex;
@@ -1751,7 +1751,7 @@ header .navBtn button:hover::before {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(56, 189, 248, 0.35), 0 0 30px rgba(56, 189, 248, 0.1);
   border-color: rgba(56, 189, 248, 0.6);
-  background: linear-gradient(135deg, rgba(8, 47, 73, 1) 0%, rgba(6, 78, 119, 1) 100%);
+  background: #0d1f3a;
 }
 
 .team-card:hover .avatar {
