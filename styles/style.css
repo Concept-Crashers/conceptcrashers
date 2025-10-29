@@ -259,6 +259,235 @@ header .navBtn button {
 
 #Home {
   background-color: var(--background-secondary);
+  position: relative;
+  overflow: hidden;
+  /* Dot grid pattern */
+  background-image: 
+    radial-gradient(circle, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Floating Bubbles Background */
+.floating-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(56, 189, 248, 0.15), 
+    rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 
+    0 0 20px rgba(56, 189, 248, 0.1),
+    inset 0 0 20px rgba(139, 92, 246, 0.05);
+  animation: float linear infinite;
+}
+
+.bubble:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  left: 25%;
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  left: 40%;
+  animation-duration: 18s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  left: 60%;
+  animation-duration: 22s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  left: 75%;
+  animation-duration: 24s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+  width: 70px;
+  height: 70px;
+  left: 15%;
+  animation-duration: 19s;
+  animation-delay: 5s;
+}
+
+.bubble:nth-child(7) {
+  width: 110px;
+  height: 110px;
+  left: 85%;
+  animation-duration: 23s;
+  animation-delay: 2.5s;
+}
+
+.bubble:nth-child(8) {
+  width: 65px;
+  height: 65px;
+  left: 50%;
+  animation-duration: 21s;
+  animation-delay: 4.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Gradient Orbs Background */
+.gradient-orbs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #38bdf8, #8b5cf6);
+  top: -10%;
+  left: -10%;
+  animation-duration: 25s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #8b5cf6, #00f0ff);
+  bottom: -10%;
+  right: -5%;
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #00f0ff, #38bdf8);
+  top: 40%;
+  right: 20%;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+}
+
+/* Floating Tech Icons */
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-icon {
+  position: absolute;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: iconFloat 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+  opacity: 0.7;
+}
+
+.tech-icon:nth-child(1) { animation-duration: 7s; animation-delay: 0s; }
+.tech-icon:nth-child(2) { animation-duration: 9s; animation-delay: 1s; }
+.tech-icon:nth-child(3) { animation-duration: 8s; animation-delay: 2s; }
+.tech-icon:nth-child(4) { animation-duration: 10s; animation-delay: 0.5s; }
+.tech-icon:nth-child(5) { animation-duration: 7.5s; animation-delay: 1.5s; }
+.tech-icon:nth-child(6) { animation-duration: 9.5s; animation-delay: 0.8s; }
+.tech-icon:nth-child(7) { animation-duration: 8.5s; animation-delay: 2.5s; }
+.tech-icon:nth-child(8) { animation-duration: 11s; animation-delay: 1.2s; }
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg) scale(1.1);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.6));
+  }
+  50% {
+    transform: translateY(-35px) rotate(-5deg) scale(1.15);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+  }
+  75% {
+    transform: translateY(-20px) rotate(3deg) scale(1.1);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.6));
+  }
 }
 
 .home {
@@ -267,6 +496,8 @@ header .navBtn button {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .home001 h1 {
@@ -285,7 +516,15 @@ header .navBtn button {
   visibility: hidden;
   transform: translateX(100%);
   transition: transform 2s ease-in-out, opacity 2s;
+  /* Neon glow effect */
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
   /* transition-delay: 3s; */
+}
+
+.home001 h1:hover {
+  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.6)) 
+          drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
+  transition: filter 0.3s ease;
 }
 
 #Home.showonX h1{
@@ -429,12 +668,47 @@ header .navBtn button {
   margin-top: 10px;
   border: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
   /* border-radius: 50px; */
 }
 
+/* Enhanced button hover effects */
+.btns button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+.btns button:nth-child(1):hover {
+  box-shadow: 0 10px 35px rgba(0, 240, 255, 0.5);
+}
+
+.btns button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btns button:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.btns button:active {
+  transform: translateY(-1px);
+}
+
 .box {
-  width: 600px;
-  height: 450px;
+  width: 500px;
+  height: 400px;
   /* background-color: red; */
   /* border-bottom: 2px solid var(--accent-deep-blue); */
   /* transform: scale(1.1); */
@@ -443,13 +717,81 @@ header .navBtn button {
   transform: translateY(100%);
   transition: transform 2s ease-in-out, opacity 2s;
   transition-delay: 3s;
+  filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.3));
 }
 
 #Home.showImg .box{
   visibility: visible;
   opacity: 1;
   transform: translateY(0%);
+  animation: heroFloat 6s ease-in-out infinite;
   /* background-color: red; */
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeInScroll 1s ease-in-out 4s forwards;
+}
+
+.scroll-indicator span {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  position: relative;
+}
+
+.scroll-arrow i {
+  color: #38bdf8;
+  font-size: 14px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScroll {
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -664,6 +1006,7 @@ header .navBtn button {
   justify-content: center;
   gap: 10px;
   margin: 50px;
+  margin-top: 40px; /* spacing from carousel */
 }
 
 .butns button {
@@ -954,11 +1297,35 @@ header .navBtn button {
   width: 100%;
   overflow: hidden;
   padding: 20px 0;
+  margin-top: 50px; /* spacing from heading */
+  position: relative;
+}
+
+/* Fade indicators on sides */
+.team-carousel::before,
+.team-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.team-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-light), transparent);
+}
+
+.team-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-light), transparent);
 }
 
 .team-track {
   display: flex;
-  gap: 20px;
+  gap: 26px; /* increased breathing room */
   align-items: stretch;
   /* we'll animate transform on this element */
   will-change: transform;
@@ -981,8 +1348,8 @@ header .navBtn button {
 }
 
 .team-card .avatar {
-  width: 84px;
-  height: 84px;
+  width: 100px; /* increased from 84px */
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 8px;
@@ -991,8 +1358,8 @@ header .navBtn button {
 
 .avatar-wrap {
   position: relative;
-  width: 84px;
-  height: 84px;
+  width: 100px; /* match new avatar size */
+  height: 100px;
   margin-bottom: 8px;
 }
 
@@ -1024,6 +1391,14 @@ header .navBtn button {
   border-color: rgba(56,189,248,0.2);
 }
 
+/* Focus state for keyboard accessibility */
+.team-card:focus-visible {
+  outline: 3px solid rgba(56,189,248,0.6);
+  outline-offset: 4px;
+  transform: translateY(-10px) scale(1.025);
+  box-shadow: 0 18px 48px rgba(56,189,248,0.3), 0 8px 28px rgba(8, 8, 36, 0.55);
+}
+
 /* glowing outline using pseudo-element */
 .team-card::after {
   content: "";
@@ -1038,7 +1413,7 @@ header .navBtn button {
 .team-socials {
   display: flex;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 16px; /* increased from 14px for better spacing */
 }
 
 .team-socials a {
@@ -1057,6 +1432,14 @@ header .navBtn button {
   box-shadow: 0 10px 26px rgba(56,189,248,0.25);
   background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(139,92,246,0.2));
   color: #fff;
+}
+
+/* Focus state for social icons */
+.team-socials a:focus-visible {
+  outline: 2px solid rgba(56,189,248,0.8);
+  outline-offset: 3px;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 26px rgba(56,189,248,0.35);
 }
 
 .team-socials a i { 
@@ -1080,6 +1463,7 @@ header .navBtn button {
 .team-card .role {
   color: #bfcfe8; /* slightly brighter than default secondary */
   font-size: 0.85em;
+  margin-top: 4px; /* added separation from name */
   margin-bottom: 8px;
 }
 
@@ -1109,6 +1493,8 @@ header .navBtn button {
 @media (max-width: 768px) {
   .team-card { min-width: 200px; max-width: 220px; }
   .team-track { gap: 12px; }
+  .Team { padding: 80px 20px; } /* adjusted padding for mobile */
+  .team-carousel { padding: 16px 0; }
 }
 
 .flex001 {
