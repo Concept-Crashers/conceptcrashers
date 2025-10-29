@@ -57,7 +57,8 @@
   }
 
   .navLinks,
-  .navBtn {
+  .navBtn,
+  .social-nav {
     display: none;
   }
 

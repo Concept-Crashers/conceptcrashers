@@ -543,35 +543,47 @@ if (teamSection) observer.observe(teamSection);
 if (footer) observer.observe(footer);
 
 
-// Responsive navbar for a mobile and other device navigation menu
+// ========================================
+// Mobile Navigation Toggle (Redesigned)
+// ========================================
 const menuIcon = document.getElementById("menuIcon");
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-menu a');
+const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+const closeNav = document.getElementById('closeNav');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-if (menuIcon && navMenu) {
+// Open mobile menu
+if (menuIcon) {
     menuIcon.addEventListener("click", () => {
-        menuIcon.classList.add("animate");
-        if (menuIcon.classList.contains("fa-bars")) {
-            menuIcon.classList.remove("fa-bars");
-            menuIcon.classList.add("fa-times");
-            navMenu.style.display = 'flex';
-        } else {
-            menuIcon.classList.remove("fa-times");
-            menuIcon.classList.add("fa-bars");
-            navMenu.style.display = 'none';
+        if (mobileNavOverlay) {
+            mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
         }
-        setTimeout(() => {
-            menuIcon.classList.remove("animate");
-        }, 500);
-        console.log("I am clicked!");
     });
+}
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.style.display = 'none';
-            menuIcon.classList.remove("fa-times");
-            menuIcon.classList.add("fa-bars");
-        });
+// Close mobile menu
+if (closeNav) {
+    closeNav.addEventListener('click', () => {
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
+}
+
+// Close menu when clicking on a link
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside the nav container
+if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileNavOverlay) {
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 }
 
@@ -617,4 +629,61 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.error('Error initializing team carousel', e);
     }
+});
+
+// Navigation scroll effects
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    
+    // Header glassmorphism
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    
+    // Scroll progress bar
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+    
+    // Active section indicator
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header nav a');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            const headerOffset = 75;
+            const elementPosition = targetSection.offsetTop;
+            const offsetPosition = elementPosition - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
 });

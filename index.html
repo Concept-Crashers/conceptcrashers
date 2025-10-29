@@ -33,6 +33,9 @@
     <!-- Pre-loader ends here -->
 
     <main id="main-content">
+        <!-- Scroll progress bar -->
+        <div class="scroll-progress-bar"></div>
+        
         <!-- navigation bar starts here -->
         <header id="header">
             <!-- logo -->
@@ -53,30 +56,97 @@
                 </div>
             </nav>
 
+            <!-- Social media icons -->
+            <div class="social-nav">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
             <!-- nav button -->
             <div class="navBtn">
-                <button>Get Started</button>
+                <button>
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </div>
 
             <i class="fa-solid fa-bars" id="menuIcon"></i>
         </header>
         <!-- navigation bar ends -->
 
-        <div class="nav-wrapper">
-            <nav class="navbar">
-            <div class="navbar-container">
-                <ul class="nav-menu">
-                    <li><a href="#Home"><i class="fa-solid fa-house-user"></i>  Home</a></li>
-                    <li><a href="#About"><i class="fa-solid fa-address-card"></i>  About</a></li>
-                    <li><a href="#Services"><i class="fa-brands fa-servicestack"></i>  Services</a></li>
-                    <li><a href="#Process"><i class="fa-solid fa-arrows-spin"></i>  Process</a></li>
-                    <li><a href="#Blog"><i class="fa-solid fa-newspaper"></i>   Blog</a></li>
-                    <li><a href="#Team"><i class="fa-solid fa-people-group"></i>  Team</a></li>
-                    <li><a href="#Contact"><i class="fa-solid fa-phone"></i>  Contact</a></li>
-                    <li><a href="#cta" class="cta-btn">Get Started</a></li>
-                </ul>
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <div class="mobile-nav-container">
+                <div class="mobile-nav-header">
+                    <img src="img/Concept-removebg-preview.png" alt="logo" width="60" height="50">
+                    <button class="close-nav" id="closeNav" aria-label="Close navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <nav class="mobile-nav-menu">
+                    <a href="#Home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#About" class="mobile-nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#Services" class="mobile-nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#Process" class="mobile-nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>Process</span>
+                    </a>
+                    <a href="#Blog" class="mobile-nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#Team" class="mobile-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#Contact" class="mobile-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+
+                <div class="mobile-nav-footer">
+                    <button class="mobile-cta-btn">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="mobile-social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            </nav>
         </div>
 
 
