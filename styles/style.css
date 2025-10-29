@@ -1835,8 +1835,26 @@ header .navBtn button:hover::before {
   color: #60d5ff;
   font-size: 0.85rem;
   margin-top: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   opacity: 0.9;
+}
+
+.star-rating {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.star-rating i {
+  color: #fbbf24;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+
+.star-rating .far {
+  color: rgba(251, 191, 36, 0.3);
+  text-shadow: none;
 }
 
 .team-card .bio {
