@@ -469,64 +469,387 @@
         <!-- why choose concept crashers section starts here -->
         <section id="Blog">
             <div class="whyChooseUs">
+                <!-- Background decorative elements -->
+                <div class="why-choose-bg">
+                    <div class="geometric-shape shape-1"></div>
+                    <div class="geometric-shape shape-2"></div>
+                    <div class="geometric-shape shape-3"></div>
+                    <div class="geometric-shape shape-4"></div>
+                </div>
+                
                 <div class="Blog1">
                     <div class="Blog001">
-                        <h1 id="section">Why Choose Concept <br> Crashers</h1>
+                        <h1 id="section">Why Choose Concept Crashers</h1>
                         <p id="section">We Don't Just Build Software. </p>
                         <p id="section">We Build Your Competitive Advantage.</p>
 
-                        <div class="BlogCards">
-                            <div class="blogCard" id="section">
-                                <div class="iconz">
-                                    <i class="fa-solid fa-users-line"></i>
+                        <!-- Statistics Section -->
+                        <div class="why-stats-container">
+                            <div class="stat-box" id="section">
+                                <div class="stat-icon">
+                                    <i class="fas fa-project-diagram"></i>
                                 </div>
-                                <h4>Expert Team</h4>
-                                <p>
-                                    Highly skilled developers
-                                    with years of industry
-                                    experience
-                                </p>
+                                <div class="stat-number" data-target="150">0</div>
+                                <div class="stat-label">Projects Completed</div>
                             </div>
-
-                            <div class="blogCard" id="section">
-                                <div class="iconz">
-                                    <i class="fa-solid fa-handshake"></i>
+                            <div class="stat-box" id="section">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trophy"></i>
                                 </div>
-                                <h4>Customer Sastifaction</h4>
-                                <p>
-                                    98% client satisfaction
-                                    rate with ongoing
-                                    support
-                                </p>
+                                <div class="stat-number" data-target="98">0</div>
+                                <div class="stat-label">Success Rate %</div>
                             </div>
-
-                            <div class="blogCard" id="section">
-                                <div class="iconz">
-                                    <i class="fa-solid fa-ranking-star"></i>
+                            <div class="stat-box" id="section">
+                                <div class="stat-icon">
+                                    <i class="fas fa-headset"></i>
                                 </div>
-                                <h4>Quality Assurance</h4>
-                                <p>
-                                    Rigorous testing and quality
-                                    control processes
-                                </p>
+                                <div class="stat-number" data-target="24">0</div>
+                                <div class="stat-label">24/7 Support</div>
                             </div>
-
-                            <div class="blogCard" id="section">
-                                <div class="iconz">
-                                    <i class="fa-solid fa-clock"></i>
+                            <div class="stat-box" id="section">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
                                 </div>
-                                <h4>Timely Delivery</h4>
-                                <p>
-                                    We deliver projects on time
-                                    without compromising
-                                    quality
-                                </p>
+                                <div class="stat-number" data-target="50">0</div>
+                                <div class="stat-label">Expert Team Members</div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="photo" id="section">
-                        <img src="" id="section" alt="" width="100%" height="100%" style="border-radius: 5px;" />
+                        <div class="BlogCards">
+                            <div class="blogCard flip-card" id="section">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="iconz">
+                                            <i class="fa-solid fa-users-line"></i>
+                                        </div>
+                                        <h4>Expert Team</h4>
+                                        <p>
+                                            Highly skilled developers
+                                            with years of industry
+                                            experience
+                                        </p>
+                                        <div class="flip-hint">
+                                            <i class="fas fa-sync-alt"></i>
+                                            <span>Hover for details</span>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4>Our Expertise</h4>
+                                        <div class="skill-bar">
+                                            <div class="skill-info">
+                                                <span>Full-Stack Development</span>
+                                                <span>95%</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-fill" data-width="95"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-info">
+                                                <span>AI/ML Solutions</span>
+                                                <span>90%</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-fill" data-width="90"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-info">
+                                                <span>Cloud Architecture</span>
+                                                <span>88%</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-fill" data-width="88"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blogCard flip-card" id="section">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="iconz">
+                                            <i class="fa-solid fa-handshake"></i>
+                                        </div>
+                                        <h4>Customer Satisfaction</h4>
+                                        <p>
+                                            98% client satisfaction
+                                            rate with ongoing
+                                            support
+                                        </p>
+                                        <div class="flip-hint">
+                                            <i class="fas fa-sync-alt"></i>
+                                            <span>Hover for details</span>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4>Client Success</h4>
+                                        <div class="back-stats">
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-star"></i>
+                                                <span>4.9/5 Average Rating</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-redo"></i>
+                                                <span>95% Client Retention</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-comments"></i>
+                                                <span>500+ Positive Reviews</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-heart"></i>
+                                                <span>Long-term Partnerships</span>
+                                            </div>
+                                        </div>
+                                        <div class="mini-testimonial">
+                                            <i class="fas fa-quote-left"></i>
+                                            <p>"Outstanding service and support!"</p>
+                                            <span>- Omolo Pasikali, CEO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blogCard flip-card" id="section">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="iconz">
+                                            <i class="fa-solid fa-ranking-star"></i>
+                                        </div>
+                                        <h4>Quality Assurance</h4>
+                                        <p>
+                                            Rigorous testing and quality
+                                            control processes
+                                        </p>
+                                        <div class="flip-hint">
+                                            <i class="fas fa-sync-alt"></i>
+                                            <span>Hover for details</span>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4>Our Standards</h4>
+                                        <div class="back-stats">
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>100% Code Review</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-shield-alt"></i>
+                                                <span>Security First Approach</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-bug"></i>
+                                                <span>99.9% Bug-Free Release</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-certificate"></i>
+                                                <span>ISO 9001 Certified</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blogCard flip-card" id="section">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="iconz">
+                                            <i class="fa-solid fa-clock"></i>
+                                        </div>
+                                        <h4>Timely Delivery</h4>
+                                        <p>
+                                            We deliver projects on time
+                                            without compromising
+                                            quality
+                                        </p>
+                                        <div class="flip-hint">
+                                            <i class="fas fa-sync-alt"></i>
+                                            <span>Hover for details</span>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4>Delivery Performance</h4>
+                                        <div class="back-stats">
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-calendar-check"></i>
+                                                <span>92% On-Time Delivery</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-rocket"></i>
+                                                <span>Agile Methodology</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-chart-line"></i>
+                                                <span>Regular Progress Updates</span>
+                                            </div>
+                                            <div class="back-stat-item">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Fast Turnaround Time</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Proof Section -->
+                        <!-- <div class="social-proof-section" id="section">
+                            <h3>Trusted by Industry Leaders</h3>
+                            <div class="client-logos-scroll">
+                                <div class="logos-track">
+                                    <div class="client-logo">
+                                        <i class="fab fa-shopify"></i>
+                                        <span>Shopify</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-stripe"></i>
+                                        <span>Stripe</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-slack"></i>
+                                        <span>Slack</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-spotify"></i>
+                                        <span>Spotify</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-airbnb"></i>
+                                        <span>Airbnb</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-uber"></i>
+                                        <span>Uber</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-shopify"></i>
+                                        <span>Shopify</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-stripe"></i>
+                                        <span>Stripe</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-slack"></i>
+                                        <span>Slack</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-spotify"></i>
+                                        <span>Spotify</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-airbnb"></i>
+                                        <span>Airbnb</span>
+                                    </div>
+                                    <div class="client-logo">
+                                        <i class="fab fa-uber"></i>
+                                        <span>Uber</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trust-stats">
+                                <div class="trust-item">
+                                    <i class="fas fa-building"></i>
+                                    <span><strong>500+</strong> Companies Trust Us</span>
+                                </div>
+                                <div class="trust-item">
+                                    <i class="fas fa-globe"></i>
+                                    <span><strong>50+</strong> Countries Served</span>
+                                </div>
+                                <div class="trust-item">
+                                    <i class="fas fa-award"></i>
+                                    <span><strong>Top 10</strong> Industry Rated</span>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- Certifications/Badges Section with Horizontal Scroll -->
+                        <div class="certifications-section" id="section">
+                            <h3>Our Certifications & Partnerships</h3>
+                            <div class="badges-scroll-container">
+                                <div class="badges-scroll-track">
+                                    <div class="badge-item">
+                                        <i class="fab fa-aws"></i>
+                                        <span>AWS Partner</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-microsoft"></i>
+                                        <span>Microsoft Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-google"></i>
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fas fa-certificate"></i>
+                                        <span>ISO 9001</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-react"></i>
+                                        <span>React Experts</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-node-js"></i>
+                                        <span>Node.js Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-docker"></i>
+                                        <span>Docker Expert</span>
+                                    </div>
+                                    <!-- Duplicate for seamless scroll -->
+                                    <div class="badge-item">
+                                        <i class="fab fa-aws"></i>
+                                        <span>AWS Partner</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-microsoft"></i>
+                                        <span>Microsoft Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-google"></i>
+                                        <span>Google Cloud</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fas fa-certificate"></i>
+                                        <span>ISO 9001</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-react"></i>
+                                        <span>React Experts</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-node-js"></i>
+                                        <span>Node.js Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python Certified</span>
+                                    </div>
+                                    <div class="badge-item">
+                                        <i class="fab fa-docker"></i>
+                                        <span>Docker Expert</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="why-cta-section" id="section">
+                            <button class="why-cta-btn">
+                                <span>Learn More About Us</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="why-cta-btn secondary">
+                                <span>See Our Work</span>
+                                <i class="fas fa-briefcase"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="Blog2">
@@ -535,6 +858,7 @@
                         <p id="section">Each project is a journey we take with our clients,
                             turning their unique challenges into powerful, high-performance digital products.
                         </p>
+                    </div>
                     </div>
 
                     <div class="Blog003">
@@ -677,7 +1001,7 @@
                                 <i class="fa-solid fa-award"></i>
                                 <span>6 yrs</span>
                             </div>
-                            <h4>Deo Woods</h4>
+                            <h4>Ggitta Ibrahim</h4>
                             <p class="role">Marketing Manager</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -702,7 +1026,7 @@
                                 <i class="fa-solid fa-award"></i>
                                 <span>8 yrs</span>
                             </div>
-                            <h4>Alice Johnson</h4>
+                            <h4>Wambogo Sadat</h4>
                             <p class="role">Product Lead</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -726,7 +1050,7 @@
                                 <i class="fa-solid fa-award"></i>
                                 <span>10 yrs</span>
                             </div>
-                            <h4>Bob Williams</h4>
+                            <h4>Kijjambu Joseph</h4>
                             <p class="role">Operations Director</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -751,7 +1075,7 @@
                                 <i class="fa-solid fa-award"></i>
                                 <span>7 yrs</span>
                             </div>
-                            <h4>Carol Davis</h4>
+                            <h4>Nsubuga Ediger</h4>
                             <p class="role">Sales Manager</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -777,7 +1101,7 @@
                                 <i class="fa-solid fa-award"></i>
                                 <span>4 yrs</span>
                             </div>
-                            <h4>Eve Adams</h4>
+                            <h4>Mugerwa Dickson</h4>
                             <p class="role">Customer Success</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -792,8 +1116,89 @@
                                 <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
                                 <a href="mailto:eve@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                             </div>
+
                         </div>
+                        
+
+                        <div class="team-card">
+                            <div class="avatar-wrap">
+                                <img class="avatar" src="img/team-5.jpg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                            </div>
+                            <div class="exp-badge" title="4 years experience">
+                                <i class="fa-solid fa-award"></i>
+                                <span>4 yrs</span>
+                            </div>
+                            <h4>Balibaseka Deo</h4>
+                            <p class="role">Customer Success</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="team-socials">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                                <a href="mailto:eve@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
                     </div>
+
+                    
+
+
+                    <div class="team-card">
+                            <div class="avatar-wrap">
+                                <img class="avatar" src="img/team-5.jpg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                            </div>
+                            <div class="exp-badge" title="4 years experience">
+                                <i class="fa-solid fa-award"></i>
+                                <span>4 yrs</span>
+                            </div>
+                            <h4>Omolo Pasikali</h4>
+                            <p class="role">Customer Success</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="team-socials">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                                <a href="mailto:eve@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                </div>
+
+                <div class="team-card">
+                            <div class="avatar-wrap">
+                                <img class="avatar" src="img/team-5.jpg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                            </div>
+                            <div class="exp-badge" title="4 years experience">
+                                <i class="fa-solid fa-award"></i>
+                                <span>4 yrs</span>
+                            </div>
+                            <h4>Ssentongo Edrine</h4>
+                            <p class="role">Customer Success</p>
+                            <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="team-socials">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                                <a href="mailto:eve@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                    </div>
+
+                    
                 </div>
 
                 <div class="butns">
