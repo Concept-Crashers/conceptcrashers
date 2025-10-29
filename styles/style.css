@@ -1692,73 +1692,79 @@ header .navBtn button:hover::before {
 .team-card {
   min-width: 240px;
   max-width: 280px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
-  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(8, 47, 73, 0.95) 0%, rgba(6, 78, 119, 0.9) 100%);
+  padding: 24px 18px 20px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
   position: relative;
   overflow: visible;
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   transition: all 0.3s ease;
 }
 
 .team-card .avatar {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 8px;
-  border: 3px solid rgba(56, 189, 248, 0.3);
+  margin-bottom: 10px;
+  border: 3px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
   transition: all 0.3s ease;
 }
 
 .avatar-wrap {
   position: relative;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 8px;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 10px;
 }
 
 .exp-badge {
   position: relative;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  padding: 6px 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(14, 165, 233, 0.3) 100%);
+  color: #60d5ff;
+  padding: 5px 10px;
   border-radius: 20px;
   display: inline-flex;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  margin-bottom: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
 .exp-badge i { 
-  font-size: 0.7rem;
-  color: #38bdf8;
+  font-size: 0.65rem;
+  color: #60d5ff;
 }
 
 /* Hover effects - clean and subtle */
 .team-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.2);
-  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.35), 0 0 30px rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.6);
+  background: linear-gradient(135deg, rgba(8, 47, 73, 1) 0%, rgba(6, 78, 119, 1) 100%);
 }
 
 .team-card:hover .avatar {
-  border-color: rgba(56, 189, 248, 0.6);
+  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
   transform: scale(1.05);
 }
 
 .team-card:hover .exp-badge {
-  background: rgba(56, 189, 248, 0.25);
-  border-color: rgba(56, 189, 248, 0.5);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.45) 100%);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  color: #fff;
 }
 
 /* Focus state for keyboard accessibility */
@@ -1775,27 +1781,29 @@ header .navBtn button:hover::before {
 
 .team-socials {
   display: flex;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 8px;
+  margin-top: 12px;
 }
 
 .team-socials a {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   display: inline-grid;
   place-items: center;
-  background: rgba(56, 189, 248, 0.1);
+  background: rgba(56, 189, 248, 0.15);
   border-radius: 8px;
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #60d5ff;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
   transition: all 0.3s ease;
 }
 
 .team-socials a:hover {
   transform: translateY(-3px);
-  background: rgba(56, 189, 248, 0.2);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #60d5ff;
+  background: rgba(56, 189, 248, 0.3);
+  border-color: rgba(56, 189, 248, 0.7);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 /* Focus state for social icons */
@@ -1810,22 +1818,25 @@ header .navBtn button:hover::before {
 
 /* improve contrast for small screens */
 @media (max-width: 480px) {
-  .exp-badge { font-size: 0.65rem; padding: 5px 10px; }
-  .team-card { padding: 24px 16px; }
+  .exp-badge { font-size: 0.65rem; padding: 4px 9px; }
+  .team-card { padding: 20px 15px 18px; }
+  .team-card .avatar { width: 85px; height: 85px; }
+  .avatar-wrap { width: 85px; height: 85px; }
 }
 
 .team-card h4 {
-  margin: 8px 0 4px;
-  color: var(--text-primary);
-  font-size: 1.1rem;
+  margin: 6px 0 4px;
+  color: #fff;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
 .team-card .role {
-  color: rgba(156, 163, 175, 0.9);
-  font-size: 0.875rem;
-  margin-top: 4px;
-  margin-bottom: 8px;
+  color: #60d5ff;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  opacity: 0.9;
 }
 
 .team-card .bio {
