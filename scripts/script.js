@@ -587,45 +587,227 @@ if (mobileNavOverlay) {
     });
 }
 
-// Team carousel initialization: duplicate items and start infinite scroll
+// Team carousel initialization: Swipeable carousel for mobile
 document.addEventListener('DOMContentLoaded', () => {
     try {
         const track = document.getElementById('teamTrack');
         if (!track) return;
 
         const container = track.parentElement;
+        const cards = Array.from(track.children);
+        const isMobile = window.innerWidth <= 991;
 
-        // Duplicate children until the track is at least twice the container width
-        const ensureClones = () => {
-            const containerWidth = container.getBoundingClientRect().width || window.innerWidth;
-            let total = track.scrollWidth;
-            let safety = 0;
-            while (total < containerWidth * 2 && safety < 12) {
-                Array.from(track.children).forEach(child => track.appendChild(child.cloneNode(true)));
-                total = track.scrollWidth;
-                safety++;
-            }
-        };
+        if (isMobile) {
+            // Mobile: Swipeable Carousel
+            let currentIndex = 0;
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            let startTime = 0;
 
-        // Start after a short delay to allow images/layout to settle
-        setTimeout(() => {
+            // Create pagination dots
+            const paginationContainer = document.createElement('div');
+            paginationContainer.className = 'team-pagination';
+            cards.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = `team-pagination-dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToSlide(index));
+                paginationContainer.appendChild(dot);
+            });
+
+            // Create swipe hint
+            const swipeHint = document.createElement('div');
+            swipeHint.className = 'team-swipe-hint';
+            swipeHint.innerHTML = '<i class="fas fa-hand-pointer"></i> <span>Swipe to explore team members</span>';
+
+            container.parentElement.appendChild(paginationContainer);
+            container.parentElement.appendChild(swipeHint);
+
+            // Hide swipe hint after 3 seconds
+            setTimeout(() => {
+                swipeHint.style.opacity = '0';
+                setTimeout(() => swipeHint.remove(), 300);
+            }, 3000);
+
+            const updateDots = () => {
+                const dots = paginationContainer.querySelectorAll('.team-pagination-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            };
+
+            const getSlideWidth = () => {
+                // Get computed style to get the actual gap value
+                const trackStyles = window.getComputedStyle(track);
+                const gap = parseInt(trackStyles.gap) || 20;
+                
+                // Get the actual card width from the first card
+                const card = cards[0];
+                const cardWidth = card.offsetWidth;
+                
+                // Return card width + gap for perfect positioning
+                return cardWidth + gap;
+            };
+
+            const goToSlide = (index) => {
+                currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+                const slideWidth = getSlideWidth();
+                const offset = -currentIndex * slideWidth;
+                track.style.transform = `translateX(${offset}px)`;
+                updateDots();
+            };
+
+            // Touch events
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                currentX = startX;
+                isDragging = true;
+                startTime = Date.now();
+                track.style.transition = 'none';
+            });
+
+            track.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                currentX = e.touches[0].clientX;
+                const diff = currentX - startX;
+                const slideWidth = getSlideWidth();
+                const currentOffset = -currentIndex * slideWidth;
+                track.style.transform = `translateX(${currentOffset + diff}px)`;
+            });
+
+            track.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                const diff = currentX - startX;
+                const swipeThreshold = 50;
+                const timeDiff = Date.now() - startTime;
+                const velocity = Math.abs(diff) / timeDiff;
+
+                if (Math.abs(diff) > swipeThreshold || velocity > 0.3) {
+                    if (diff > 0 && currentIndex > 0) {
+                        goToSlide(currentIndex - 1);
+                    } else if (diff < 0 && currentIndex < cards.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(currentIndex);
+                    }
+                } else {
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Mouse events for desktop testing
+            track.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                currentX = startX;
+                isDragging = true;
+                startTime = Date.now();
+                track.style.transition = 'none';
+                e.preventDefault();
+            });
+
+            track.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                currentX = e.clientX;
+                const diff = currentX - startX;
+                const slideWidth = getSlideWidth();
+                const currentOffset = -currentIndex * slideWidth;
+                track.style.transform = `translateX(${currentOffset + diff}px)`;
+            });
+
+            track.addEventListener('mouseup', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                const diff = currentX - startX;
+                const swipeThreshold = 50;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0 && currentIndex > 0) {
+                        goToSlide(currentIndex - 1);
+                    } else if (diff < 0 && currentIndex < cards.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(currentIndex);
+                    }
+                } else {
+                    goToSlide(currentIndex);
+                }
+            });
+
+            track.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    track.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Auto-advance every 5 seconds
+            let autoAdvanceInterval = setInterval(() => {
+                if (currentIndex < cards.length - 1) {
+                    goToSlide(currentIndex + 1);
+                } else {
+                    goToSlide(0);
+                }
+            }, 5000);
+
+            // Pause auto-advance on interaction
+            container.addEventListener('touchstart', () => {
+                clearInterval(autoAdvanceInterval);
+            });
+
+            container.addEventListener('touchend', () => {
+                clearInterval(autoAdvanceInterval);
+                autoAdvanceInterval = setInterval(() => {
+                    if (currentIndex < cards.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(0);
+                    }
+                }, 5000);
+            });
+
+        } else {
+            // Desktop: Original infinite scroll
+            // Remove any mobile-specific styles
+            track.style.transform = '';
+            track.style.transition = '';
+            
+            const ensureClones = () => {
+                const containerWidth = container.getBoundingClientRect().width || window.innerWidth;
+                let total = track.scrollWidth;
+                let safety = 0;
+                while (total < containerWidth * 3 && safety < 20) {
+                    Array.from(track.children).forEach(child => {
+                        track.appendChild(child.cloneNode(true));
+                    });
+                    total = track.scrollWidth;
+                    safety++;
+                }
+            };
+
+            // Ensure clones and start animation
             ensureClones();
 
-            const speed = 3500; // px per second
-            const width = track.scrollWidth;
-            const duration = Math.max(12, Math.round(width / speed));
-            track.style.setProperty('--team-scroll-duration', duration + 's');
-            track.classList.add('scrolling');
+            setTimeout(() => {
+                const speed = 50; // pixels per second
+                const width = track.scrollWidth / 2; // Half because we duplicate
+                const duration = width / speed;
+                track.style.setProperty('--team-scroll-duration', duration + 's');
+                track.classList.add('scrolling');
 
-            // Pause on hover for accessibility/UX
-            container.addEventListener('mouseenter', () => track.classList.add('pause'));
-            container.addEventListener('mouseleave', () => track.classList.remove('pause'));
+                container.addEventListener('mouseenter', () => track.classList.add('pause'));
+                container.addEventListener('mouseleave', () => track.classList.remove('pause'));
 
-            // Respect reduced motion preference
-            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                track.classList.remove('scrolling');
-            }
-        }, 300);
+                if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    track.classList.remove('scrolling');
+                }
+            }, 100);
+        }
     } catch (e) {
         console.error('Error initializing team carousel', e);
     }

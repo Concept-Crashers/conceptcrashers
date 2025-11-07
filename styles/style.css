@@ -558,7 +558,7 @@ header .navBtn button:hover::before {
   }
 
   footer {
-    padding-bottom: 120px !important; /* Increased from 70px to accommodate social icons */
+    padding-bottom: 120px !important;
   }
 
   /* Floating action button adjustment */
@@ -566,29 +566,102 @@ header .navBtn button:hover::before {
     bottom: 80px !important;
   }
 
-  /* Team section mobile improvements */
+  /* Team section mobile - Swipeable Carousel */
+  .Team {
+    padding: 60px 0 80px 0;
+  }
+
   .team-carousel {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    padding: 20px 10px;
+    overflow: hidden;
+    padding: 0 10px;
+    margin-top: 40px;
+    position: relative;
+    touch-action: pan-y pinch-zoom;
   }
 
   .team-carousel::before,
   .team-carousel::after {
-    display: none; /* Remove fade indicators on mobile */
+    display: none;
   }
 
   .team-track {
-    gap: 15px;
-    padding: 0 10px;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
 
   .team-card {
-    min-width: 260px; /* Ensure cards are visible */
-    max-width: 280px;
-    flex-shrink: 0; /* Prevent shrinking */
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    flex-shrink: 0;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(15, 30, 55, 0.95) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  /* Pagination dots - positioned below cards */
+  .team-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 15px 0;
+  }
+
+  .team-pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .team-pagination-dot.active {
+    background: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    transform: scale(1.2);
+  }
+
+  /* Swipe indicators */
+  .team-swipe-hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    color: rgba(148, 163, 184, 0.6);
+    font-size: 0.85rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .team-swipe-hint i {
+    font-size: 1.2rem;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* Ensure buttons are visible below carousel */
+  .Team .butns {
+    display: flex !important;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Team .butns button {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
   }
 }
 
@@ -626,6 +699,39 @@ header .navBtn button:hover::before {
 
   .mobile-bottom-nav-item span {
     font-size: 0.52rem;
+  }
+
+  /* Team section - Smaller screens */
+  .Team h2 {
+    font-size: 1.3rem;
+  }
+
+  .Team h1 {
+    font-size: 1.8rem;
+  }
+
+  .Team .para {
+    font-size: 0.95rem;
+  }
+
+  .team-pagination {
+    margin-top: 18px;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .team-pagination-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .team-swipe-hint {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+
+  .team-swipe-hint i {
+    font-size: 1rem;
   }
 }
 
@@ -3053,8 +3159,15 @@ header .navBtn button:hover::before {
   display: flex;
   gap: 26px; /* increased breathing room */
   align-items: stretch;
-  /* we'll animate transform on this element */
   will-change: transform;
+}
+
+/* Desktop infinite scroll animation */
+@media (min-width: 992px) {
+  .team-track {
+    display: flex;
+    gap: 26px;
+  }
 }
 
 .team-card {
@@ -3114,25 +3227,27 @@ header .navBtn button:hover::before {
   color: #60d5ff;
 }
 
-/* Hover effects - clean and subtle */
-.team-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.35), 0 0 30px rgba(56, 189, 248, 0.1);
-  border-color: rgba(56, 189, 248, 0.5);
-  background: #0d1f3a;
-}
+/* Hover effects - desktop only */
+@media (min-width: 992px) {
+  .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(56, 189, 248, 0.35), 0 0 30px rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.5);
+    background: #0d1f3a;
+  }
 
-.team-card:hover .avatar {
-  border-color: rgba(56, 189, 248, 0.8);
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
-  transform: scale(1.05);
-}
+  .team-card:hover .avatar {
+    border-color: rgba(56, 189, 248, 0.8);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+    transform: scale(1.05);
+  }
 
-.team-card:hover .exp-badge {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.45) 100%);
-  border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-  color: #fff;
+  .team-card:hover .exp-badge {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.45) 100%);
+    border-color: rgba(56, 189, 248, 0.7);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    color: #fff;
+  }
 }
 
 /* Focus state for keyboard accessibility */
@@ -3527,42 +3642,44 @@ header .navBtn button:hover::before {
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .team-carousel { 
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding: 16px 0;
-    margin-top: 30px;
+  /* Team section - Swipeable carousel optimizations */
+  .Team {
+    padding: 60px 0 80px 0;
   }
-  
-  .team-card { 
-    min-width: 220px; 
-    max-width: 240px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
+
+  .team-carousel {
+    padding: 0 8px;
   }
-  
-  .team-track { 
-    gap: 16px;
-    padding: 0 20px;
+
+  .team-card {
+    min-width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
   }
-  
-  .Team { padding: 80px 20px; } /* adjusted padding for mobile */
-  
-  /* Team section buttons responsive */
-  .butns {
+
+  .team-pagination {
+    margin-top: 20px;
+    padding: 12px 0;
+  }
+
+  .team-swipe-hint {
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+
+  /* Team section buttons */
+  .Team .butns {
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin: 30px 20px;
+    margin: 40px 20px 20px 20px;
   }
-  
-  .butns button {
+
+  .Team .butns button {
     width: 100%;
-    max-width: 280px;
-    height: 45px;
-    font-size: 0.95rem;
+    max-width: 320px;
+    height: 50px;
+    font-size: 1rem;
   }
   
   /* Contact form tablet responsive */
