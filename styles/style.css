@@ -218,10 +218,10 @@ header {
   height: 75px;
   background-color: var(--background-primary);
   display: flex;
-  gap: 100px;
+  gap: 20px;
   align-items: center;
-  justify-content: space-around;
-  padding: 20px 50px;
+  justify-content: space-between;
+  padding: 20px 30px;
   position: fixed;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -248,20 +248,33 @@ header.scrolled .logo {
 .logo {
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .logo:hover {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.05) rotate(3deg);
   filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.6));
 }
 
 /* navigation styles */
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header nav .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
 header nav a {
-  font-size: .9em;
+  font-size: 0.85em;
   color: var(--text-primary);
-  margin-left: 20px;
   position: relative;
-  width: max-content;
+  white-space: nowrap;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -401,6 +414,222 @@ header .navBtn button:hover::before {
 /* Header styles ends here */
 
 /* ========================================== */
+/* Mobile Bottom Navigation */
+/* ========================================== */
+
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 25, 47, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 10px 0 max(10px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  z-index: 9999;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 3px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  flex: 1;
+  max-width: 65px;
+  min-height: 58px;
+  border-radius: 50%;
+}
+
+.mobile-bottom-nav-item i {
+  font-size: 1.3rem;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: inherit;
+}
+
+.mobile-bottom-nav-item span {
+  font-size: 0.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-bottom-nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 30px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 0 0 3px 3px;
+  transition: transform 0.3s ease;
+  display: none; /* Hide the top gradient bar */
+}
+
+.mobile-bottom-nav-item.active::before,
+.mobile-bottom-nav-item:active::before {
+  transform: translateX(-50%) scaleX(1);
+  display: none; /* Ensure gradient stays hidden */
+}
+
+.mobile-bottom-nav-item.active {
+  color: #38bdf8;
+}
+
+.mobile-bottom-nav-item.active i {
+  transform: translateY(-3px) scale(1.15);
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(56, 189, 248, 0.4));
+}
+
+.mobile-bottom-nav-item.active span {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.mobile-bottom-nav-item:active {
+  transform: scale(0.95);
+}
+
+/* Ripple effect for touch feedback */
+.mobile-bottom-nav-item {
+  overflow: hidden;
+}
+
+.mobile-bottom-nav-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: -1;
+}
+
+.mobile-bottom-nav-item:active::after {
+  width: 60px;
+  height: 60px;
+}
+
+/* Show bottom nav on mobile */
+@media (max-width: 991px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  /* Hide the entire header on mobile */
+  #header {
+    display: none !important;
+  }
+
+  /* Hide the hamburger menu icon */
+  .fa-bars {
+    display: none !important;
+  }
+
+  /* Adjust sections to account for no header */
+  #Home {
+    padding-top: 0;
+    min-height: 100vh;
+  }
+
+  /* Add padding to bottom of sections to account for fixed nav */
+  section:last-of-type {
+    padding-bottom: 80px;
+  }
+
+  footer {
+    padding-bottom: 120px !important; /* Increased from 70px to accommodate social icons */
+  }
+
+  /* Floating action button adjustment */
+  .fab-button {
+    bottom: 80px !important;
+  }
+
+  /* Team section mobile improvements */
+  .team-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+  }
+
+  .team-carousel::before,
+  .team-carousel::after {
+    display: none; /* Remove fade indicators on mobile */
+  }
+
+  .team-track {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .team-card {
+    min-width: 260px; /* Ensure cards are visible */
+    max-width: 280px;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  }
+
+  .mobile-bottom-nav-item {
+    padding: 5px 2px;
+    max-width: 60px;
+    min-height: 52px;
+  }
+
+  .mobile-bottom-nav-item i {
+    font-size: 1.2rem;
+  }
+
+  .mobile-bottom-nav-item span {
+    font-size: 0.58rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-bottom-nav-item {
+    padding: 4px 2px;
+    max-width: 55px;
+    min-height: 48px;
+    gap: 2px;
+  }
+
+  .mobile-bottom-nav-item i {
+    font-size: 1.1rem;
+  }
+
+  .mobile-bottom-nav-item span {
+    font-size: 0.52rem;
+  }
+}
+
+/* ========================================== */
 /* Mobile Navigation Overlay Styles */
 /* ========================================== */
 
@@ -472,9 +701,9 @@ header .navBtn button:hover::before {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 18px 20px;
+    padding: 16px 18px;
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
     text-decoration: none;
     border-radius: 12px;
@@ -511,14 +740,15 @@ header .navBtn button:hover::before {
 }
 
 .mobile-nav-link i {
-    font-size: 1.3rem;
-    width: 30px;
+    font-size: 1.2rem;
+    width: 28px;
     text-align: center;
     background: var(--gradient-primary);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
 }
 
 .mobile-nav-footer {
@@ -531,12 +761,12 @@ header .navBtn button:hover::before {
 
 .mobile-cta-btn {
     width: 100%;
-    height: 55px;
+    height: 50px;
     border: none;
     border-radius: 50px;
     background: var(--gradient-primary);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -567,15 +797,15 @@ header .navBtn button:hover::before {
 }
 
 .mobile-social-links a {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: rgba(56, 189, 248, 0.1);
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: all 0.3s ease;
     border: 1px solid rgba(56, 189, 248, 0.2);
 }
@@ -1363,16 +1593,23 @@ header .navBtn button:hover::before {
 .butns {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin: 50px;
-  margin-top: 40px; /* spacing from carousel */
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .butns button {
-  width: 150px;
-  height: 40px;
+  min-width: 180px;
+  height: 45px;
   border: none;
   border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0 25px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .butns button:nth-child(1) {
@@ -3290,10 +3527,28 @@ header .navBtn button:hover::before {
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .team-card { min-width: 200px; max-width: 220px; }
-  .team-track { gap: 12px; }
+  .team-carousel { 
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 16px 0;
+    margin-top: 30px;
+  }
+  
+  .team-card { 
+    min-width: 220px; 
+    max-width: 240px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+  
+  .team-track { 
+    gap: 16px;
+    padding: 0 20px;
+  }
+  
   .Team { padding: 80px 20px; } /* adjusted padding for mobile */
-  .team-carousel { padding: 16px 0; }
   
   /* Team section buttons responsive */
   .butns {
@@ -3848,10 +4103,16 @@ form {
   opacity: 1;
 }
 
+.gallery-info {
+  text-align: left;
+}
+
 .gallery-info h3 {
   color: var(--white);
   font-size: 1rem;
   margin-bottom: 6px;
+  font-weight: 600;
+  line-height: 1.3;
   transform: translateY(20px);
   transition: transform 0.3s ease 0.1s;
 }
@@ -3864,6 +4125,7 @@ form {
   color: var(--text-secondary);
   font-size: 0.8rem;
   margin-bottom: 8px;
+  line-height: 1.5;
   transform: translateY(20px);
   transition: transform 0.3s ease 0.15s;
 }
@@ -3878,6 +4140,7 @@ form {
   display: flex;
   align-items: center;
   gap: 5px;
+  font-weight: 500;
   transform: translateY(20px);
   transition: transform 0.3s ease 0.2s;
 }
@@ -3986,17 +4249,25 @@ form {
     padding: 50px 15px;
   }
 
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
   .gallery-header h2 {
     font-size: 1.75rem;
+    margin-bottom: 10px;
   }
 
   .gallery-header p {
     font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .gallery-filters {
     gap: 8px;
     margin-bottom: 25px;
+    justify-content: center;
   }
 
   .filter-btn {
@@ -4021,12 +4292,18 @@ form {
     height: 195px;
   }
 
+  .gallery-info {
+    text-align: left;
+  }
+
   .gallery-info h3 {
     font-size: 0.95rem;
+    line-height: 1.3;
   }
 
   .gallery-info p {
     font-size: 0.75rem;
+    line-height: 1.4;
   }
 
   .gallery-date {
@@ -4053,20 +4330,209 @@ form {
 
   .gallery-header {
     margin-bottom: 30px;
+    text-align: center;
   }
 
   .gallery-header h2 {
     font-size: 1.5rem;
+    margin-bottom: 8px;
   }
 
   .gallery-header p {
     font-size: 0.85rem;
     padding: 0 10px;
+    line-height: 1.5;
   }
 
   .gallery-filters {
     gap: 6px;
     margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5px;
+  }
+
+  .filter-btn {
+    padding: 7px 15px;
+    font-size: 0.75rem;
+  }
+
+  .gallery-scroll-wrapper {
+    padding: 0 10px;
+  }
+
+  .gallery-scroll-wrapper::before,
+  .gallery-scroll-wrapper::after {
+    width: 10px;
+  }
+
+  .gallery-grid {
+    gap: 15px;
+  }
+
+  .gallery-item {
+    flex: 0 0 240px;
+  }
+
+  .gallery-image {
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  .gallery-overlay {
+    padding: 12px;
+  }
+
+  .gallery-info {
+    text-align: left;
+  }
+
+  .gallery-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .gallery-info p {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .gallery-date {
+    font-size: 0.65rem;
+  }
+
+  .view-btn {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+  }
+
+  .load-more-btn {
+    padding: 10px 25px;
+    font-size: 0.8rem;
+  }
+
+  .gallery-load-more {
+    padding: 15px 0;
+    margin-top: 15px;
+  }
+}
+
+/* ========================================== */
+/* SweetAlert Mobile Responsive Styles */
+/* ========================================== */
+
+/* Mobile-friendly SweetAlert customization */
+@media (max-width: 768px) {
+  .swal2-popup.mobile-friendly-popup {
+    max-width: 95% !important;
+    width: 95% !important;
+    padding: 1.2em !important;
+    border-radius: 15px !important;
+  }
+
+  .swal2-title.mobile-friendly-title {
+    font-size: 1.2rem !important;
+    padding: 0 0.5em !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .swal2-html-container.mobile-friendly-text {
+    font-size: 0.8em !important;
+    padding: 0 0.5em !important;
+    line-height: 1.5 !important;
+    margin: 0.5em 0 !important;
+  }
+
+  .swal2-image.mobile-friendly-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    margin: 1em auto !important;
+    border-radius: 10px !important;
+  }
+
+  .swal2-confirm.mobile-friendly-button {
+    font-size: 0.9rem !important;
+    padding: 10px 25px !important;
+    min-width: 100px !important;
+  }
+
+  /* Icon sizing for mobile */
+  .swal2-icon {
+    width: 55px !important;
+    height: 55px !important;
+    margin: 1em auto 0.5em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .swal2-popup.mobile-friendly-popup {
+    padding: 1em !important;
+    border-radius: 12px !important;
+  }
+
+  .swal2-title.mobile-friendly-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.4em !important;
+  }
+
+  .swal2-html-container.mobile-friendly-text {
+    font-size: 0.8em !important;
+    margin: 0.4em 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .swal2-image.mobile-friendly-image {
+    max-height: 250px !important;
+    margin: 0.8em auto !important;
+    border-radius: 8px !important;
+  }
+
+  .swal2-confirm.mobile-friendly-button {
+    font-size: 0.85rem !important;
+    padding: 9px 22px !important;
+  }
+
+  .swal2-icon {
+    width: 45px !important;
+    height: 45px !important;
+    margin: 0.8em auto 0.4em !important;
+  }
+
+  .gallery-section {
+    padding: 40px 10px;
+  }
+
+  .gallery-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .gallery-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .gallery-header p {
+    font-size: 0.85rem;
+    padding: 0 10px;
+    line-height: 1.5;
+  }
+
+  .gallery-filters {
+    gap: 6px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5px;
   }
 
   .filter-btn {
@@ -5805,7 +6271,7 @@ footer {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 20px 20px 30px 20px; /* Extra bottom padding */
   }
   
   .back-to-top-footer {
@@ -5816,6 +6282,7 @@ footer {
   .footer-social {
     flex-direction: column;
     gap: 15px;
+    margin-bottom: 20px; /* Extra space for mobile nav */
   }
 }
 
@@ -5898,4 +6365,109 @@ footer {
   background-color: #00bfff;
   color: #0e0e0e;
   transform: scale(1.1);
+}
+
+/* ========================================== */
+/* Mobile Navigation Additional Fixes */
+/* ========================================== */
+
+@media (max-width: 768px) {
+  .mobile-nav-container {
+    padding: 15px;
+  }
+
+  .mobile-nav-header {
+    padding: 15px 0;
+    margin-bottom: 30px;
+  }
+
+  .mobile-nav-menu {
+    gap: 6px;
+    padding: 15px 0;
+  }
+
+  .mobile-nav-link {
+    padding: 14px 16px;
+    font-size: 1rem;
+    gap: 15px;
+  }
+
+  .mobile-nav-link i {
+    font-size: 1.1rem;
+    width: 26px;
+  }
+
+  .mobile-nav-footer {
+    padding: 15px 0;
+    gap: 20px;
+  }
+
+  .mobile-cta-btn {
+    height: 48px;
+    font-size: 0.95rem;
+  }
+
+  .mobile-social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-nav-container {
+    padding: 12px;
+  }
+
+  .mobile-nav-header {
+    padding: 12px 0;
+    margin-bottom: 25px;
+  }
+
+  .mobile-nav-header img {
+    width: 50px;
+    height: 42px;
+  }
+
+  .close-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .mobile-nav-menu {
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  .mobile-nav-link {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    gap: 12px;
+  }
+
+  .mobile-nav-link i {
+    font-size: 1rem;
+    width: 24px;
+  }
+
+  .mobile-nav-footer {
+    padding: 12px 0;
+    gap: 18px;
+  }
+
+  .mobile-cta-btn {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-social-links {
+    gap: 12px;
+  }
+
+  .mobile-social-links a {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
 }

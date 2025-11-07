@@ -286,11 +286,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
             // Add your load more logic here
+            const isMobile = window.innerWidth <= 768;
             Swal.fire({
                 title: 'Coming Soon!',
                 text: 'More gallery items will be loaded here.',
                 icon: 'info',
-                confirmButtonColor: '#9062f0'
+                confirmButtonColor: '#9062f0',
+                width: isMobile ? '90%' : '400px',
+                padding: isMobile ? '1.5em' : '2em',
+                background: '#1a1a2e',
+                color: '#fff',
+                confirmButtonText: 'Got it!',
+                customClass: {
+                    popup: 'mobile-friendly-popup',
+                    title: 'mobile-friendly-title',
+                    confirmButton: 'mobile-friendly-button'
+                }
             });
         });
     }
@@ -305,17 +316,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = galleryItem.querySelector('.gallery-info h3').textContent;
             const description = galleryItem.querySelector('.gallery-info p').textContent;
 
-            // Show image in modal using SweetAlert
+            // Detect if mobile device
+            const isMobile = window.innerWidth <= 768;
+
+            // Show image in modal using SweetAlert with responsive settings
             Swal.fire({
                 title: title,
                 text: description,
                 imageUrl: img.src,
                 imageAlt: title,
                 confirmButtonColor: '#9062f0',
-                width: '800px',
-                padding: '2em',
+                width: isMobile ? '95%' : '800px',
+                padding: isMobile ? '1em' : '2em',
                 background: '#1a1a2e',
-                color: '#fff'
+                color: '#fff',
+                confirmButtonText: 'Close',
+                customClass: {
+                    popup: 'mobile-friendly-popup',
+                    image: 'mobile-friendly-image',
+                    title: 'mobile-friendly-title',
+                    htmlContainer: 'mobile-friendly-text',
+                    confirmButton: 'mobile-friendly-button'
+                },
+                imageWidth: isMobile ? '100%' : 600,
+                imageHeight: isMobile ? 'auto' : 400
             });
         });
     });
@@ -336,3 +360,52 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ========================================
+// Mobile Bottom Navigation Active State
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileBottomNav = document.getElementById('mobileBottomNav');
+  if (!mobileBottomNav) return;
+
+  const navItems = mobileBottomNav.querySelectorAll('.mobile-bottom-nav-item');
+  const sections = document.querySelectorAll('section[id]');
+
+  // Handle click on nav items
+  navItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      // Remove active class from all items
+      navItems.forEach(navItem => navItem.classList.remove('active'));
+      // Add active class to clicked item
+      this.classList.add('active');
+    });
+  });
+
+  // Update active state on scroll
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '-20% 0px -70% 0px'
+  };
+
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.getAttribute('id');
+        
+        // Remove active class from all nav items
+        navItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to corresponding nav item
+        const activeNavItem = mobileBottomNav.querySelector(`a[href="#${sectionId}"]`);
+        if (activeNavItem) {
+          activeNavItem.classList.add('active');
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  // Observe all sections
+  sections.forEach(section => observer.observe(section));
+});

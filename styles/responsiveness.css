@@ -46,14 +46,12 @@
 /* =========================================== */
 @media screen and (max-width: 991px) {
   .fa-bars {
-    color: white;
-    font-size: 35px;
-    display: flex !important;
+    display: none !important;
   }
 
+  /* Hide entire header on mobile */
   #header {
-    padding: 20px 50px;
-    height: 75px;
+    display: none !important;
   }
 
   .navLinks,
@@ -67,9 +65,18 @@
     height: 60px;
   }
 
+  /* Ensure mobile bottom nav is visible */
+  .mobile-bottom-nav {
+    display: flex !important;
+  }
+
+  /* Hide overlay navigation */
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+
   .home {
-    padding: 50px;
-    /* background-color: pink; */
+    padding: 50px 20px;
     flex-direction: column;
   }
 
