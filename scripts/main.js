@@ -246,3 +246,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ========================================
+// Gallery Filter Functionality
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const loadMoreBtn = document.querySelector('.load-more-btn');
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            galleryItems.forEach((item, index) => {
+                const category = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    // Show item with staggered animation
+                    setTimeout(() => {
+                        item.classList.remove('hide');
+                        item.style.animation = 'fadeInUp 0.5s ease forwards';
+                    }, index * 50);
+                } else {
+                    // Hide item
+                    item.classList.add('hide');
+                }
+            });
+        });
+    });
+
+    // Load more functionality (placeholder - can be enhanced with actual pagination)
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            // Add your load more logic here
+            Swal.fire({
+                title: 'Coming Soon!',
+                text: 'More gallery items will be loaded here.',
+                icon: 'info',
+                confirmButtonColor: '#9062f0'
+            });
+        });
+    }
+
+    // View button functionality
+    const viewBtns = document.querySelectorAll('.view-btn');
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const galleryItem = btn.closest('.gallery-item');
+            const img = galleryItem.querySelector('img');
+            const title = galleryItem.querySelector('.gallery-info h3').textContent;
+            const description = galleryItem.querySelector('.gallery-info p').textContent;
+
+            // Show image in modal using SweetAlert
+            Swal.fire({
+                title: title,
+                text: description,
+                imageUrl: img.src,
+                imageAlt: title,
+                confirmButtonColor: '#9062f0',
+                width: '800px',
+                padding: '2em',
+                background: '#1a1a2e',
+                color: '#fff'
+            });
+        });
+    });
+});
+
+// Add fade in up animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
