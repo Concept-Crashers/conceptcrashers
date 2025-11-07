@@ -781,8 +781,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const containerWidth = container.getBoundingClientRect().width || window.innerWidth;
                 let total = track.scrollWidth;
                 let safety = 0;
-                while (total < containerWidth * 3 && safety < 20) {
-                    Array.from(track.children).forEach(child => {
+                // Clone until we have enough content for seamless scroll
+                while (total < containerWidth * 3 && safety < 25) {
+                    const currentChildren = Array.from(track.children);
+                    currentChildren.forEach(child => {
                         track.appendChild(child.cloneNode(true));
                     });
                     total = track.scrollWidth;
@@ -793,23 +795,213 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ensure clones and start animation
             ensureClones();
 
+            // Start animation after a brief delay
             setTimeout(() => {
-                const speed = 50; // pixels per second
+                const speed = 50; // pixels per second - increased speed for better visibility
                 const width = track.scrollWidth / 2; // Half because we duplicate
-                const duration = width / speed;
+                const duration = Math.max(width / speed, 15); // Minimum 15 seconds
+                
                 track.style.setProperty('--team-scroll-duration', duration + 's');
                 track.classList.add('scrolling');
 
-                container.addEventListener('mouseenter', () => track.classList.add('pause'));
-                container.addEventListener('mouseleave', () => track.classList.remove('pause'));
+                // Pause on hover
+                container.addEventListener('mouseenter', () => {
+                    track.classList.add('pause');
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    track.classList.remove('pause');
+                });
 
+                // Respect reduced motion preferences
                 if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                     track.classList.remove('scrolling');
                 }
-            }, 100);
+            }, 200);
         }
     } catch (e) {
         console.error('Error initializing team carousel', e);
+    }
+});
+
+// Gallery carousel initialization: Swipeable carousel for mobile
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const galleryWrapper = document.querySelector('.gallery-scroll-wrapper');
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        
+        if (!galleryWrapper || !galleryGrid || galleryItems.length === 0) {
+            console.log('Gallery elements not found');
+            return;
+        }
+
+        const isMobile = window.innerWidth <= 991;
+        
+        if (isMobile) {
+            // Mobile: Swipeable carousel
+            let currentIndex = 0;
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            let startTime = 0;
+
+            // Create pagination container
+            const paginationContainer = document.createElement('div');
+            paginationContainer.className = 'gallery-pagination';
+            galleryWrapper.parentElement.insertBefore(paginationContainer, galleryWrapper.nextSibling);
+
+            // Create pagination dots
+            galleryItems.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-pagination-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                paginationContainer.appendChild(dot);
+            });
+
+            // Create swipe hint
+            const swipeHint = document.createElement('div');
+            swipeHint.className = 'gallery-swipe-hint';
+            swipeHint.innerHTML = '<i class="fas fa-chevron-left"></i> Swipe to navigate <i class="fas fa-chevron-right"></i>';
+            paginationContainer.parentElement.insertBefore(swipeHint, paginationContainer.nextSibling);
+
+            // Auto-hide swipe hint after 3 seconds
+            setTimeout(() => {
+                swipeHint.style.opacity = '0';
+                setTimeout(() => swipeHint.style.display = 'none', 300);
+            }, 3000);
+
+            // Get actual slide width including gap
+            const getSlideWidth = () => {
+                const gridStyles = window.getComputedStyle(galleryGrid);
+                const gap = parseInt(gridStyles.gap) || 20;
+                const item = galleryItems[0];
+                const itemWidth = item.offsetWidth;
+                return itemWidth + gap;
+            };
+
+            // Navigate to specific slide
+            const goToSlide = (index) => {
+                currentIndex = Math.max(0, Math.min(index, galleryItems.length - 1));
+                const slideWidth = getSlideWidth();
+                const offset = -currentIndex * slideWidth;
+                galleryGrid.style.transform = `translateX(${offset}px)`;
+                updateDots();
+            };
+
+            // Update pagination dots
+            const updateDots = () => {
+                const dots = paginationContainer.querySelectorAll('.gallery-pagination-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            };
+
+            // Touch events
+            galleryGrid.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                currentX = startX;
+                isDragging = true;
+                startTime = Date.now();
+                galleryGrid.style.transition = 'none';
+            });
+
+            galleryGrid.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                currentX = e.touches[0].clientX;
+                const diff = currentX - startX;
+                const slideWidth = getSlideWidth();
+                const currentOffset = -currentIndex * slideWidth;
+                galleryGrid.style.transform = `translateX(${currentOffset + diff}px)`;
+            });
+
+            galleryGrid.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                const diff = currentX - startX;
+                const timeDiff = Date.now() - startTime;
+                const velocity = Math.abs(diff) / timeDiff;
+
+                galleryGrid.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                if (Math.abs(diff) > 50 || velocity > 0.3) {
+                    if (diff > 0 && currentIndex > 0) {
+                        goToSlide(currentIndex - 1);
+                    } else if (diff < 0 && currentIndex < galleryItems.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(currentIndex);
+                    }
+                } else {
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Mouse events for desktop testing
+            galleryGrid.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                currentX = startX;
+                isDragging = true;
+                startTime = Date.now();
+                galleryGrid.style.transition = 'none';
+                galleryGrid.style.cursor = 'grabbing';
+            });
+
+            galleryGrid.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                currentX = e.clientX;
+                const diff = currentX - startX;
+                const slideWidth = getSlideWidth();
+                const currentOffset = -currentIndex * slideWidth;
+                galleryGrid.style.transform = `translateX(${currentOffset + diff}px)`;
+            });
+
+            galleryGrid.addEventListener('mouseup', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                galleryGrid.style.cursor = 'grab';
+                
+                const diff = currentX - startX;
+                const timeDiff = Date.now() - startTime;
+                const velocity = Math.abs(diff) / timeDiff;
+
+                galleryGrid.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                if (Math.abs(diff) > 50 || velocity > 0.3) {
+                    if (diff > 0 && currentIndex > 0) {
+                        goToSlide(currentIndex - 1);
+                    } else if (diff < 0 && currentIndex < galleryItems.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(currentIndex);
+                    }
+                } else {
+                    goToSlide(currentIndex);
+                }
+            });
+
+            galleryGrid.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    galleryGrid.style.cursor = 'grab';
+                    galleryGrid.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Initial setup
+            galleryGrid.style.cursor = 'grab';
+            goToSlide(0);
+
+        } else {
+            // Desktop: Keep horizontal scroll behavior
+            console.log('Gallery desktop mode - horizontal scroll enabled');
+        }
+    } catch (e) {
+        console.error('Error initializing gallery carousel', e);
     }
 });
 
