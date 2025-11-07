@@ -3172,6 +3172,64 @@ header .navBtn button:hover::before {
     width: auto !important;
     height: auto !important;
   }
+  
+  /* Team buttons small mobile */
+  .butns {
+    margin: 25px 15px;
+    gap: 12px;
+  }
+  
+  .butns button {
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer logo small mobile */
+  .footer-about .footer-logo {
+    width: 70px;
+    margin-bottom: 12px;
+  }
+  
+  /* Contact form small mobile */
+  .contact-container {
+    padding: 10px;
+    gap: 25px;
+  }
+  
+  .contact-info {
+    padding: 10px;
+  }
+  
+  .contact-form {
+    padding: 20px 10px;
+  }
+  
+  form {
+    padding: 0 5px;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .send-message-btn {
+    width: 100%;
+    padding: 15px 25px;
+    font-size: 1rem;
+    justify-content: center;
+  }
 }
 
 .team-card h4 {
@@ -3235,6 +3293,55 @@ header .navBtn button:hover::before {
   .team-track { gap: 12px; }
   .Team { padding: 80px 20px; } /* adjusted padding for mobile */
   .team-carousel { padding: 16px 0; }
+  
+  /* Team section buttons responsive */
+  .butns {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 20px;
+  }
+  
+  .butns button {
+    width: 100%;
+    max-width: 280px;
+    height: 45px;
+    font-size: 0.95rem;
+  }
+  
+  /* Contact form tablet responsive */
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 15px;
+  }
+  
+  .contact-info {
+    min-width: 100%;
+    padding: 15px;
+  }
+  
+  .contact-form {
+    padding: 25px 20px;
+  }
+  
+  .form-group {
+    width: 95%;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+  
+  .send-message-btn {
+    width: 100%;
+    padding: 13px 25px;
+    font-size: 1rem;
+    justify-content: center;
+  }
 }
 
 .flex001 {
@@ -3425,20 +3532,21 @@ header .navBtn button:hover::before {
   min-height: 450px;
   background-color: var(--background-secondary);
   border-radius: 10px;
-  padding: 30px;
-  padding-top: 40px 0px 20px 20px;
+  padding: 30px 20px;
   /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); */
   /* background: red; */
 }
 
 .form-group {
-  width: 90%;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 form {
   display: grid;
   place-items: center;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .form-group label {
@@ -3452,7 +3560,7 @@ form {
 .form-group input[type="email"],
 .form-group textarea {
   width: 100%;
-  padding: 10px 10px;
+  padding: 14px 16px;
   background-color: var(--background-light);
   /* Input background */
   border: 1px solid var(--accent-color);
@@ -3461,6 +3569,12 @@ form {
   color: #e0e0e0;
   font-size: 1em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .form-group input[type="text"]:focus,
@@ -5175,6 +5289,17 @@ footer {
     grid-template-columns: 1fr;
     padding: 60px 20px 40px;
     gap: 40px;
+  }
+  
+  /* Footer logo responsive */
+  .footer-about .footer-logo {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-stats {
+    gap: 20px;
+    justify-content: center;
   }
   
   .footer-bottom {
