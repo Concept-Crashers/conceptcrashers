@@ -326,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageUrl: img.src,
                 imageAlt: title,
                 confirmButtonColor: '#9062f0',
-                width: isMobile ? '95%' : '800px',
-                padding: isMobile ? '1em' : '2em',
+                width: isMobile ? '95%' : '600px',
+                padding: isMobile ? '1em' : '1.5em',
                 background: '#1a1a2e',
                 color: '#fff',
                 confirmButtonText: 'Close',
@@ -338,8 +338,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     htmlContainer: 'mobile-friendly-text',
                     confirmButton: 'mobile-friendly-button'
                 },
-                imageWidth: isMobile ? '100%' : 600,
-                imageHeight: isMobile ? 'auto' : 400
+                imageWidth: isMobile ? '100%' : 400,
+                imageHeight: isMobile ? 'auto' : 300
             });
         });
     });
