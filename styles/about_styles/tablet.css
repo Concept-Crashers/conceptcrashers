@@ -148,22 +148,21 @@
 
     #hero{
         width: 100%;
-        height:1400px;
+        height:auto;
         display: flex;
+        position: relative;
         justify-content: center;
         background-color: var(--bg1);
-        
-
     }
 
     .hero-content{
         width: 90%;
-        height: 1550px;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: absolute;
-        margin: 60px 0px 0px 20px;
+        top: 0;
         /* background-color: aqua; */
     }
 
@@ -180,7 +179,7 @@
 
     .hero-body{
         width: 90%;
-        height: 200px;
+        height: auto;
         position: absolute;
         top: 100px;
         text-align: center;
@@ -234,7 +233,7 @@
 
     .hero-content2{
         width: 100%;
-        height: 500px;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -271,7 +270,7 @@
         gap: 10px;
         position: absolute;
         left: -80px;
-        top: -50px;
+        top: -10px;
         /* background-color: green; */
     }
 
@@ -611,7 +610,7 @@
     /* MEDIA FEEDBACK CSS STYLE CODE */
     #media-feedback{
         width: 100%;
-        height: 3800px;
+        height: auto;
         display: grid;
         place-items: center;
         background-color: var(--bg1);
@@ -662,7 +661,7 @@
 
     .feedback-cards{
         width: 100%;
-        height: 2800px;
+        height: auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(320px);
@@ -674,7 +673,7 @@
 
     .feedback-card{
         width: 100%;
-        height: 850px;
+        height: auto;
         /* border: 2px solid var(--bg2); */
         border-radius: 5px;
         margin-bottom: 50px;
@@ -692,17 +691,15 @@
 
 
 
-    .feedback-card h3{
-        font-size: var(--font5);
-        color: var(--primary-color);
-        margin: 0px 10px 0px 10px;
-    }
+#meadia-tittle{
+    font-size: 2.5em;
+    color: white;
+}
 
-    .feedback-card p{
-        font-size: var(--font4);
-        color: var(--primary-color);
-        margin: 0px 10px 0px 10px;
-    }
+#meadia-par{
+    font-size: 2em;
+    color: white;
+}
 
     .feedback-dots{
         width: 200px;
