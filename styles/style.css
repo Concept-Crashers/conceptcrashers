@@ -4801,6 +4801,41 @@ form {
   .gallery-item {
     transform: none !important;
   }
+
+  /* Mobile: show a single card per viewport and let it fill available width */
+  .gallery-scroll-wrapper {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin: 0 !important;
+    overflow-x: auto !important;
+  }
+
+  .gallery-grid {
+    gap: 12px !important;
+    padding-left: 0 !important;
+    scroll-padding-left: 12px !important; /* ensures first item starts fully visible */
+    justify-content: flex-start !important;
+  }
+
+  /* Single card per viewport, occupying full available width */
+  .gallery-item {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: start !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure first item is not offset or clipped */
+  .gallery-item:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .footer-social{
+    display:none;
+  }
 }
 
 /* ========================================== */
@@ -4852,9 +4887,19 @@ form {
     height: 55px !important;
     margin: 1em auto 0.5em !important;
   }
+
+  .footer-social{
+    display:none;
+  }
 }
 
 @media (max-width: 480px) {
+
+  .footer-social{
+    display:none;
+  }
+
+
   .swal2-popup.mobile-friendly-popup {
     padding: 1em !important;
     border-radius: 12px !important;
@@ -6793,6 +6838,10 @@ footer {
     height: 40px;
     font-size: 0.95rem;
   }
+
+  .footer-social{
+    display:none !important ;
+  }
 }
 
 @media (max-width: 480px) {
@@ -6850,5 +6899,9 @@ footer {
     width: 38px;
     height: 38px;
     font-size: 0.9rem;
+  }
+
+  .footer-social{
+    display:none !important ;
   }
 }
