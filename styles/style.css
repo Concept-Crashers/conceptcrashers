@@ -4739,7 +4739,6 @@ form {
   
   /* Perfect image display */
   .gallery-image {
-    width:310px !important;
     height: 180px !important;
     position: relative !important;
     overflow: hidden !important;
