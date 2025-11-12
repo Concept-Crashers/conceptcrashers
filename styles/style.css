@@ -4985,6 +4985,7 @@ form {
   }
 
   .gallery-image {
+    width:310px;
     height: 180px;
     border-radius: 10px;
   }
