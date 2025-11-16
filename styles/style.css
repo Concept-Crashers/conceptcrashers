@@ -237,7 +237,6 @@ header.scrolled {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(56, 189, 248, 0.1);
-  /* z-index: 1000; */
 }
 
 header.scrolled .logo {
