@@ -9,175 +9,417 @@
     --main-color: white;
     --primary-color: black;
     --secondary-color: rgb(247, 128, 128);
-    --mini-color: rgb(170, 19, 19);
+    /* --mini-color: rgb(17, 224, 10); */
     --main-font: 3.75em;
     --font: 0.9em;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Ensure hero visual boxes are centered on small screens
+   This override forces the visuals to stack and centers the three boxes
+   when the viewport is narrow (tablets/phones). */
+@media (max-width: 900px) {
+    .herosection .hero-visuals {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 12px !important;
+        margin: 12px auto !important;
+        box-sizing: border-box;
+    }
 
-/*Start of the Navigation bar*/
-header{
-    padding: 12px 0;
-    background-color: var(--secondary-color);
+    .herosection .hero-visuals .box-large,
+    .herosection .hero-visuals .box-small-1,
+    .herosection .hero-visuals .box-small-2 {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 12px auto !important;
+        width: min(92%, 420px) !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* =====================
+   Footer - responsive
+   Mobile-first rules: compact on phones, expand on wider viewports
+   ===================== */
+
+footer#footer {
+    background-color: #071730; /* dark blue backdrop */
+    color: #e9f0fb;
+    padding: 28px 12px;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background: linear-gradient(90deg, #0b2140 0%, #1e6fb8 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(11,33,64,0.25);
+}
+
+/* Keep the CTA constrained and centered inside its grid column on wide viewports */
+.footer-cta {
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    justify-self: center;
+}
+
+.footer-cta .cta-content h2{
+    margin: 0 0 6px 0;
+    font-size: 1.25rem;
+}
+
+.footer-cta .cta-content p{
+    margin: 0;
+    opacity: 0.95;
+    line-height: 1.3;
+}
+
+.cta-btn-footer{
+    background: #ffffff;
+    color: #0b2140;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer-main{
+    display: flex;
+    gap: 28px;
+    margin-top: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-column{
+    flex: 1 1 220px;
+    min-width: 180px;
+}
+
+.footer-column h3{
+    margin-bottom: 10px;
+}
+
+.footer-column ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li{
+    margin-bottom: 8px;
+}
+
+.footer-column a{
+    color: #dbe8ff;
+    text-decoration: none;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom .legal-links a{
+    color: #cbdff6;
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.footer-social{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    gap: 12px;
+    color: #cfe6ff;
 }
 
-header h1{
-    font-family: var(--font-family);
-    color: var(--primary-color);
-    font-weight: 300;
+.footer-logo{
+    width: 84px;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
 }
 
-header nav a{
-    margin-right: 30px;
-    font-family: var(--font-family);
-    color: var(--primary-color);
+/* Tablet and up: arrange CTA horizontally and columns side-by-side */
+@media (min-width: 601px) {
+    .footer-cta {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 28px;
+    }
+
+    .cta-btn-footer{
+        min-width: 180px;
+    }
 }
 
-header button{
-    width: 100px;
-    height: 40px;
-    background-color: rgb(21, 30, 75);
-    color: var(--main-color);
-    font-family: var(--font-family);
-    border: none;
-    border-radius: 5px;
-    font-size: var(--font);
-    margin-top: 1px;
+/* Wider screens: allow multi-column layout, larger paddings */
+@media (min-width: 901px) {
+    footer#footer{ padding: 48px 12px; }
+    .footer-container{ padding: 0 20px; grid-template-columns: 1fr 3fr; align-items: start; }
+    .footer-main{ gap: 36px; }
 }
-/*End of the Navigation bar*/
+
+/* Narrow screens: stack columns and make CTA full width; enforce left-alignment for mobile per request */
+@media (max-width: 900px) {
+    .footer-cta{ width: 100%; text-align: center; align-items: center; }
+    .footer-cta .cta-content{ text-align: center; }
+    .cta-btn-footer{ width: 90%; min-width: 0; }
+    .footer-main{ flex-direction: column; gap: 18px; }
+    .footer-column{ width: 100%; }
+    .footer-bottom{ flex-direction: column; align-items: center; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    footer#footer{ padding: 18px 10px; }
+    .footer-container{ padding-left: 12px; padding-right: 12px; }
+    /* Force left-alignment of container and CTA on very small phones (user requested) */
+    footer#footer .footer-container{ width:100%; margin-left:0; text-align:left; }
+    footer#footer .footer-cta{ align-items:flex-start; text-align:left; }
+    .cta-btn-footer{ width:100%; }
+    .footer-main{ gap: 14px; }
+    .footer-bottom{ align-items:flex-start; text-align:left; }
+}
+
+/*Initializing everything to default*/
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}    
+    /*Creating the root variables*/
+:root{
+    --main-color: white;
+    --primary-color: black;
+    --secondary-color: rgb(247, 128, 128);
+    /* --mini-color: rgb(17, 224, 10); */
+    --main-font: 3.75em;
+    --font: 0.9em;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ensure hero visual boxes are centered on small screens
+   This override forces the visuals to stack and centers the three boxes
+   when the viewport is narrow (tablets/phones). */
+@media (max-width: 900px) {
+    .herosection .hero-visuals {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 12px !important;
+        margin: 12px auto !important;
+        box-sizing: border-box;
+    }
+
+    .herosection .hero-visuals .box-large,
+    .herosection .hero-visuals .box-small-1,
+    .herosection .hero-visuals .box-small-2 {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 12px auto !important;
+        width: min(92%, 420px) !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+h1{
+    font-size: 60px;
+}
 
 /*Start of the Hero Section*/
 .herobody{
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--secondary-color);
-    z-index: -1;
+    width: 100vw !important;
+    max-height: 100vh !important;
+    background-color: #112240 !important;
+    z-index: -1 !important;
 }
 
 
 .herosection {
-    /* height: 100%; */
+    /* height: 100% !important; */
     /* background-color: var(--secondary-color); */
-    padding-top: 50px;
-    padding-bottom: 200px; /*Large padding to extend the pink area */
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two main columns */
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
+    padding-top: 50px !important;
+    padding-bottom: 200px !important;/*Large padding to extend the pink area */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Two main columns */
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    gap: 40px !important;
     /* position: relative; */
-    z-index: -1000 !important;
-    overflow: hidden; /* Contains the absolute/relative boxes */
+    z-index: 1 !important;
+    overflow: hidden !important; /* Contains the absolute/relative boxes */
 }
 
 /* Hero Content (Left Side) */
 .hero-content {
-    max-width: 5100px;
+    max-width: 5100px !important;
+    margin-top: 280px !important;
     /* padding: 0 20px; */
-    z-index: 2; /* Ensure content is above the boxes */
+    z-index: 2 !important; /* Ensure content is above the boxes */
 }
 
-.hero-title {
-    font-size: var(--main-font);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    font-weight: 900;
-    font-family: var(--font-family);
+#hero-title {
+    font-size: var(--main-font) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
+    color:  #64ffda !important;
+    font-weight: 900 !important;
+    font-family: var(--font-family) !important;
 }
 
 .highlight {
-    background-color: rgb(182, 235, 59);
-    padding: 0 5px;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    background-color: rgba(2, 12, 27, 0.7) !important;
+    color:  #64ffda;
+    padding: 0 5px !important;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1) !important;
+    display: inline-block !important;
 }
 
 .hero-text {
-    font-size: var(--font);
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    font-family: var(--font-family);
-    font-weight: 600;
+    font-size: var(--font) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;
+    color: var(--main-color) !important;
+    font-family: var(--font-family) !important;
+    font-weight: 300 !important;
 }
 
 .hero-actions {
-    display: flex;
-    gap: 15px;
+    display: flex !important;
+    gap: 15px !important;
 }
 
 .hero-actions button {
-    width: 145px;
-    height: 40px;
+    width: 145px !important;
+    height: 40px !important;
     /* text-decoration: none; */
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 12px;
-    border: 1px solid transparent;
-    font-family: var(--font-family);
+    border-radius: 4px !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    /* border: 1px solid transparen !important; */
+    font-family: var(--font-family) !important;
 }
 
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--main-color);
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
+    color: var(--main-color) !important;
+    border: none;
 }
 
 .btn-secondary {
-    background-color: var(--main-color);
-    color: var(--primary-color);
-    border-color: #ccc;
+    background-color: var(--main-color) !important;
+    color: var(--primary-color) !important;
+    border-color: #ccc !important;
 }
 
 /* Hero Visuals (Right Side Boxes) */
 .hero-visuals {
-    position: relative;
-    height: 700px; /* Set a height to contain the absolute boxes */
-    padding-right: 20px;
-    z-index: 1; /* Keep the boxes behind the content (if they overlap) */
+    position: relative !important;
+    height: 700px !important; /* Set a height to contain the absolute boxes */
+    padding-right: 20px !important;
+    margin-top: 190px !important;
+    z-index: 1 !important; /* Keep the boxes behind the content (if they overlap) */
 }
 
 /* Shared Box Style */
 .hero-visuals div {
-    background-color: var(--mini-color);
-    z-index: 1000;
-    position: absolute;
+    background-color: var(--mini-color) !important;
+    z-index: 1000 !important;
+    position: absolute !important;
 }
 
 .hero-visuals{
-    position: relative;
+    position: relative !important;
 }
 
 /* Positioning and Sizing for Boxes */
 .box-large {
-    width: 500px;
-    height: 420px;
-    top: 0;
-    right: 20px;
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 650px !important;
+    height: 420px !important;
+    top: 100px !important;
+    right: -70px !important;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.box-large img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: -1000 !important;
 }
 
 .box-small-1 {
-    width: 450px;
-    height: 400px;
-    bottom: -50px; /* Position it lower than the hero section */
-    left: -640px;
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 450px !important;
+    height: 400px !important;
+    bottom: -130px !important; /* Position it lower than the hero section */
+    left: -640px !important;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
     /* z-index: 1; */
     /* position: absolute; */
 }
 
+.box-small-1 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: -1000 !important;
+}
+
 .box-small-2 {
-    width: 500px;
-    height: 400px;
-    bottom: -150px; /* Position it lower than the hero section */
-    right: 230px;
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 700px !important;
+    height: 400px !important;
+    bottom: -260px !important; /* Position it lower than the hero section */
+    right: 20px !important;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
+    z-index: -1 !important;
+}
+
+.box-small-2 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: -1000 !important;
 }
 /*End of the Hero Section */
 
@@ -185,7 +427,7 @@ header button{
 .workingsection{
     width: 100%;
     min-height: 100vh;
-    background-color: var(--main-color);
+    background-color: #112240 !important;
     margin-top: 370px;
     display: flex;
     justify-content: center;
@@ -195,7 +437,7 @@ header button{
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgb(228, 228, 228);
+    background-color: #0a192f !important;
     border-radius: 5px;
     height: auto;
     padding: 20px;
@@ -210,7 +452,7 @@ header button{
 .workingsection .working .workingheader h1{
     font-size: var(--main-font);
     font-family: var(--font-family);
-    color: var(--primary-color);
+    color:  #64ffda !important;
 }
 
 .workingsection .working .workingheader p{
@@ -218,6 +460,7 @@ header button{
     font-family: var(--font-family);
     font-weight: 600;
     margin-top: 5px;
+    color: var(--main-color);
 }
 
 .working .workinginfo{
@@ -228,7 +471,7 @@ header button{
 .working .workinginfo .information{
     width: 525px;
     height: 150px;
-    background-color: var(--main-color);
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
     margin-top: 30px;
     border-radius: 5px;
     padding-top: 20px;
@@ -257,10 +500,10 @@ header button{
 .working .workingbutton button{
     width: 150px;
     height: 48px;
-    background-color: var(--primary-color);
+    background-color: var(--main-color) !important;
     border: none;
     border-radius: 5px;
-    color: var(--main-color);
+    color: var(--primary-color) !important;
     font-weight: 700;
     font-family: var(--font-family);
     font-size: var(--font);
@@ -483,109 +726,6 @@ header button{
 }
 /* End of Positions Navigation */
 
-/* Start of the Footer Section */
-.sect04{
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 20px;
-}
-
-.sect04 .footersection{
-    display: flex;
-    justify-content: space-between;
-}
-
-span{
-    background-color: var(--mini-color);
-    border-radius: 8px;
-}
-
-.foot01{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-    font-family: var(--font-family);
-}
-
-.foot01 h1{
-    font-size: var(--main-font);
-    margin-top: 5px;
-}
-
-.bttn01{
-    width: 120px;
-    height: 40px;
-    color: var(--primary-color);
-    background-color: var(--main-color);
-    border-radius: 5px;
-    border: none;
-    font-family: var(--font-family);
-    font-weight: 400;
-}
-
-.bttn02{
-    width: 120px;
-    height: 40px;
-    color: var(--main-color);
-    background-color: rgb(21, 30, 75);
-    border-radius: 5px;
-    border: none;
-    margin-left: 10px;
-    font-family: var(--font-family);
-}
-
-.concept01{
-    padding-left: 220px;
-}
-
-.concept02{
-    padding-right: 280px;
-}
-
-.foot02{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0px;
-    padding-left: 220px;
-    padding-right: 285px;
-}
-
-.foot02 p{
-    margin-top: 5px;
-}
-
-.typein{
-    color: black;
-    width: 200px;
-    height: 32px;
-    border: none;
-    border-radius: 3px;
-    font-weight: bold;
-    padding-left: 5px;
-}
-
-.btn{
-    color: white;
-    background-color: red;
-    width: 100px;
-    height: 32px;
-    border-radius: 3px;
-}
-
-.line{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 215px;
-    padding-right: 250px;
-    font-size: 15px;
-}
 /* .footer div{
     display: flex;
     flex-direction: column;
@@ -792,84 +932,6 @@ span{
     }
     
 
-    .foot01,
-    .foot02,
-    .footer{
-        flex-direction: column;
-        padding-left: 20px;
-        padding-right: 20px;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    /* Ensure the small copyright/footer is left-aligned and sits above .foot02
-       when stacked on narrow screens. We make it full-width and left-aligned. */
-    .sect04 > div {
-        width: 100%;
-    }
-
-    .sect04 .footer{
-        justify-content: flex-start;
-        text-align: left;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* On small screens prefer inline layout: place .concept01 on the left and
-       .concept02 (buttons) on the right when space allows. We allow wrapping
-       so if the viewport is extremely narrow the buttons will drop below. */
-    .sect04 .footersection{
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .sect04 .concept01{
-        flex: 1 1 60%;
-        min-width: 160px;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: left;
-        transform: none; /* remove the earlier visual nudge for structured alignment */
-    }
-
-    .sect04 .concept02{
-        flex: 0 0 auto;
-        order: 2;
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Align the content inside .concept01 with .concept02 on mobile so text
-       and buttons share the same left/right gutters. This overrides the large
-       desktop paddings (220/280) used for wide screens. */
-    .sect04 .concept01{
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: left;
-    }
-
-    /* small visual nudge to bring concept01 slightly closer to concept02 */
-    .sect04 .concept01{
-        transform: translateX(4px);
-    }
-
-    .typein{
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .btn{
-        width: 100%;
-        max-width: 160px;
-    }
-
     /* Removed phone-specific stacking and sizing rules for layered
        hero images so the hero-reset rules at the end determine the
        final layout across viewports. This prevents earlier assistant
@@ -924,6 +986,42 @@ span{
         padding: 8px;
     }
 }
+
+
+
+/* Center hero content on small screens: title, text, and actions */
+@media (max-width: 900px) {
+    .herosection .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 12px !important;
+        gap: 12px !important;
+    }
+
+    .herosection .hero-content .hero-title,
+    .herosection .hero-content .hero-text {
+        width: 100% !important;
+        max-width: 720px !important;
+        margin: 6px auto !important;
+        text-align: center !important;
+    }
+
+    .herosection .hero-content .hero-actions {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 14px !important;
+        width: 100% !important;
+        max-width: 720px !important;
+        margin: 8px auto 0 auto !important;
+    }
+
+    .herosection .hero-content .hero-actions button {
+        margin: 0 !important;
+    }
+}
+
 
 /* Final override: ensure .box-large stays below hero-content on small screens */
 @media (max-width: 900px) {
@@ -1309,110 +1407,6 @@ img{
 }
 /* End of Positions Navigation */
 
-/* Start of the Footer Section */
-.sect04{
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 20px;
-}
-
-.sect04 .footersection{
-    display: flex;
-    justify-content: space-between;
-}
-
-span{
-    background-color: var(--mini-color);
-    border-radius: 8px;
-}
-
-.foot01{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-    font-family: var(--font-family);
-}
-
-.foot01 h1{
-    font-size: var(--main-font);
-    margin-top: 5px;
-}
-
-.bttn01{
-    width: 120px;
-    height: 40px;
-    color: var(--primary-color);
-    background-color: var(--main-color);
-    border-radius: 5px;
-    border: none;
-    font-family: var(--font-family);
-    font-weight: 400;
-}
-
-.bttn02{
-    width: 120px;
-    height: 40px;
-    color: var(--main-color);
-    background-color: rgb(21, 30, 75);
-    border-radius: 5px;
-    border: none;
-    margin-left: 10px;
-    font-family: var(--font-family);
-}
-
-.concept01{
-    padding-left: 220px;
-}
-
-.concept02{
-    padding-right: 280px;
-}
-
-.foot02{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0px;
-    padding-left: 220px;
-    padding-right: 285px;
-}
-
-.foot02 p{
-    margin-top: 5px;
-}
-
-.typein{
-    color: black;
-    width: 200px;
-    height: 32px;
-    border: none;
-    border-radius: 3px;
-    font-weight: bold;
-    padding-left: 5px;
-}
-
-.btn{
-    color: white;
-    background-color: red;
-    width: 100px;
-    height: 32px;
-    border-radius: 3px;
-}
-
-.line{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 215px;
-    padding-right: 250px;
-    font-size: 15px;
-}
-
 /* Star of Responsiveness */
 
 @media (max-width: 1200px) {
@@ -1721,85 +1715,6 @@ span{
         text-align: center;
     }
     
-
-    .foot01,
-    .foot02,
-    .footer{
-        flex-direction: column;
-        padding-left: 20px;
-        padding-right: 20px;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    /* Ensure the small copyright/footer is left-aligned and sits above .foot02
-       when stacked on narrow screens. We make it full-width and left-aligned. */
-    .sect04 > div {
-        width: 100%;
-    }
-
-    .sect04 .footer{
-        justify-content: flex-start;
-        text-align: left;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* On small screens prefer inline layout: place .concept01 on the left and
-       .concept02 (buttons) on the right when space allows. We allow wrapping
-       so if the viewport is extremely narrow the buttons will drop below. */
-    .sect04 .footersection{
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .sect04 .concept01{
-        flex: 1 1 60%;
-        min-width: 160px;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: left;
-        transform: none; /* remove the earlier visual nudge for structured alignment */
-    }
-
-    .sect04 .concept02{
-        flex: 0 0 auto;
-        order: 2;
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Align the content inside .concept01 with .concept02 on mobile so text
-       and buttons share the same left/right gutters. This overrides the large
-       desktop paddings (220/280) used for wide screens. */
-    .sect04 .concept01{
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: left;
-    }
-
-    /* small visual nudge to bring concept01 slightly closer to concept02 */
-    .sect04 .concept01{
-        transform: translateX(4px);
-    }
-
-    .typein{
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .btn{
-        width: 100%;
-        max-width: 160px;
-    }
-
     /* Give position cards extra vertical room on very small screens so text wraps
        comfortably without overflow. */
     .developmentpart .openpositions .position1{

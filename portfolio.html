@@ -5,26 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONCEPT CRASHERS</title>
     <link rel="stylesheet" href="/styles/portfolio.css">
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="about-images/Favicon.png" type="image/png">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- favicon imported from about file by pascal-->
+         <link
+      rel="icon"
+      href="about-images/Favicon.png"
+      type="image/png"
+      class="favicon"
+    />
 </head>
 <body>
-    <!--Start of the Navigation bar  -->
-    <header>
+   <!-- navigation bar starts here -->
+        <header id="header">
+            <!-- logo -->
+            <div>
+                <img src="img/Concept-removebg-preview.png" class="logo" alt="logo" width="75" height="65">
+            </div>
 
-        <h1>Logo</h1>
+            <!-- navifation links -->
+            <nav>
+                <div class="navLinks">
+                    <a href="#Home">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#Services">Services</a>
+                    <a href="#Process">Process</a>
+                    <a href="#Blog">Blog</a>
+                    <a href="#Team">Team</a>
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Contact">Contact</a>
+                </div>
+            </nav>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Resources</a>
-            <a href="#">Services</a>
-            <a href="#">Team</a>
+            <!-- Social media icons -->
+            <div class="social-nav">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- nav button -->
+            <div class="navBtn">
+                <button>
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </header>
+        <!-- navigation bar ends -->
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="#Home" class="mobile-bottom-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#About" class="mobile-bottom-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="#Services" class="mobile-bottom-nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Services</span>
+            </a>
+            <a href="#Team" class="mobile-bottom-nav-item">
+                <i class="fas fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="#Gallery" class="mobile-bottom-nav-item">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#Contact" class="mobile-bottom-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
         </nav>
 
-        <button>Get Started</button>
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <div class="mobile-nav-container">
+                <div class="mobile-nav-header">
+                    <img src="img/Concept-removebg-preview.png" alt="logo" width="60" height="50">
+                    <button class="close-nav" id="closeNav" aria-label="Close navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <nav class="mobile-nav-menu">
+                    <a href="#Home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#About" class="mobile-nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#Services" class="mobile-nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#Process" class="mobile-nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>Process</span>
+                    </a>
+                    <a href="#Blog" class="mobile-nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#Team" class="mobile-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#Gallery" class="mobile-nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="#Contact" class="mobile-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
 
-    </header>
-    <!-- End of the Navigation bar -->
+                <div class="mobile-nav-footer">
+                    <button class="mobile-cta-btn">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="mobile-social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Navigation bar ends here -->
 
     <main>
       
@@ -34,7 +182,7 @@
 
                 <div class="hero-content">
 
-                    <h1 class="hero-title">
+                    <h1 id="hero-title" style="font-size: 60px !important;">
                       Join our fast <br>
                       growing <span class="highlight">company</span>
                     </h1>
@@ -52,9 +200,15 @@
 
                 <div class="hero-visuals">
 
-                  <div class="box-large"></div>
-                  <div class="box-small-1"></div>
-                  <div class="box-small-2"></div>
+                  <div class="box-large">
+                    <img src="img/agri.png" alt="">
+                  </div>
+                  <div class="box-small-1">
+                    <img src="img/e-commerce.png" alt="">
+                  </div>
+                  <div class="box-small-2">
+                    <img src="img/campusBallot.png" alt="">
+                  </div>
 
                 </div>
 
@@ -69,7 +223,7 @@
             <div class="working">
 
                 <div class="workingheader">
-                    <h1>Why working with us?</h1>
+                    <h1 style="font-size: 60px;">Why working with us?</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae pulvinar ipsum. <br>Sed a interdum metus, ut feugiat arcu. Lorem ipsum dolor sit amet, Lorem ipsum</p>
                 </div>
 
@@ -132,7 +286,7 @@
 
                 <div class="commentsintro">
 
-                    <h1>What our team says</h1>
+                    <h1 style="font-size: 60px;">What our team says</h1>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut <br>vitae pulvinar ipsum. Sed a interdum metus, ut feugi Lorem <br>ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae <br>pulvinar ipsum. Sed a interdum metus, ut feugi</p>
 
@@ -168,7 +322,7 @@
         <section class="positionsection">
             <div class="positions">
 
-                <h1>Open positions</h1>
+                <h1 style="font-size: 60px;">Open positions</h1>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae pulvinar <br>ipsum. Sed a interdum metus, ut feugi lorem ipsum dolor sit amet. <br>consectetur adipiscing elit. Ut vitae</p>
 
@@ -225,110 +379,164 @@
         </section>
         <!-- End of the Positions section -->
 
-        <!-- Start of the Footer Section -->
-        <section class="sect04">
+        <!-- Footer Section -->
+        <footer id="footer">
+            <div class="footer-container">
+                <!-- Footer CTA Banner -->
+                <div class="footer-cta">
+                    <div class="cta-content">
+                        <h2>Ready to Transform Your Business?</h2>
+                        <p style="font-size: 1em;">Let's build something amazing together. Get in touch with our team today!</p>
+                    </div>
+                    <button class="cta-btn-footer">
+                        <span>Start Your Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
 
+                <!-- Main Footer Content -->
+                <div class="footer-main">
+                    <!-- Company Info Column -->
+                    <div class="footer-column footer-about">
+                        <img src="img/Concept-removebg-preview.png" alt="Concept Crashers" class="footer-logo">
+                        <p class="footer-tagline">Engineering next-gen digital experiences powered by AI and innovation.</p>
+                        <div class="footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="footersection">
+                    <!-- Quick Links Column -->
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#Home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#About"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#Process"><i class="fas fa-chevron-right"></i> Our Process</a></li>
+                            <li><a href="#Team"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                            <li><a href="#Contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
 
-                <div class="foot01">
+                    <!-- Services Column -->
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> AI Solutions</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> IT Consultation</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> System Development</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        </ul>
+                    </div>
 
-                    <div class="concept01">
-
-                        <p>Transforming complex concepts into simple, <br>powerful solutions that drive business success</p>
-
-                        <h1>Concept <span>Crashers</span></h1>
-
-                        <div>
-
+                    <!-- Newsletter Column -->
+                    <div class="footer-column footer-newsletter">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest tech insights and updates.</p>
+                        
+                        <!-- Quick Contact -->
+                        <div class="quick-contact">
+                            <a href="tel:+256700000000" class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+256 700 000 000</span>
+                            </a>
+                            <a href="mailto:info@conceptcrashers.com" class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@conceptcrashers.com</span>
+                            </a>
                         </div>
 
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>ISO Certified</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-award"></i>
+                                <span>Award Winning</span>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
-                <div class="concept02">
-
-                    <button class="bttn01">Get Started</button>
-
-                    <button class="bttn02">Learn more</button>
-
-                </div>
-
-            </div>
-
-                <div>
-
-                <hr class="line">
-
-                <div class="footer">
-                    <div>&copy; 2025 Concept Crashers, All rights reserved.</div>
-                    <div>Crafted with passion for innovation and excellence.</div>
-                </div>
-
-                </div>
-
-                <div class="foot02">
-
-                <div>
-
-                    <h3>Pages</h3>
-                    
-                    <div>
-                        <p>Github</p>
-                        <p>Instagram</p>
-                        <p>Twitter</p>
-                        <p>Whatsapp</p>
-                        <p>Youtube</p>
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <p>&copy; 2025 <strong>Concept Crashers</strong>. All rights reserved.</p>
+                        <div class="legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <span class="separator">•</span>
+                            <a href="#">Terms of Service</a>
+                            <span class="separator">•</span>
+                            <a href="#">Cookie Policy</a>
+                        </div>
                     </div>
-
-                </div>
-
-                <div>
-
-                    <h3>Social Media</h3>
-                    <p>Linkedin</p>
-                    <p>Github</p>
-                    <p>Instagram</p>
-                    <p>Twitter</p>
-                    <p>Whatsapp</p>
-                    <p>Youtube</p>
-
-                </div>
-
-                <div>
-
-                    <h3>Newsletter</h3>
-
-                    <p>Stay connected!</p>
-
-                    <p>Subscribe for our newsletter</p>
-
-                    <div>
-                        <input type="text" name="Email" placeholder="Email" class="typein">
-                        <button class="btn">Sign Up</button>
+                    <div class="footer-social">
+                        <span>Follow Us:</span>
+                        <div class="social-links-footer">
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
 
+                <!-- Back to Top in Footer -->
+                <!-- <button class="back-to-top-footer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Back to Top</span> -->
+                </button>
             </div>
+        </footer>
 
-            <div>
+        <!-- Floating Action Button -->
+        <!-- <div class="fab-button">
+        <i class="fas fa-search"></i>
+        </div> -->
 
-                <hr class="line">
-
-                <div class="footer">
-                    <div>&copy; 2025 Concept Crashers, All rights reserved.</div>
-                    <div>Crafted with passion for innovation and excellence.</div>
-                </div>
-
-            </div>
-
-            </div>
+        <!-- footer section starts here -->
 
 
-        </section>
-        <!-- End of the Footer Section -->
+
+        <!-- Floating Action Button -->
+        <div>
+            <button class="fab-button" title="scroll to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+
+
+        <script src="scripts/main.js"></script>
+        <script src="scripts/script.js"></script>
+
     </main>
 <script src="/styles/script.portfolio.js"></script>
 </body>
