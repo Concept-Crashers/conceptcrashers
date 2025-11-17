@@ -4,7 +4,7 @@
 
   const SELECTOR = '.hero-visuals';
   const MAX_WIDTH = 900;
-  const MAX_SPEED_PX_PER_SEC = 120; // top speed (px/s)
+  const MAX_SPEED_PX_PER_SEC = 160; // top speed (px/s)
   const MAX_SPEED = MAX_SPEED_PX_PER_SEC / 1000; // px/ms
   const SMOOTH_FACTOR = 0.0035; // smoothing factor per ms (tweak for feel)
   const VELOCITY_EPS = 0.02; // threshold to consider velocity stopped (px/ms)
