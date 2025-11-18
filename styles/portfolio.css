@@ -458,7 +458,7 @@ h1{
 .workingsection .working .workingheader p{
     font-size: var(--font);
     font-family: var(--font-family);
-    font-weight: 600;
+    font-weight: 400 !important;
     margin-top: 5px;
     color: var(--main-color);
 }
@@ -522,7 +522,7 @@ h1{
 
 .teamcommentsection .teamcomments{
     width: 100%;
-    background-color: rgb(235, 167, 65);
+    background-color: #112240 !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -537,30 +537,30 @@ h1{
 }
 
 .teamcomments .commentsintro h1{
-    font-family: var(--font-family);
+    font-family: var(--font-family) !important;
     font-size: var(--main-font);
-    color: var(--primary-color);
+    color: #00f0ff !important;
 }
 
 .teamcomments .commentsintro p{
-    font-family: var(--font-family);
+    font-family: var(--font-family) 1!important;
     font-size: var(--font);
     margin-top: 10px;
-    font-weight: 600;
+    font-weight: 400 !important;
+    color: var(--main-color);
 }
 
 .teamcomments .commentsintro .commentsbtn button{
     width: 50px;
     height: 50px;
-    background-color: white;
+    background-color: #38bdf8 !important;
     border: none;
     border-radius: 5px;
     margin-top: 50px;
 }
 
-.teamcomments .commentsintro .commentsbtn button img{
-    width: 35px;
-    height: 35px;
+.teamcomments .commentsintro .commentsbtn button i.fa-solid{
+    font-size: 32px;
     /* background-color: red; */
 }
 
@@ -579,20 +579,21 @@ h1{
 }
 
 .teamcomments .commentsinfo .commentimage{
-    width: 60px;
-    height: 60px;
+    width: 70px !important;
+    height: 80px !important;
     background-color: var(--mini-color);
-    border-radius: 5px;
+    border-radius: 5px !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px !important;
 }
 
 .teamcomments .commentsinfo .commentimage img{
-    width: 50px;
-    height: 50px;
-    /* background-color: pink; */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1000 !important
 }
 
 .teamcomments .commentsinfo h2{
