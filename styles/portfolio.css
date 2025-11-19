@@ -580,9 +580,9 @@ h1{
 
 .teamcomments .commentsinfo .commentimage{
     width: 70px !important;
-    height: 80px !important;
+    height: 70px !important;
     background-color: var(--mini-color);
-    border-radius: 5px !important;
+    /* border-radius: 5px !important; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -590,10 +590,11 @@ h1{
 }
 
 .teamcomments .commentsinfo .commentimage img{
-    width: 100% !important;
-    height: 100% !important;
+    width: 70px !important;
+    height: 70px !important;
     object-fit: cover !important;
-    z-index: 1000 !important
+    z-index: 1 !important;
+    border-radius: 50% !important;
 }
 
 .teamcomments .commentsinfo h2{
@@ -628,7 +629,7 @@ h1{
 .positionsection{
     width: 100%;
     min-height: 100vh;
-    background-color: var(--main-color);
+    background-color: #112240 !important;
     display: flex;
     justify-content: center;
 }
@@ -636,13 +637,13 @@ h1{
 .positionsection .positions{
     width: 80%;
     height: 100%;
-    background-color: var(--main-color);
+    background-color: #112240 !important;
 }
 
 .positionsection .positions h1{
     font-family: var(--font-family);
     font-size: var(--main-font);
-    color: var(--primary-color);
+    color:  #00f0ff !important;
     text-align: center;
     margin-top: 10px;
 }
@@ -650,9 +651,10 @@ h1{
 .positionsection .positions p{
     font-family: var(--font-family);
     font-size: var(--font);
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     margin-top: 10px;
+    color: var(--main-color);
 }
 
 .positionsection .positions .positionbuttons{
@@ -664,7 +666,7 @@ h1{
 .positionsection .positions .positionbuttons button{
     width: 150px;
     height: 45px;
-    background-color: var(--primary-color);
+    background-color: grad;
     border: none;
     border-radius: 5px;
     color: var(--main-color);
@@ -682,7 +684,7 @@ h1{
 .positions .developmentpart h2{
     font-family: var(--font-family);
     font-size: 30px;
-    color: var(--primary-color);
+    color: var(--main-color) !important;
     margin-top: 50px;
 }
 
@@ -1345,7 +1347,7 @@ img{
 .positionsection .positions .positionbuttons button{
     width: 150px;
     height: 45px;
-    background-color: var(--primary-color);
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%);
     border: none;
     border-radius: 5px;
     color: var(--main-color);
