@@ -380,6 +380,7 @@ h1{
     top: 100px !important;
     right: -70px !important;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 20px !important;
 }
 
 .box-large img {
@@ -387,6 +388,7 @@ h1{
     height: 100% !important;
     object-fit: cover !important;
     z-index: -1000 !important;
+    border-radius: 20px !important;
 }
 
 .box-small-1 {
@@ -395,6 +397,7 @@ h1{
     bottom: -130px !important; /* Position it lower than the hero section */
     left: -640px !important;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 20px !important;
     /* z-index: 1; */
     /* position: absolute; */
 }
@@ -404,6 +407,7 @@ h1{
     height: 100% !important;
     object-fit: cover !important;
     z-index: -1000 !important;
+    border-radius: 20px !important;
 }
 
 .box-small-2 {
@@ -413,6 +417,7 @@ h1{
     right: 20px !important;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
     z-index: -1 !important;
+    border-radius: 20px !important;
 }
 
 .box-small-2 img {
@@ -420,13 +425,14 @@ h1{
     height: 100% !important;
     object-fit: cover !important;
     z-index: -1000 !important;
+    border-radius: 20px !important;
 }
 /*End of the Hero Section */
 
 /* Start of the Why Working With Us section */
 .workingsection{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh !important;
     background-color: #112240 !important;
     margin-top: 370px;
     display: flex;
@@ -514,7 +520,7 @@ h1{
 /* Start of Team Comments section */
 .teamcommentsection{
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh !important;
     background-color: var(--main-color);
     display: flex;
     align-items: center;
