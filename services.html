@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <!-- Reliable Font Awesome CDN for mobile -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="services.css"> 
+
+      
+</head>
+
+<body>
+    <header>
+        <div class="logo">Concept Crashers</div>
+
+        <!--Hamburger icon -->
+        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu" aria-label="Main navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Resources</a>
+            <a href="#">Services</a>
+            <a href="#">Team</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-cloud icon"></i></div>
+                    <div>
+                        <h3>DevOps & Cloud Solutions</h3>
+                        <p>Design, deploy and operate scalable cloud environments (AWS / Azure / GCP) using IaC, CI/CD pipelines, and monitoring.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-code icon"></i></div>
+                    <div>
+                        <h3>Web Development</h3>
+                        <p>Modern single-page applications and backends using React/Vue + Node with SEO and performance optimization.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-mobile-screen-button icon"></i></div>
+                    <div>
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform apps — Flutter, Kotlin, Swift, React Native — integrated with analytics and CI/CD.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-brain icon"></i></div>
+                    <div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Custom ML models, NLP pipelines, and computer vision systems to automate processes and surface insights.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-chart-line icon"></i></div>
+                    <div>
+                        <h3>Data Analytics & BI</h3>
+                        <p>Dashboards, ETL pipelines, and KPIs to turn data into actionable business insights.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-shield-halved icon"></i></div>
+                    <div>
+                        <h3>Cybersecurity & Risk</h3>
+                        <p>Proactive protection: penetration testing, threat modeling, vulnerability management and incident response.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="features-hero">
+            <h2 class="big-title">Features</h2>
+            <p class="lead">
+                Feature-rich solutions that combine scalable architecture, strong security, and data-driven insights. Concept Crashers delivers end-to-end technology products — from idea and design through engineering, deployment, and managed operations.
+            </p>
+            <a class="cta" href="#contact">Get Started</a>
+        </section>
+    </main>
+
+    <script>
+        // Hamburger toggle
+        const toggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        toggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('show') &&
+                !navMenu.contains(e.target) &&
+                !toggle.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+
+
+</body>
+
+
+</html>
