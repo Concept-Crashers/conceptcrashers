@@ -5574,10 +5574,11 @@ form {
   .swal2-popup.mobile-friendly-popup {
     padding: 1em !important;
     border-radius: 12px !important;
+    background: 'linear-gradient(135deg, #1a2b42 0%, #112240 100%)',
   }
 
   .swal2-title.mobile-friendly-title {
-    font-size: 1.1rem !important;
+    font-size: 0.7rem !important;
     margin-bottom: 0.4em !important;
   }
 

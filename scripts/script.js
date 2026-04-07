@@ -100,21 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloader && mainContent) {
         function hidePreloader() {
             preloader.classList.add('hidden');
-            preloader.addEventListener('transitionend', () => {
+            mainContent.classList.add('visible');
+            document.body.style.overflow = 'auto';
+            // Wait for transition to complete (0.7s) before setting display:none
+            setTimeout(() => {
                 preloader.style.display = 'none';
-                mainContent.classList.add('visible');
-                document.body.style.overflow = 'auto';
-            }, { once: true });
+            }, 750);
         }
-        window.addEventListener('load', () => {
-            setTimeout(hidePreloader, 2000);
-        });
-        setTimeout(() => {
-            if (!preloader.classList.contains('hidden')) {
-                console.warn("Preloader force-hidden after timeout. 'load' event might not have fired.");
-                hidePreloader();
-            }
-        }, 2000);
+        
+        // Hide preloader after 2 seconds regardless of load event
+        setTimeout(hidePreloader, 2000);
+        
+        // Also hide when load event fires (whichever comes first)
+        window.addEventListener('load', hidePreloader, { once: true });
     }
 });
 

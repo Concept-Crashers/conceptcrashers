@@ -1,3 +1,13 @@
+// Force stop loading if it takes too long (5 seconds)
+setTimeout(() => {
+    if (document.readyState !== 'complete') {
+        console.warn('Page took too long to load. Forcing completion.');
+        if (typeof window.stop === 'function') {
+            window.stop();
+        }
+    }
+}, 5000);
+
 //Scroll Animation on different elements 
 const mainObserver = new IntersectionObserver((entries) =>{
     entries.forEach(entry => {
@@ -328,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 confirmButtonColor: '#9062f0',
                 width: isMobile ? '95%' : '600px',
                 padding: isMobile ? '1em' : '1.5em',
-                background: '#1a1a2e',
+                background: 'linear-gradient(135deg, #1a2b42 0%, #112240 100%)',
                 color: '#fff',
                 confirmButtonText: 'Close',
                 customClass: {
