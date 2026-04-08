@@ -21,39 +21,6 @@ body {
     color: var(--text-light);
 }
 
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 6%;
-    background: #0c1828;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.logo {
-    font-weight: 800;
-    color: var(--accent-cyan);
-    font-size: 1.4rem;
-}
-
-nav {
-    display: flex;
-    gap: 18px;
-}
-
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 6px 8px;
-    border-radius: 6px;
-    transition: 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--accent-cyan);
-}
 
 /* SERVICES SECTION */
 .services-section{
