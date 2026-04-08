@@ -1639,7 +1639,7 @@ header .navBtn button:hover::before {
   text-align: center;
   margin-bottom: 16px;
   font-weight: 800;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
   animation: fadeInDown 0.8s ease-out;
 }
@@ -1783,12 +1783,12 @@ header .navBtn button:hover::before {
   border: none;
   border-radius: 50px;
   font-size: 0.95rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   padding: 0 30px;
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
 }
 
