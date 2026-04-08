@@ -57,6 +57,8 @@ nav a:hover {
 
 /* SERVICES SECTION */
 .services-section{
+    display:flex;
+    flex-direction:column;
     padding: 80px 6%;
 }
 
