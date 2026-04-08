@@ -13,23 +13,154 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">Concept Crashers</div>
+    <!-- navigation bar starts here -->
+        <header id="header">
+            <!-- logo -->
+            <div>
+                <a href="#Home">
+                    <img src="img/Concept-removebg-preview.png" class="logo" alt="logo" width="75" height="65">
+                </a>
+            </div>
 
-        <!--Hamburger icon -->
-        <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
+            <!-- navifation links -->
+            <nav>
+                <div class="navLinks">
+                    <a href="#Home">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#Services">Services</a>
+                    <a href="#Process">Process</a>
+                    <a href="#Blog">Blog</a>
+                    <a href="#Team">Team</a>
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Contact">Contact</a>
+                </div>
+            </nav>
+
+            <!-- Social media icons -->
+            <div class="social-nav">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- nav button -->
+            <div class="navBtn">
+                <button>
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </header>
+        <!-- navigation bar ends -->
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="#Home" class="mobile-bottom-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#About" class="mobile-bottom-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="#Services" class="mobile-bottom-nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Services</span>
+            </a>
+            <a href="#Team" class="mobile-bottom-nav-item">
+                <i class="fas fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="#Gallery" class="mobile-bottom-nav-item">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#Contact" class="mobile-bottom-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <div class="mobile-nav-container">
+                <div class="mobile-nav-header">
+                    <img src="img/Concept-removebg-preview.png" alt="logo" width="60" height="50">
+                    <button class="close-nav" id="closeNav" aria-label="Close navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <nav class="mobile-nav-menu">
+                    <a href="#Home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#About" class="mobile-nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#Services" class="mobile-nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#Process" class="mobile-nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>Process</span>
+                    </a>
+                    <a href="#Blog" class="mobile-nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#Team" class="mobile-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#Gallery" class="mobile-nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="#Contact" class="mobile-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+
+                <div class="mobile-nav-footer">
+                    <button class="mobile-cta-btn">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="mobile-social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <nav id="nav-menu" aria-label="Main navigation">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Resources</a>
-            <a href="#">Services</a>
-            <a href="#">Team</a>
-        </nav>
-    </header>
 
     <main>
         <section class="services">
