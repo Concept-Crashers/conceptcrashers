@@ -1686,7 +1686,7 @@ header .navBtn button:hover::before {
   background: linear-gradient(145deg, rgba(19, 36, 58, 0.8), rgba(15, 28, 46, 0.9));
   border: 1px solid rgba(40, 215, 255, 0.15);
   border-radius: 16px;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1747,7 +1747,7 @@ header .navBtn button:hover::before {
 /* Title and Text */
 .serviceCard-grid h3 {
   color: var(--text-primary);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin: 0;
   transition: color 0.3s ease;
@@ -1761,7 +1761,7 @@ header .navBtn button:hover::before {
   font-size: 0.9rem;
   color: var(--text-secondary);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1;
   width: 100%;
 }
 
