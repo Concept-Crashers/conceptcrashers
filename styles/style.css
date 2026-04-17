@@ -1631,7 +1631,7 @@ header .navBtn button:hover::before {
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   background: linear-gradient(135deg, #28d7ff, #6a5cff);
   background-clip: text;
   -webkit-background-clip: text;
