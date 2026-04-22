@@ -1775,6 +1775,7 @@ header .navBtn button:hover::before {
   margin: 0;
   flex-wrap: wrap;
   animation: fadeInUp 0.8s ease-out 0.4s both;
+  -webkit-animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .butns button {
