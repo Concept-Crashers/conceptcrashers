@@ -45,174 +45,7 @@
     }
 }
 
-/* =====================
-   Footer - responsive
-   Mobile-first rules: compact on phones, expand on wider viewports
-   ===================== */
 
-footer#footer {
-    background-color: #071730; /* dark blue backdrop */
-    color: #e9f0fb;
-    padding: 28px 12px;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 12px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: center;
-}
-
-.footer-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    background: linear-gradient(90deg, #0b2140 0%, #1e6fb8 100%);
-    color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(11,33,64,0.25);
-}
-
-/* Keep the CTA constrained and centered inside its grid column on wide viewports */
-.footer-cta {
-    width: 100%;
-    max-width: 520px;
-    box-sizing: border-box;
-    justify-self: center;
-}
-
-.footer-cta .cta-content h2{
-    margin: 0 0 6px 0;
-    font-size: 1.25rem;
-}
-
-.footer-cta .cta-content p{
-    margin: 0;
-    opacity: 0.95;
-    line-height: 1.3;
-}
-
-.cta-btn-footer{
-    background: #ffffff;
-    color: #0b2140;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 999px;
-    font-weight: 700;
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    cursor: pointer;
-}
-
-.footer-main{
-    display: flex;
-    gap: 28px;
-    margin-top: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.footer-column{
-    flex: 1 1 220px;
-    min-width: 180px;
-}
-
-.footer-column h3{
-    margin-bottom: 10px;
-}
-
-.footer-column ul{
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li{
-    margin-bottom: 8px;
-}
-
-.footer-column a{
-    color: #dbe8ff;
-    text-decoration: none;
-}
-
-.footer-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-top: 22px;
-    flex-wrap: wrap;
-}
-
-.footer-bottom .legal-links a{
-    color: #cbdff6;
-    margin-right: 8px;
-    text-decoration: none;
-}
-
-.footer-social{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #cfe6ff;
-}
-
-.footer-logo{
-    width: 84px;
-    height: auto;
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* Tablet and up: arrange CTA horizontally and columns side-by-side */
-@media (min-width: 601px) {
-    .footer-cta {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 24px 28px;
-    }
-
-    .cta-btn-footer{
-        min-width: 180px;
-    }
-}
-
-/* Wider screens: allow multi-column layout, larger paddings */
-@media (min-width: 901px) {
-    footer#footer{ padding: 48px 12px; }
-    .footer-container{ padding: 0 20px; grid-template-columns: 1fr 3fr; align-items: start; }
-    .footer-main{ gap: 36px; }
-}
-
-/* Narrow screens: stack columns and make CTA full width; enforce left-alignment for mobile per request */
-@media (max-width: 900px) {
-    .footer-cta{ width: 100%; text-align: center; align-items: center; }
-    .footer-cta .cta-content{ text-align: center; }
-    .cta-btn-footer{ width: 90%; min-width: 0; }
-    .footer-main{ flex-direction: column; gap: 18px; }
-    .footer-column{ width: 100%; }
-    .footer-bottom{ flex-direction: column; align-items: center; text-align: center; }
-}
-
-@media (max-width: 600px) {
-    footer#footer{ padding: 18px 10px; }
-    .footer-container{ padding-left: 12px; padding-right: 12px; }
-    /* Force left-alignment of container and CTA on very small phones (user requested) */
-    footer#footer .footer-container{ width:100%; margin-left:0; text-align:left; }
-    footer#footer .footer-cta{ align-items:flex-start; text-align:left; }
-    .cta-btn-footer{ width:100%; }
-    .footer-main{ gap: 14px; }
-    .footer-bottom{ align-items:flex-start; text-align:left; }
-}
 
 /*Initializing everything to default*/
 *{
@@ -269,7 +102,7 @@ h1{
 /*Start of the Hero Section*/
 .herobody{
     width: 100%;
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: #112240 !important;
     /* z-index: -1 !important; */
 }
@@ -278,22 +111,23 @@ h1{
 .herosection {
     /* height: 100% !important; */
     /* background-color: var(--secondary-color); */
-    padding-top: 50px !important;
+    /* padding-top: 50px !important; */
     padding-bottom: 200px !important;/*Large padding to extend the pink area */
     display: grid !important;
     grid-template-columns: 1fr 1fr !important; /* Two main columns */
-    max-width: 1200px !important;
-    margin: 0 auto !important;
+    max-width: 90% !important;
+    max-height: 100% !important;
+    /* margin: 0 auto !important; */
     gap: 40px !important;
     /* position: relative; */
-    z-index: 1 !important;
+    /* z-index: 1 !important; */
     overflow: hidden !important; /* Contains the absolute/relative boxes */
 }
 
 /* Hero Content (Left Side) */
 .hero-content {
     max-width: 5100px !important;
-    margin-top: 280px !important;
+    margin-top: 170px !important;
     /* padding: 0 20px; */
     z-index: 2 !important; /* Ensure content is above the boxes */
 }
@@ -318,7 +152,7 @@ h1{
 .hero-text {
     font-size: var(--font) !important;
     line-height: 1.6 !important;
-    margin-bottom: 30px !important;
+    /* margin-bottom: 30px !important; */
     color: var(--main-color) !important;
     font-family: var(--font-family) !important;
     font-weight: 300 !important;
@@ -338,6 +172,7 @@ h1{
     font-size: 12px !important;
     /* border: 1px solid transparen !important; */
     font-family: var(--font-family) !important;
+    margin-top: 10px !important;
 }
 
 
@@ -358,7 +193,7 @@ h1{
     position: relative !important;
     height: 700px !important; /* Set a height to contain the absolute boxes */
     padding-right: 20px !important;
-    margin-top: 190px !important;
+    margin-top: 100px !important;
     z-index: 1 !important; /* Keep the boxes behind the content (if they overlap) */
 }
 
@@ -394,7 +229,7 @@ h1{
 .box-small-1 {
     width: 450px !important;
     height: 400px !important;
-    bottom: -130px !important; /* Position it lower than the hero section */
+    bottom: -150px !important; /*Position it lower than the hero section */
     left: -640px !important;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
     border-radius: 20px !important;
@@ -429,12 +264,13 @@ h1{
 }
 /*End of the Hero Section */
 
+
 /* Start of the Why Working With Us section */
 .workingsection{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh !important;
     background-color: #112240 !important;
-    margin-top: 0px;
+    margin-top: 0px !important;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -442,18 +278,18 @@ h1{
 
 .workingsection .working{
     width: 95%;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 100%;
+    margin: 100px !important;
     background-color: #0a192f !important;
     border-radius: 5px;
-    height: auto;
-    padding: 20px;
+    /* height: auto; */
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 
 .workingsection .working .workingheader{
     text-align: center;
-    margin-top: 0px;
+    /* margin-top: 0px; */
 }
 
 .workingsection .working .workingheader h1{
@@ -522,8 +358,9 @@ h1{
 .teamcommentsection{
     width: 100%;
     min-height: 70vh !important;
-    background-color: var(--main-color);
+    background-color: #112240 !important;
     display: flex;
+    margin-top: 0px !important;
     align-items: center;
     overflow: hidden !important;
 }
@@ -738,21 +575,7 @@ h1{
 }
 /* End of Positions Navigation */
 
-/* .footer div{
-    display: flex;
-    flex-direction: column;
-}
-.footer div a{
-    color: white;
-    margin-top: 10px;
-} */
-/* End of the Footer Section */
-/* Responsive tweaks (re-inserted)
-   Breakpoints: 1200px, 900px, 600px
-   These rules adjust layout/typography and stack columns for smaller screens.
-   NOTE: This block intentionally does NOT include any hamburger/mobile-nav rules
-   (no JS required). It only adjusts sizes and flow so the page is usable on phones.
-*/
+
 @media (max-width: 1200px) {
     header {
         padding: 0 20px;
