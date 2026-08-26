@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+/* css variable declarations */
+:root{
+    --main-font:"Poppins",sans-serif;
+    --bg-primary:#0A192F;
+    --bg-secondary:#112240;
+    --bg-light:#1A2B42;
+    --white:#ffffff;
+    --text-primary:#CCD6F6;
+    --text-secondary:#8892B0;
+    --text-accent:#64ffda;
+
+    --gradient-primary:linear-gradient(135deg,#00f0ff 0%, #8b5cf6 100%);
+    --gradient-secondary:linear-gradient(135deg,#00bcd4 0%,#64ffda 100%);
+
+    --font-size-small:0.875rem;
+    --font-size-basel:0.95rem;
+    --font-size-large:1.25rem;
+    --font-size-x-large:45px;
+}
+
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+header{
+    width: 100%;
+    min-height: 75px;
+    height: auto;
+    background-color:var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px 20px 50px;
+}
+header img{
+    width: 75px;
+    height: 65px;
+}
+nav a{
+    margin-left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-basel);
+}
+.headerbtn button{
+    width: 140px;
+    height: 40px;
+    /* background: var(--gradient-primary); */
+    border-radius: 5px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+}
+/* home section starts from here */
+
+.Homesection{
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    background-color:var(--bg-light);
+    padding: clamp(3rem, 8vw, 6rem);
+}
+.mainsection{
+    width: 100%;
+    min-height: 55vh;
+    height: auto;
+    /* background-color:var(--bg-secondary); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 500px; */
+    /* background-color: white; */
+}
+.wordings{
+    text-align: center;
+    margin-top: 0;
+    color: var(--white);
+}
+
+.wordings h1{
+    font-size: var(--font-size-x-large);
+}
+.wordings p{
+    margin-top: 15px;
+}
+.span001{
+    width: 50px;
+    height: 30px;
+    background-color: var(--white);
+    color: var(--bg-primary);
+    font-size: 30px;
+    font-size: var(--font-size-x-large);
+}
+.card{
+    width: min(100%, 1100px);
+    min-height: auto;
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--bg-primary);
+    padding: 40px;
+    background: var(--bg-secondary);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.content{
+    width: calc(50% - 10px);
+    min-width: 0;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: solid black; */
+
+}
+
+.lab{
+    margin-top: 15px;
+}
+
+label{
+    color: var(--white);
+    color: var(--text-secondary);
+    font-size: .8em;
+}
+.input00{
+    display: flex;
+    gap: 10px;
+}
+.input01 input{
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid var(--text-accent);
+    border-radius: 2px;
+    background: transparent;
+    padding-left: 5px;
+    color: var(--white);
+}
+.input02 input{
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid var(--text-accent);
+    border-radius: 2px;
+    background: transparent;
+    padding-left: 5px;
+    color: var(--white);
+}
+
+.areawords{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+#message{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+}
+/* textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid var(--text-accent);
+    border-radius: 5px;
+    padding-left: 5px;
+    color: var(--text-secondary);
+    
+} */
+ 
+
+.btn00 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 5px;
+}
+.btn00 button{
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    outline: none;
+    background: var(--gradient-primary);
+    border: none;
+    color: var(--white);
+    font-size: var(--font-size-basel);
+
+    
+}
+
+.btn00 p{
+    margin-top: 20px;
+    color: var(--text-primary);
+    font-size: .8em;
+}
+
+.words{
+    width: calc(50% - 10px);
+    min-width: 0;
+    height: 100%;
+    /* background-color: black; */
+    padding: 20px;
+    /* line-height: 40px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+}
+
+.contentwords{
+    width: 100%;
+    height: auto;
+    /* background-color: yellow; */
+    /* margin-top: 50px; */
+}
+.smallwords h4{
+    /* margin-bottom: 10px; */
+    color: white;
+    margin-top: 30px;
+}
+.smallwords p{
+    /* margin-bottom: 10px; */
+    color: white;
+    font-size: .75em;
+    width: 100%;
+    max-width: 330px;
+}
+.contentwords hr{
+    margin-top: 0;
+    margin-bottom: 70px;
+    width: 90%;
+}
+
+.smallwords02 h1{
+    color: white;
+}
+.smallwords02 p{
+    /* margin-bottom: 10px; */
+    color: white;
+}
+
+
+.tele-phone{
+    margin-top: 20px;
+    color: var(--text-secondary) !important;
+}
+
+.email{
+    margin: 20px 0;
+    color: var(--text-secondary);
+    font-size: .75em;
+}
+
+/* section-two starts from here */
+.sect2{
+    width: 100%;
+    min-height: auto;
+     /* background-color: aqua;  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 6rem);
+     background-color: var(--bg-primary); 
+}
+
+.main{
+    width: min(100%, 1100px);
+    min-height: auto;
+    height: auto;
+    display: flex; 
+    flex-direction: column; 
+     align-items: center; 
+     background-color:var(--bg-secondary);
+     /* background-color: var(--white); */
+
+    /* padding-top: 30px;  */
+    /* background-color: red; */
+    /* margin-top: 10px; */
+    border-radius: 5px;
+}
+.questioncard{
+    width: min(100%, 900px);
+    min-height: 290px;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 30px;
+}
+.questionheading{
+    padding: 20px;
+}
+.questionheading h1{
+    color: var(--white);
+}
+
+.questionheading p{
+    color: var(--white);
+}
+.questionwords{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     margin-bottom: 25px; 
+    
+}
+.questionwords p{
+    margin-top: 10px;
+}
+
+
+
+ 
+
+
+/* sectionthree starts from here */
+
+.section_three{
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+    margin-top: 0px;
+    background-color: var(--bg-secondary);
+}
+
+.secthree{
+    width: 90%;
+    min-height: auto;
+    height: auto;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secthree001{
+    width: 80%;
+    min-height: auto;
+    height: auto;
+    /* background-color: aqua; */
+}
+.secthree001 h1{
+    color: var(--white);
+}
+
+ .svgwords{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.svgwords p{
+     margin-top: 10px; 
+    color: var(--white);
+}
+.officesadress{
+    width: 100%;
+    min-height: 50vh;
+    height: auto;
+    background-color: var(--bg-secondary);
+    display: flex;
+    margin-top: 30px;
+    overflow: hidden;
+
+}
+.plainoffices{
+    width: 50%;
+    min-height: 100%;
+    height: auto;
+    background-color: var(--bg-primary);
+}
+
+.plainoffices iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    display: block;
+}
+ .adress{
+    width: 50%;
+    min-height: 100%;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+} 
+.adress h1{
+    margin-top: 10px;
+    color: var(--bg-primary);
+}
+.adress p{
+    margin-top: 10px;
+    color: var(--bg-secondary);
+}
+.adress h4{
+    margin-bottom: 5px;
+    color: var(--bg-secondary);
+}
+
+/* my footer css */
+
+.sect02{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 3rem);
+}
+
+span{
+    background-color: red;
+    border-radius: 8px;
+    padding: 0 0.5rem;
+}
+
+.foot01{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.foot01 h1{
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.concept02{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.bttn01, .bttn02{
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bttn01{
+    color: black;
+    background-color: white;
+}
+
+.bttn02{
+    color: white;
+    background-color: rgba(190, 188, 188, 0.24);
+}
+
+.bttn01:hover, .bttn02:hover {
+    transform: translateY(-2px);
+}
+
+.foot02{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+}
+
+.foot02 > div {
+    text-align: left;
+}
+
+.foot02 h3 {
+    margin-bottom: 1rem;
+}
+
+.foot02 p {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.typein{
+    color: black;
+    width: 200px;
+    height: 32px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    padding-left: 5px;
+    margin-right: 0.5rem;
+}
+
+.btn{
+    color: white;
+    background-color: red;
+    width: 100px;
+    height: 32px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: darkred;
+}
+
+.line{
+    margin: 2rem 0;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    font-size: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concept Crashers</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" href="img/Favicon (2).png" type="image/png">
+    <link rel="icon" href="about-images/Favicon.png" type="image/png">
     <link rel="stylesheet" href="styles/responsiveness.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- favicon imported from about file by pascal-->
+    <link
+      rel="icon"
+      href="about-images/Favicon.png"
+      type="image/png"
+      class="favicon"
+    />
 </head>
 
 <body>
@@ -40,7 +48,9 @@
         <header id="header">
             <!-- logo -->
             <div>
-                <img src="img/Concept-removebg-preview.png" class="logo" alt="logo" width="75" height="65">
+                <a href="index.html">
+                    <img src="img/Concept-removebg-preview.png" class="logo" alt="logo" width="75" height="65">
+                </a>
             </div>
 
             <!-- navifation links -->
@@ -235,7 +245,9 @@
 
                     <div class="btns">
                         <button>Get Started</button>
-                        <button>Learn More</button>
+                        <button>
+                            <a href="about.html" style="color: white; z-index: 9999">Learn More</a>
+                        </button>
                     </div>
                 </div>
 
@@ -270,7 +282,9 @@
                     <div class="aboutcontext002">
 
                         <div class="aboutBtn">
-                            <button class="section">Get Started</button>
+                            <button class="section">
+                                <a href="about.html" style="color: white">About us</a>
+                            </button>
                         </div>
 
                         <div class="main001" id="section">
@@ -348,7 +362,7 @@
         <!-- services section starts here -->
         <section id="Services">
             <div class="services">
-                <h1 class="title" id="section">Our Services</h1>
+                <h1 class="heading" id="section" style="text-align: center;">Our Services</h1>
                 <p class="sub-title" id="section">Technology is an investment. <br>Our services are designed to deliver
                     a clear
                     return. 
@@ -453,47 +467,105 @@
         <!-- development process section starts here -->
         <section id="Process">
             <div class="process">
-                <h1 id="section">Our <br>Development Process</h1>
+                <h1 id="section" class="heading">Our Development Process</h1>
+                
                 <div class="ourProcess">
-
-                    <div class="process001">
-                        <div class="img">
-                            <img src="" alt="" id="section">
+                    <div class="process-timeline">
+                        <!-- Step 1: Discovery (RIGHT) -->
+                        <div class="timeline-step">
+                            <span class="step-counter">Step 1/5</span>
+                            <div class="step-indicator">
+                                <span class="step-number">1</span>
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="step-content">
+                                <div class="status-badge">⚡ Active</div>
+                                <h3>Discovery</h3>
+                                <p>We dive deep into understanding your business, goals, and challenges to lay the foundation for success.</p>
+                                <ul>
+                                    <li>Requirements analysis</li>
+                                    <li>Market research</li>
+                                    <li>Stakeholder interviews</li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="paragraph" style="margin-top:20px" id="section">
-                            This isn't just about delivering code;
-                            it's about building the right solution that
-                            solves your problems and achieves your goals.
-                        </p>
+
+                        <!-- Step 2: Planning (LEFT) -->
+                        <div class="timeline-step">
+                            <span class="step-counter">Step 2/5</span>
+                            <div class="step-indicator">
+                                <span class="step-number">2</span>
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="step-content">
+                                <div class="status-badge">🎯 Planning</div>
+                                <h3>Planning</h3>
+                                <p>We create a detailed roadmap with clear milestones, timelines, and deliverables for your project.</p>
+                                <ul>
+                                    <li>Architecture design</li>
+                                    <li>Resource allocation</li>
+                                    <li>Timeline scheduling</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Development (RIGHT) -->
+                        <div class="timeline-step">
+                            <span class="step-counter">Step 3/5</span>
+                            <div class="step-indicator">
+                                <span class="step-number">3</span>
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="step-content">
+                                <div class="status-badge">💻 Building</div>
+                                <h3>Development</h3>
+                                <p>Our expert developers build your solution with clean code, best practices, and regular progress updates.</p>
+                                <ul>
+                                    <li>Agile development</li>
+                                    <li>Code reviews</li>
+                                    <li>Regular updates</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Testing (LEFT) -->
+                        <div class="timeline-step">
+                            <span class="step-counter">Step 4/5</span>
+                            <div class="step-indicator">
+                                <span class="step-number">4</span>
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="step-content">
+                                <div class="status-badge">✅ Testing</div>
+                                <h3>Testing</h3>
+                                <p>We conduct comprehensive testing to ensure quality, performance, and security of your application.</p>
+                                <ul>
+                                    <li>Unit testing</li>
+                                    <li>Integration testing</li>
+                                    <li>Security audits</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Deployment (RIGHT) -->
+                        <div class="timeline-step">
+                            <span class="step-counter">Step 5/5</span>
+                            <div class="step-indicator">
+                                <span class="step-number">5</span>
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="step-content">
+                                <div class="status-badge">🚀 Launch</div>
+                                <h3>Deployment</h3>
+                                <p>We launch your project with precision and provide ongoing support to ensure continued success.</p>
+                                <ul>
+                                    <li>Production deployment</li>
+                                    <li>24/7 monitoring</li>
+                                    <li>Technical support</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="process002">
-                        <div class="processCard" id="section">
-                            <h3>1. Discovery</h3>
-                            <p class="paragraph">Understanding clients` requirements and business goals</p>
-                        </div>
-
-                        <div class="processCard" id="section">
-                            <h3>2. Planning</h3>
-                            <p class="paragraph">Creating detailed project roadmap and timeline</p>
-                        </div>
-
-                        <div class="processCard" id="section">
-                            <h3>3. Development</h3>
-                            <p class="paragraph">Building your solution with regular progress updates</p>
-                        </div>
-
-                        <div class="processCard" id="section">
-                            <h3>4. Testing</h3>
-                            <p class="paragraph">Comprehensive testing and quality assurance</p>
-                        </div>
-
-                        <div class="processCard" id="section">
-                            <h3>5. Deployment</h3>
-                            <p class="paragraph">Launching your project and providing ongoing support</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -897,7 +969,7 @@
                     <div class="Blog003">
                         <div class="BlogCard" id="section">
                             <div class="pic">
-                                <img src="img/Elexy - Electronics Store Shopify Theme OS 2_0.jfif" alt="Project-image">
+                                <img src="img/e-commerce.png" alt="Project-image">
                                 <div class="project-overlay">
                                     <div class="project-icon">
                                         <i class="fas fa-shopping-cart"></i>
@@ -935,7 +1007,7 @@
 
                         <div class="BlogCard" id="section">
                             <div class="pic">
-                                <img src="img/Healthcare UI_UX Design_ Enhancing Patient Engagement _.jfif" alt="Project-image">
+                                <img src="img/agri.png" alt="Project-image" style="width: 100%; height: 100%; object-fit: cover">
                                 <div class="project-overlay">
                                     <div class="project-icon">
                                         <i class="fas fa-seedling"></i>
@@ -963,7 +1035,7 @@
                                         <span>6 members</span>
                                     </div>
                                 </div>
-                                <a href="#" class="view-project-btn">
+                                <a href="https://agri-buddy.onrender.com/" class="view-project-btn">
                                     <span>View Project</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -972,7 +1044,7 @@
 
                         <div class="BlogCard" id="section">
                             <div class="pic">
-                                <img src="img/data chart analystic.jfif" alt="Project-image">
+                                <img src="img/campusBallot.png" alt="Project-image">
                                 <div class="project-overlay">
                                     <div class="project-icon">
                                         <i class="fas fa-chart-line"></i>
@@ -993,14 +1065,14 @@
                                 <div class="project-stats">
                                     <div class="stat">
                                         <i class="fas fa-clock"></i>
-                                        <span>2 months</span>
+                                        <span>7 months</span>
                                     </div>
                                     <div class="stat">
                                         <i class="fas fa-users"></i>
-                                        <span>4 members</span>
+                                        <span>9 members</span>
                                     </div>
                                 </div>
-                                <a href="#" class="view-project-btn">
+                                <a href="https://www.campusballot.tech/" class="view-project-btn">
                                     <span>View Project</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -1028,7 +1100,7 @@
                         <!-- Repeatable team card (replace placeholders with real images and content) -->
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/gi.jpeg" alt="Deo Woods" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/gi.jpeg" alt="Ggita Ibrahim" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="6 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1053,13 +1125,13 @@
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/Me.jpeg" alt="Alice Johnson" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/whs.jpg" alt="Wambogo Hassan Sadat" onerror="this.style.opacity=0.6;" />
                             </div>
-                            <div class="exp-badge" title="8 years experience">
+                            <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
                                 <span>4 yrs</span>
                             </div>
-                            <h4>Wambogo Sadat</h4>
+                            <h4>Wambogo Hassan Sadat</h4>
                             <p class="role">Executive</p>
                             <div class="star-rating">
                                 <i class="fas fa-star"></i>
@@ -1078,7 +1150,7 @@
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/kj.jpeg" alt="Bob Williams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/kj.jpeg" alt="Kijjambu Joseph" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="10 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1103,7 +1175,7 @@
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/op.jpeg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/op.jpeg" alt="Omolo Pasikali" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1129,7 +1201,7 @@
                         <!-- Duplicate a few placeholders for a smoother initial scroll; JS will clone as needed -->
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/md.jpeg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/md.jpeg" alt="Mugerwa Dickson Junior" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1156,7 +1228,7 @@
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/bd.jpeg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/bd.jpeg" alt="Balibaseka Deo" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1181,7 +1253,7 @@
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/team-4.jpg" alt="Carol Davis" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" style="object-fit: cover; object-position: top;" src="img/nsu.jpeg" alt="Nsubuga Ediger" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="7 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1206,7 +1278,7 @@
 
                 <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/team-5.jpg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/se.jpeg" alt="Ssentongo Edrine" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1222,16 +1294,16 @@
                                 <i class="far fa-star"></i>
                             </div>
                             <div class="team-socials">
-                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sentongo-edrine-42b372325?trk=contact-info" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/edrine172" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                 <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-                                <a href="mailto:eve@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="mailto:sentongoedrine172@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                             </div>
                     </div>
 
                         <div class="team-card">
                             <div class="avatar-wrap">
-                                <img class="avatar" src="img/team-5.jpg" alt="Eve Adams" onerror="this.style.opacity=0.6;" />
+                                <img class="avatar" src="img/mo.jpeg" alt="Muchwezi Onesmus" onerror="this.style.opacity=0.6;" />
                             </div>
                             <div class="exp-badge" title="4 years experience">
                                 <i class="fa-solid fa-award"></i>
@@ -1369,42 +1441,25 @@
                 <!-- Horizontal Scrolling Gallery -->
                 <div class="gallery-scroll-wrapper">
                     <div class="gallery-grid">
-                        <!-- Gallery Item 1 -->
 
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-item" data-category="celebrations">
+                        <div class="gallery-item" data-category="team">
                         <div class="gallery-image">
-                            <img src="img/dev.jpeg" alt="Company Anniversary" onerror="this.src='https://via.placeholder.com/400x300?text=Anniversary'">
+                            <img src="img/steam.jpeg" alt="Team Outing">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
-                                    <h3>Blockchain Dev Fest 2025</h3>
-                                    <p>Empowering Developers, Igniting Innovation and building solutions for Africa's Future</p>
-                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 18th October, 2025</span>
+                                    <h3>5th Kyambogo STEAM Festival</h3>
+                                    <p>Demystifying SCience, Technology and Innovation for Community Development</p>
+                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 21 April, 2026</span>
                                 </div>
                                 <button class="view-btn"><i class="fas fa-expand"></i></button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-item" data-category="events">
-                        <div class="gallery-image">
-                            <img src="img/id.jpeg" alt="Workshop" onerror="this.src='https://via.placeholder.com/400x300?text=Workshop'">
-                            <div class="gallery-overlay">
-                                <div class="gallery-info">
-                                    <h3>Intelligent Design Public Lecture</h3>
-                                    <p>Learning and growing together</p>
-                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 15th October, 2025 </span>
-                                </div>
-                                <button class="view-btn"><i class="fas fa-expand"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 7 -->
+                    <!-- Gallery Item 1 -->
                     <div class="gallery-item" data-category="team">
                         <div class="gallery-image">
-                            <img src="img/speke3.jpeg" alt="Team Outing" onerror="this.src='https://via.placeholder.com/400x300?text=Team+Outing'">
+                            <img src="img/speke3.jpeg" alt="Team Outing">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>GAIME Global AI Innovation Movement and Evolution</h3>
@@ -1418,7 +1473,21 @@
 
                     <div class="gallery-item" data-category="team">
                         <div class="gallery-image">
-                            <img src="img/speke2.jpeg" alt="Team Outing" onerror="this.src='https://via.placeholder.com/400x300?text=Team+Outing'">
+                            <img src="img/steam2.jpeg" alt="Team Outing">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>5th Kyambogo STEAM Festival</h3>
+                                    <p>Demystifying SCience, Technology and Innovation for Community Development</p>
+                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 22 April, 2026</span>
+                                </div>
+                                <button class="view-btn"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item" data-category="team">
+                        <div class="gallery-image">
+                            <img src="img/speke2.jpeg" alt="Team Outing">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>GAIME Global AI Innovation Movement and Evolution</h3>
@@ -1430,10 +1499,40 @@
                         </div>
                     </div>
 
-                    <!-- Gallery Item 8 -->
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image">
+                            <img src="img/id.jpeg" alt="Workshop">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Intelligent Design Public Lecture</h3>
+                                    <p>Learning and growing together</p>
+                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 15th October, 2025 </span>
+                                </div>
+                                <button class="view-btn"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Gallery Item  4-->
+                    <div class="gallery-item" data-category="celebrations">
+                        <div class="gallery-image">
+                            <img src="img/dev.jpeg" alt="Company Anniversary">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Blockchain Dev Fest 2025</h3>
+                                    <p>Empowering Developers, Igniting Innovation and building solutions for Africa's Future</p>
+                                    <span class="gallery-date"><i class="fas fa-calendar"></i> 18th October, 2025</span>
+                                </div>
+                                <button class="view-btn"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 5 -->
                     <div class="gallery-item" data-category="projects">
                         <div class="gallery-image">
-                            <img src="img/gallery-8.jpg" alt="Client Meeting" onerror="this.src='https://via.placeholder.com/400x300?text=Client+Meeting'">
+                            <img src="img/gallery-8.jpg" alt="Client Meeting">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>Strategic Planning</h3>
@@ -1443,11 +1542,13 @@
                                 <button class="view-btn"><i class="fas fa-expand"></i></button>
                             </div>
                         </div>
-                    </div>
+                    </div>  
 
-                             <div class="gallery-item" data-category="events">
+                    <!-- Gallery Item 6 -->
+                        
+                    <div class="gallery-item" data-category="events">
                             <div class="gallery-image">
-                                <img src="img/gallery-1.jpg" alt="Tech Conference 2024" onerror="this.src='https://via.placeholder.com/400x300?text=Tech+Conference+2024'">
+                                <img src="img/gallery-1.jpg" alt="Tech Conference 2024">
                                 <div class="gallery-overlay">
                                     <div class="gallery-info">
                                         <h3>Tech Conference 2024</h3>
@@ -1459,10 +1560,10 @@
                             </div>
                         </div>
 
-                        <!-- Gallery Item 2 -->
+                        <!-- Gallery Item 7 -->
                         <div class="gallery-item" data-category="team">
                             <div class="gallery-image">
-                                <img src="img/gallery-2.jpg" alt="Team Building" onerror="this.src='https://via.placeholder.com/400x300?text=Team+Building'">
+                                <img src="img/gallery-2.jpg" alt="Team Building">
                                 <div class="gallery-overlay">
                                     <div class="gallery-info">
                                     <h3>Team Building Day</h3>
@@ -1474,10 +1575,10 @@
                         </div>
                     </div>
 
-                    <!-- Gallery Item 3 -->
+                    <!-- Gallery Item 8 -->
                     <div class="gallery-item" data-category="projects">
                         <div class="gallery-image">
-                            <img src="img/gallery-3.jpg" alt="Project Launch" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Launch'">
+                            <img src="img/gallery-3.jpg" alt="Project Launch">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>Product Launch Event</h3>
@@ -1489,10 +1590,10 @@
                         </div>
                     </div>
 
-                    <!-- Gallery Item 4 -->
+                    <!-- Gallery Item 9 -->
                     <div class="gallery-item" data-category="office">
                         <div class="gallery-image">
-                            <img src="img/gallery-4.jpg" alt="Office Space" onerror="this.src='https://via.placeholder.com/400x300?text=Modern+Office'">
+                            <img src="img/gallery-4.jpg" alt="Office Space">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>Our Workspace</h3>
@@ -1504,10 +1605,10 @@
                         </div>
                     </div>
 
-                    <!-- Gallery Item 9 -->
+                    <!-- Gallery Item 10 -->
                     <div class="gallery-item" data-category="celebrations">
                         <div class="gallery-image">
-                            <img src="img/gallery-9.jpg" alt="Award Ceremony" onerror="this.src='https://via.placeholder.com/400x300?text=Awards'">
+                            <img src="img/gallery-9.jpg" alt="Award Ceremony">
                             <div class="gallery-overlay">
                                 <div class="gallery-info">
                                     <h3>Industry Awards</h3>
@@ -1967,8 +2068,8 @@
         </div>
 
 
-        <script src="scripts/main.js"></script>
-        <script src="scripts/script.js"></script>
+        <script defer src="scripts/main.js"></script>
+        <script defer src="scripts/script.js"></script>
 
     </main>
 </body>

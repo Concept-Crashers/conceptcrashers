@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Crashers</title>
+    <!-- Reliable Font Awesome CDN for mobile -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/service.css"> 
+    <link rel="stylesheet" href="styles/style.css"> 
+    <link rel="stylesheet" href="styles/responsiveness.css"> 
+
+
+      
+</head>
+
+<body>
+    <!-- navigation bar starts here -->
+        <header id="header">
+            <!-- logo -->
+            <div>
+                <a href="#Home">
+                    <img src="img/Concept-removebg-preview.png" class="logo" alt="logo" width="75" height="65">
+                </a>
+            </div>
+
+            <!-- navifation links -->
+            <nav>
+                <div class="navLinks">
+                    <a href="#Home">Home</a>
+                    <a href="#About">About</a>
+                    <a href="#Services">Services</a>
+                    <a href="#Process">Process</a>
+                    <a href="#Blog">Blog</a>
+                    <a href="#Team">Team</a>
+                    <a href="#Gallery">Gallery</a>
+                    <a href="#Contact">Contact</a>
+                </div>
+            </nav>
+
+            <!-- Social media icons -->
+            <div class="social-nav">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- nav button -->
+            <div class="navBtn">
+                <button>
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </header>
+        <!-- navigation bar ends -->
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="#Home" class="mobile-bottom-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#About" class="mobile-bottom-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="#Services" class="mobile-bottom-nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Services</span>
+            </a>
+            <a href="#Team" class="mobile-bottom-nav-item">
+                <i class="fas fa-users"></i>
+                <span>Team</span>
+            </a>
+            <a href="#Gallery" class="mobile-bottom-nav-item">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#Contact" class="mobile-bottom-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <div class="mobile-nav-container">
+                <div class="mobile-nav-header">
+                    <img src="img/Concept-removebg-preview.png" alt="logo" width="60" height="50">
+                    <button class="close-nav" id="closeNav" aria-label="Close navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <nav class="mobile-nav-menu">
+                    <a href="#Home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#About" class="mobile-nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#Services" class="mobile-nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="#Process" class="mobile-nav-link">
+                        <i class="fas fa-tasks"></i>
+                        <span>Process</span>
+                    </a>
+                    <a href="#Blog" class="mobile-nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#Team" class="mobile-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#Gallery" class="mobile-nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="#Contact" class="mobile-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+
+                <div class="mobile-nav-footer">
+                    <button class="mobile-cta-btn">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="mobile-social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <main>
+        <section class="services-section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-cloud icon"></i></div>
+                    <div>
+                        <h3>DevOps & Cloud Solutions</h3>
+                        <p>Design, deploy and operate scalable cloud environments (AWS / Azure / GCP) using IaC, CI/CD pipelines, and monitoring.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-code icon"></i></div>
+                    <div>
+                        <h3>Web Development</h3>
+                        <p>Modern single-page applications and backends using React/Vue + Node with SEO and performance optimization.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-mobile-screen-button icon"></i></div>
+                    <div>
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform apps — Flutter, Kotlin, Swift, React Native — integrated with analytics and CI/CD.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-brain icon"></i></div>
+                    <div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Custom ML models, NLP pipelines, and computer vision systems to automate processes and surface insights.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-chart-line icon"></i></div>
+                    <div>
+                        <h3>Data Analytics & BI</h3>
+                        <p>Dashboards, ETL pipelines, and KPIs to turn data into actionable business insights.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="icon-wrap"><i class="fa-solid fa-shield-halved icon"></i></div>
+                    <div>
+                        <h3>Cybersecurity & Risk</h3>
+                        <p>Proactive protection: penetration testing, threat modeling, vulnerability management and incident response.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="features-hero">
+            <h2 class="big-title">Features</h2>
+            <p class="lead">
+                Feature-rich solutions that combine scalable architecture, strong security, and data-driven insights. Concept Crashers delivers end-to-end technology products — from idea and design through engineering, deployment, and managed operations.
+            </p>
+            <a class="cta" href="#contact">Get Started</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+        <footer id="footer">
+            <div class="footer-container">
+                <!-- Footer CTA Banner -->
+                <div class="footer-cta">
+                    <div class="cta-content">
+                        <h2>Ready to Transform Your Business?</h2>
+                        <p style="font-size: 1em;">Let's build something amazing together. Get in touch with our team today!</p>
+                    </div>
+                    <button class="cta-btn-footer">
+                        <span>Start Your Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Main Footer Content -->
+                <div class="footer-main">
+                    <!-- Company Info Column -->
+                    <div class="footer-column footer-about">
+                        <img src="img/Concept-removebg-preview.png" alt="Concept Crashers" class="footer-logo">
+                        <p class="footer-tagline">Engineering next-gen digital experiences powered by AI and innovation.</p>
+                        <div class="footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">98%</span>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links Column -->
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#Home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#About"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#Process"><i class="fas fa-chevron-right"></i> Our Process</a></li>
+                            <li><a href="#Team"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                            <li><a href="#Contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Column -->
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> AI Solutions</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> IT Consultation</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> System Development</a></li>
+                            <li><a href="#Services"><i class="fas fa-chevron-right"></i> Training</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Column -->
+                    <div class="footer-column footer-newsletter">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest tech insights and updates.</p>
+                        
+                        <!-- Quick Contact -->
+                        <div class="quick-contact">
+                            <a href="tel:+256700000000" class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+256 700 000 000</span>
+                            </a>
+                            <a href="mailto:info@conceptcrashers.com" class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@conceptcrashers.com</span>
+                            </a>
+                        </div>
+
+                        <div class="trust-badges">
+                            <div class="badge-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>ISO Certified</span>
+                            </div>
+                            <div class="badge-item">
+                                <i class="fas fa-award"></i>
+                                <span>Award Winning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <p>&copy; 2025 <strong>Concept Crashers</strong>. All rights reserved.</p>
+                        <div class="legal-links">
+                            <a href="#">Privacy Policy</a>
+                            <span class="separator">•</span>
+                            <a href="#">Terms of Service</a>
+                            <span class="separator">•</span>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <span>Follow Us:</span>
+                        <div class="social-links-footer">
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Top in Footer -->
+                <!-- <button class="back-to-top-footer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Back to Top</span> -->
+                </button>
+            </div>
+        </footer>
+
+    <script>
+        // Hamburger toggle
+        const toggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        toggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('show') &&
+                !navMenu.contains(e.target) &&
+                !toggle.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
+        });
+    </script>
+
+
+</body>
+
+
+</html>

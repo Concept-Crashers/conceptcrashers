@@ -1,3 +1,13 @@
+// Force stop loading if it takes too long (5 seconds)
+setTimeout(() => {
+    if (document.readyState !== 'complete') {
+        console.warn('Page took too long to load. Forcing completion.');
+        if (typeof window.stop === 'function') {
+            window.stop();
+        }
+    }
+}, 5000);
+
 //Scroll Animation on different elements 
 const mainObserver = new IntersectionObserver((entries) =>{
     entries.forEach(entry => {
@@ -319,33 +329,39 @@ document.addEventListener('DOMContentLoaded', () => {
             // Detect if mobile device
             const isMobile = window.innerWidth <= 768;
 
-            // Show image in modal using SweetAlert with responsive settings
+            // Show image in modal using SweetAlert with custom palette and responsive settings
             Swal.fire({
                 title: title,
                 text: description,
                 imageUrl: img.src,
                 imageAlt: title,
-                confirmButtonColor: '#9062f0',
-                width: isMobile ? '95%' : '600px',
-                padding: isMobile ? '1em' : '1.5em',
-                background: '#1a1a2e',
+                confirmButtonColor: '#9062f0', // Accent purple
+                width: isMobile ? '98%' : '520px',
+                padding: isMobile ? '1.2em' : '2em',
+                background: 'linear-gradient(135deg, #1a1a2e 0%, #9062f0 100%)',
                 color: '#fff',
                 confirmButtonText: 'Close',
                 customClass: {
-                    popup: 'mobile-friendly-popup',
-                    image: 'mobile-friendly-image',
-                    title: 'mobile-friendly-title',
-                    htmlContainer: 'mobile-friendly-text',
-                    confirmButton: 'mobile-friendly-button'
+                    popup: 'gallery-swal-popup',
+                    image: 'gallery-swal-image',
+                    title: 'gallery-swal-title',
+                    htmlContainer: 'gallery-swal-text',
+                    confirmButton: 'gallery-swal-button'
                 },
                 imageWidth: isMobile ? '100%' : 400,
-                imageHeight: isMobile ? 'auto' : 300
+                imageHeight: isMobile ? 'auto' : 300,
+                showClass: {
+                    popup: 'swal2-animate-in'
+                },
+                hideClass: {
+                    popup: 'swal2-animate-out'
+                }
             });
         });
     });
 });
 
-// Add fade in up animation
+// Add fade in up animation and SweetAlert custom styles
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeInUp {
@@ -357,6 +373,71 @@ style.textContent = `
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    /* SweetAlert custom palette for gallery view */
+    .gallery-swal-popup {
+        background: linear-gradient(135deg, #1a1a2e 0%, #9062f0 100%) !important;
+        color: #fff !important;
+        border-radius: 1.2em !important;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        padding: 0 !important;
+        max-width: 98vw;
+    }
+    .gallery-swal-title {
+        color: #fff !important;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1.4em;
+        margin-bottom: 0.5em;
+    }
+    .gallery-swal-text {
+        color: #e0e0e0 !important;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+    .gallery-swal-button {
+        background: #9062f0 !important;
+        color: #fff !important;
+        border-radius: 2em !important;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        padding: 0.7em 2.2em;
+        margin-top: 1em;
+        box-shadow: 0 2px 8px rgba(144,98,240,0.15);
+        transition: background 0.2s;
+    }
+    .gallery-swal-button:hover {
+        background: #7a4de6 !important;
+    }
+    .gallery-swal-image {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 1em !important;
+        margin-bottom: 1em;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    @media (max-width: 600px) {
+        .gallery-swal-popup {
+            width: 98vw !important;
+            padding: 0.5em !important;
+        }
+        .gallery-swal-title {
+            font-size: 1.1em;
+        }
+        .gallery-swal-text {
+            font-size: 0.95em;
+        }
+        .gallery-swal-image {
+            max-width: 100vw !important;
+        }
+    }
+    .swal2-animate-in {
+        animation: fadeInUp 0.5s;
+    }
+    .swal2-animate-out {
+        animation: fadeInUp 0.5s reverse;
     }
 `;
 document.head.appendChild(style);
