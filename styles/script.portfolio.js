@@ -1,4 +1,23 @@
 (() => {
+  const testimonialCards = [...document.querySelectorAll('.teamcomments .commentsinfo')];
+  const previousTestimonialButton = document.querySelector('.teamcomments .btnone');
+  const nextTestimonialButton = document.querySelector('.teamcomments .btntwo');
+  let testimonialIndex = 0;
+
+  function showTestimonial(index) {
+    testimonialIndex = (index + testimonialCards.length) % testimonialCards.length;
+    testimonialCards.forEach((card, cardIndex) => {
+      const isActive = cardIndex === testimonialIndex;
+      card.classList.toggle('active', isActive);
+      card.setAttribute('aria-hidden', String(!isActive));
+    });
+  }
+
+  if (testimonialCards.length) {
+    previousTestimonialButton?.addEventListener('click', () => showTestimonial(testimonialIndex - 1));
+    nextTestimonialButton?.addEventListener('click', () => showTestimonial(testimonialIndex + 1));
+  }
+
   // Smoothed auto-scroll for .hero-visuals when viewport <= 900px.
   // Uses exponential smoothing for velocity so movement and reversals feel smooth.
 
