@@ -113,29 +113,58 @@ header button:hover {
     line-height: 1.2;
     margin-top: 120px;
     text-align: center;
+    color: white;
 }
 
 .main-descript p{
     max-width: 800px;
     margin: 1rem auto;
+    color: white;
 }
 
 .team{
-    height: 220px;
     background-color: rgb(3, 3, 46);
-    border-radius: 3px;
+    border-radius: 8px;
     overflow: hidden;
 }
 
 .team img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
 .team:hover img {
     transform: scale(1.05);
+}
+
+/* Team member social media links */
+.team-socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.team-socials a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.team-socials a:hover{
+    background-color: rgb(36, 204, 204);
+    color: #0a192f;
+    transform: translateY(-3px);
 }
 
 .main-body{
@@ -154,16 +183,27 @@ header button:hover {
     text-align: center;
 }
 
+.main-body .teammate h4{
+    color: white;
+}
+
+.main-body .teammate p{
+    color: white;
+}
+
 .main-body p{
     font-weight: lighter;
 }
 
+section{
+    background-color: #1a2b42;
+}
 
 /* start point of section two */
 .sect02{
     width: 100%;
     background-color: black;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 3rem 1rem;
 }
 
@@ -279,6 +319,24 @@ header button:hover {
     margin: 0 auto;
 }
 
+/* ============================================
+   RESPONSIVENESS — ALL DEVICES
+   ============================================ */
+
+/* Large Desktops (1400px and up) */
+@media screen and (min-width: 1400px) {
+    .main-body {
+        max-width: 1600px;
+        gap: 2rem;
+    }
+
+    .team-socials a {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
 /* Media Queries */
 @media screen and (min-width: 768px) {
     .foot01 {
@@ -295,6 +353,36 @@ header button:hover {
     }
 }
 
+/* Laptops / Small Desktops (up to 1199px) */
+@media screen and (max-width: 1199px) {
+    .main-body {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    .main-descript h1 {
+        margin-top: 90px;
+    }
+}
+
+/* Tablets (up to 991px) */
+@media screen and (max-width: 991px) {
+    .main-body {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .main-descript h1 {
+        margin-top: 70px;
+        font-size: clamp(1.8rem, 4.5vw, 3rem);
+    }
+
+    .main-descript p {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Mobile Tablets / Large Phones (up to 768px) */
 @media screen and (max-width: 768px) {
     header .desktop-nav {
         display: none;
@@ -312,12 +400,42 @@ header button:hover {
         display: none;
     }
 
+    .main-descript h1 {
+        margin-top: 60px;
+    }
+
     .main-body {
+        grid-template-columns: repeat(2, 1fr);
         padding: 1rem;
         gap: 1rem;
-        /* grid-template-columns: 1fr;    } */
+    }
+
+    .team-socials {
+        gap: 0.5rem;
+    }
+
+    .team-socials a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
 }
 
+/* Mobile Phones (up to 575px) */
+@media screen and (max-width: 575px) {
+    .main-body {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+
+    .team-socials a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile Phones (up to 480px) */
 @media screen and (max-width: 480px) {
     .concept02 {
         flex-direction: column;
@@ -336,6 +454,7 @@ header button:hover {
     .main-descript h1 {
         font-size: 1.8rem;
         padding: 0 1rem;
+        margin-top: 50px;
     }
 
     .main-descript p {
@@ -345,12 +464,13 @@ header button:hover {
     }
 
     .main-body {
-        grid-template-columns: 2fr;
+        grid-template-columns: 1fr;
         padding: 1rem;
+        gap: 1.5rem;
     }
 
     .team {
-        height: 180px;
+        border-radius: 6px;
     }
 
     .teammate h4 {
@@ -361,7 +481,32 @@ header button:hover {
         font-size: 0.85rem;
     }
 
+    .team-socials {
+        margin-top: 0.6rem;
+    }
+
     br {
         display: none;
+    }
+}
+
+/* Very Small Devices (up to 360px) */
+@media screen and (max-width: 360px) {
+    .main-descript h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-descript p {
+        font-size: 0.85rem;
+    }
+
+    .team-socials {
+        gap: 0.4rem;
+    }
+
+    .team-socials a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
     }
 }
