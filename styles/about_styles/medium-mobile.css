@@ -142,7 +142,7 @@
 
     #hero{
         width: 100%;
-        min-height:1400px;
+        height:auto;
         display: flex;
         justify-content: center;
         background-color: var(--bg1);
@@ -152,13 +152,13 @@
 
     .hero-content{
         width: 90%;
-        min-height: 1550px;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: absolute;
         margin: 60px 0px 0px 20px;
-        /* background-color: aqua; */
+        background-color: aqua;
     }
 
     .hero-content1{
