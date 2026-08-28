@@ -414,22 +414,28 @@ label{
     width: 50%;
     min-height: 100%;
     height: auto;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     border: 1px solid black;
     text-align: center;
     padding: 10px;
 } 
 .adress h1{
     margin-top: 10px;
-    color: var(--bg-primary);
+    color: white;
 }
+
+
 .adress p{
     margin-top: 10px;
-    color: var(--bg-secondary);
+    color: white;
 }
 .adress h4{
     margin-bottom: 5px;
     color: var(--bg-secondary);
+}
+.contactinformation h3{
+    margin-top: 10px;
+    color: var(--text-accent);
 }
 
 .contactinformation {
