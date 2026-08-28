@@ -18,6 +18,23 @@
     nextTestimonialButton?.addEventListener('click', () => showTestimonial(testimonialIndex + 1));
   }
 
+  const exploreWorkButton = document.querySelector('.hero-actions .btn-primary');
+  const viewServicesButton = document.querySelector('.hero-actions .btn-secondary');
+
+  exploreWorkButton?.addEventListener('click', () => {
+    window.location.href = 'process.html';
+  });
+
+  viewServicesButton?.addEventListener('click', () => {
+    window.location.href = 'services.html';
+  });
+
+  const startProjectButton = document.querySelector('.workingbutton button');
+
+  startProjectButton?.addEventListener('click', () => {
+    window.location.href = 'contact.html';
+  });
+
   // Smoothed auto-scroll for .hero-visuals when viewport <= 960px.
   // Uses exponential smoothing for velocity so movement and reversals feel smooth.
 

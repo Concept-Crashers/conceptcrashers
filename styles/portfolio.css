@@ -566,6 +566,26 @@ h1{
     border-color: #ccc !important;
 }
 
+.herosection .hero-actions .btn-primary {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.herosection .hero-actions .btn-primary:hover {
+    background: var(--main-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid #ccc !important;
+}
+
+.herosection .hero-actions .btn-secondary {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.herosection .hero-actions .btn-secondary:hover {
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
 /* Hero Visuals (Right Side Boxes) */
 .hero-visuals {
     position: relative !important;
@@ -1224,10 +1244,33 @@ h1{
     }
 }
 
+/* Match the hero primary button while the project CTA is hovered. */
+.working .workingbutton button {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.working .workingbutton button:hover {
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
+    background-color: transparent !important;
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
+/* Position buttons use the secondary hero button style while hovered. */
+.positionsection .positions .positionbuttons button {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.positionsection .positions .positionbuttons button:hover {
+    background: var(--main-color) !important;
+    background-color: var(--main-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid #ccc !important;
+}
+
 /* Footer responsive layout */
 footer#footer {
     width: 100%;
-    padding: 0 !important;
     overflow: hidden;
 }
 
@@ -1255,6 +1298,10 @@ footer#footer .badge-item span {
 }
 
 @media (max-width: 1024px) {
+    footer#footer {
+        padding: 0 !important;
+    }
+
     footer#footer .footer-main {
         gap: 32px;
         padding-left: 28px;
