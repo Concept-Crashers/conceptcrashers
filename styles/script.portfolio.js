@@ -1,13 +1,50 @@
 (() => {
-  // Smoothed auto-scroll for .hero-visuals when viewport <= 900px.
+  const testimonialCards = [...document.querySelectorAll('.teamcomments .commentsinfo')];
+  const previousTestimonialButton = document.querySelector('.teamcomments .btnone');
+  const nextTestimonialButton = document.querySelector('.teamcomments .btntwo');
+  let testimonialIndex = 0;
+
+  function showTestimonial(index) {
+    testimonialIndex = (index + testimonialCards.length) % testimonialCards.length;
+    testimonialCards.forEach((card, cardIndex) => {
+      const isActive = cardIndex === testimonialIndex;
+      card.classList.toggle('active', isActive);
+      card.setAttribute('aria-hidden', String(!isActive));
+    });
+  }
+
+  if (testimonialCards.length) {
+    previousTestimonialButton?.addEventListener('click', () => showTestimonial(testimonialIndex - 1));
+    nextTestimonialButton?.addEventListener('click', () => showTestimonial(testimonialIndex + 1));
+  }
+
+  const exploreWorkButton = document.querySelector('.hero-actions .btn-primary');
+  const viewServicesButton = document.querySelector('.hero-actions .btn-secondary');
+
+  exploreWorkButton?.addEventListener('click', () => {
+    window.location.href = 'process.html';
+  });
+
+  viewServicesButton?.addEventListener('click', () => {
+    window.location.href = 'services.html';
+  });
+
+  const startProjectButton = document.querySelector('.workingbutton button');
+
+  startProjectButton?.addEventListener('click', () => {
+    window.location.href = 'contact.html';
+  });
+
+  // Smoothed auto-scroll for .hero-visuals when viewport <= 960px.
   // Uses exponential smoothing for velocity so movement and reversals feel smooth.
 
   const SELECTOR = '.hero-visuals';
-  const MAX_WIDTH = 900;
-  const MAX_SPEED_PX_PER_SEC = 160; // top speed (px/s)
+  const MAX_WIDTH = 960;
+  const MAX_SPEED_PX_PER_SEC = 110; // top speed (px/s)
   const MAX_SPEED = MAX_SPEED_PX_PER_SEC / 1000; // px/ms
-  const SMOOTH_FACTOR = 0.0035; // smoothing factor per ms (tweak for feel)
+  const SMOOTH_FACTOR = 0.0025; // smoothing factor per ms (tweak for feel)
   const VELOCITY_EPS = 0.02; // threshold to consider velocity stopped (px/ms)
+  const EDGE_PAUSE_MS = 650;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let visuals = null;
@@ -16,6 +53,7 @@
   let paused = false;
   let direction = 1; // 1 = down, -1 = up
   let lastTime = null;
+  let edgeReachedAt = null;
 
   // physics state
   let velocity = 0; // px/ms
@@ -72,7 +110,13 @@
 
     // when we're waiting and velocity has dropped near zero, flip direction smoothly
     if (waitingToFlip && Math.abs(velocity) < VELOCITY_EPS) {
-      waitingToFlip = false; direction = -direction; updateTargetVelocity();
+      if (edgeReachedAt === null) edgeReachedAt = timestamp;
+      if (timestamp - edgeReachedAt >= EDGE_PAUSE_MS) {
+        waitingToFlip = false;
+        edgeReachedAt = null;
+        direction = -direction;
+        updateTargetVelocity();
+      }
     }
 
     rafId = requestAnimationFrame(step);
@@ -84,12 +128,12 @@
     visuals = document.querySelector(SELECTOR);
     if (!visuals) return;
     restoreOriginalIfCloned(visuals);
-    running = true; paused = false; lastTime = null; velocity = 0; waitingToFlip = false; updateTargetVelocity();
+    running = true; paused = false; lastTime = null; velocity = 0; waitingToFlip = false; edgeReachedAt = null; updateTargetVelocity();
     rafId = requestAnimationFrame(step);
   }
 
   function stop() {
-    running = false; paused = false; lastTime = null; velocity = 0; targetVelocity = 0; waitingToFlip = false;
+    running = false; paused = false; lastTime = null; velocity = 0; targetVelocity = 0; waitingToFlip = false; edgeReachedAt = null;
     if (rafId) cancelAnimationFrame(rafId);
     rafId = null;
     if (visuals) { visuals.style.overflowY = ''; visuals.style.webkitOverflowScrolling = ''; }

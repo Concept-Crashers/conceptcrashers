@@ -15,6 +15,384 @@
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Final responsive overrides for the portfolio page */
+@media (max-width: 900px){
+    .herobody,
+    .herosection{
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .herosection{
+        width: 100% !important;
+        padding: 90px 16px 36px !important;
+        overflow: visible !important;
+    }
+
+    .herosection .hero-visuals{
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .herosection .hero-visuals div{
+        width: min(100%, 520px) !important;
+        max-height: none !important;
+        aspect-ratio: 5 / 4 !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        min-height: 0 !important;
+        padding: 48px 16px !important;
+    }
+
+    .workingsection .working,
+    .positionsection .positions{
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 !important;
+    }
+
+    .workingsection .working{
+        height: auto !important;
+        padding: 28px 16px !important;
+    }
+
+    .working .workinginfo .information{
+        width: 100% !important;
+        height: auto !important;
+        min-height: 120px;
+        padding: 20px !important;
+    }
+
+    .working .workinginfo .information h2,
+    .working .workinginfo .information p{
+        margin-left: 0 !important;
+    }
+
+    .teamcommentsection .teamcomments{
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        width: min(100%, 520px) !important;
+        max-width: 520px !important;
+    }
+
+    .teamcomments .commentsinfo{
+        margin: 0 !important;
+    }
+
+    .developmentpart .openpositions,
+    .developmentpart .openpositions .position1{
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .developmentpart .openpositions .position1 .positionsnavigation nav{
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 600px){
+    .herosection{
+        padding: 32px 12px 28px !important;
+    }
+
+    .hero-actions{
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 340px;
+    }
+
+    .hero-actions button{
+        width: 100% !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        padding: 36px 12px !important;
+    }
+
+    .workingsection .working{
+        padding: 22px 12px !important;
+    }
+
+    .workingheader p br,
+    .commentsintro p br,
+    .positions > p br,
+    .position1 p br{
+        display: none;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        max-width: 100% !important;
+    }
+
+    .teamcomments .commentsinfo .commentsline{
+        width: 100% !important;
+    }
+
+    .positionsection .positions .positionbuttons{
+        width: 100%;
+        gap: 10px;
+    }
+
+    .positionsection .positions .positionbuttons button{
+        flex: 1 1 120px;
+        margin-right: 0;
+    }
+
+}
+
+/* Portfolio page responsive foundation */
+html,
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.herosection,
+.workingsection .working,
+.teamcomments,
+.positions{
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.herosection{
+    min-height: 700px;
+}
+
+.hero-content,
+.workingheader,
+.commentsintro,
+.positions{
+    min-width: 0;
+}
+
+.hero-text,
+.workingheader p,
+.commentsintro p,
+.commentsinfo p,
+.positions > p,
+.position1 p{
+    overflow-wrap: anywhere;
+}
+
+.commentsinfo .commentsline{
+    max-width: 100%;
+}
+
+@media (max-width: 1200px){
+    .herosection{
+        width: 100% !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    }
+
+    .box-large{
+        width: min(55vw, 650px) !important;
+    }
+
+    .workingsection .working{
+        width: calc(100% - 40px) !important;
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .working .workinginfo .information{
+        width: calc(50% - 20px);
+    }
+
+    .positionsection .positions{
+        width: calc(100% - 40px) !important;
+    }
+}
+
+@media (max-width: 900px){
+    .herobody{
+        min-height: 0 !important;
+    }
+
+    .herosection{
+        width: 100% !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 90px 16px 36px !important;
+        overflow: visible !important;
+    }
+
+    .hero-content{
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    #hero-title,
+    .teamcomments .commentsintro h1,
+    .positionsection .positions h1,
+    .workingsection .workingheader h1{
+        font-size: clamp(2rem, 7vw, 3.75rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero-text{
+        max-width: 680px;
+    }
+
+    .hero-actions{
+        flex-wrap: wrap;
+    }
+
+    .herosection .hero-visuals{
+        width: 100% !important;
+        max-height: none !important;
+        overflow: visible !important;
+        margin-top: 8px !important;
+    }
+
+    .herosection .hero-visuals div{
+        width: min(100%, 520px) !important;
+        max-height: none !important;
+        aspect-ratio: 5 / 4 !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        min-height: 0 !important;
+        padding: 48px 16px !important;
+    }
+
+    .workingsection .working{
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 28px 16px !important;
+    }
+
+    .working .workinginfo .information{
+        width: 100% !important;
+        height: auto !important;
+        min-height: 120px;
+        padding: 20px !important;
+    }
+
+    .working .workinginfo .information h2,
+    .working .workinginfo .information p{
+        margin-left: 0 !important;
+    }
+
+    .teamcommentsection .teamcomments{
+        padding: 0 !important;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        width: min(100%, 520px) !important;
+        max-width: 520px !important;
+    }
+
+    .teamcomments .commentsinfo{
+        margin-top: 0 !important;
+    }
+
+    .positionsection .positions{
+        width: 100% !important;
+    }
+
+    .positions .developmentpart{
+        width: 100%;
+    }
+
+    .developmentpart .openpositions{
+        width: 100%;
+    }
+
+    .developmentpart .openpositions .position1{
+        max-width: none !important;
+    }
+
+    .developmentpart .openpositions .position1 .positionsnavigation nav{
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 600px){
+    .herosection{
+        padding: 32px 12px 28px !important;
+    }
+
+    .hero-actions{
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 340px;
+    }
+
+    .hero-actions button{
+        width: 100% !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        padding: 36px 12px !important;
+    }
+
+    .workingsection .working{
+        padding: 22px 12px !important;
+    }
+
+    .workingheader p br,
+    .commentsintro p br,
+    .positions > p br,
+    .position1 p br{
+        display: none;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        max-width: 100% !important;
+    }
+
+    .teamcomments .commentsinfo{
+        padding: 16px !important;
+    }
+
+    .teamcomments .commentsinfo .commentsline{
+        width: 100% !important;
+    }
+
+    .positionsection .positions .positionbuttons{
+        width: 100%;
+        gap: 10px;
+    }
+
+    .positionsection .positions .positionbuttons button{
+        flex: 1 1 120px;
+        margin-right: 0;
+    }
+
+    .developmentpart .openpositions .position1{
+        padding: 16px !important;
+    }
+
+}
+
 /* Ensure hero visual boxes are centered on small screens
    This override forces the visuals to stack and centers the three boxes
    when the viewport is narrow (tablets/phones). */
@@ -45,174 +423,7 @@
     }
 }
 
-/* =====================
-   Footer - responsive
-   Mobile-first rules: compact on phones, expand on wider viewports
-   ===================== */
 
-footer#footer {
-    background-color: #071730; /* dark blue backdrop */
-    color: #e9f0fb;
-    padding: 28px 12px;
-}
-
-.footer-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 12px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: center;
-}
-
-.footer-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    background: linear-gradient(90deg, #0b2140 0%, #1e6fb8 100%);
-    color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(11,33,64,0.25);
-}
-
-/* Keep the CTA constrained and centered inside its grid column on wide viewports */
-.footer-cta {
-    width: 100%;
-    max-width: 520px;
-    box-sizing: border-box;
-    justify-self: center;
-}
-
-.footer-cta .cta-content h2{
-    margin: 0 0 6px 0;
-    font-size: 1.25rem;
-}
-
-.footer-cta .cta-content p{
-    margin: 0;
-    opacity: 0.95;
-    line-height: 1.3;
-}
-
-.cta-btn-footer{
-    background: #ffffff;
-    color: #0b2140;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 999px;
-    font-weight: 700;
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    cursor: pointer;
-}
-
-.footer-main{
-    display: flex;
-    gap: 28px;
-    margin-top: 20px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.footer-column{
-    flex: 1 1 220px;
-    min-width: 180px;
-}
-
-.footer-column h3{
-    margin-bottom: 10px;
-}
-
-.footer-column ul{
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li{
-    margin-bottom: 8px;
-}
-
-.footer-column a{
-    color: #dbe8ff;
-    text-decoration: none;
-}
-
-.footer-bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-top: 22px;
-    flex-wrap: wrap;
-}
-
-.footer-bottom .legal-links a{
-    color: #cbdff6;
-    margin-right: 8px;
-    text-decoration: none;
-}
-
-.footer-social{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #cfe6ff;
-}
-
-.footer-logo{
-    width: 84px;
-    height: auto;
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* Tablet and up: arrange CTA horizontally and columns side-by-side */
-@media (min-width: 601px) {
-    .footer-cta {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 24px 28px;
-    }
-
-    .cta-btn-footer{
-        min-width: 180px;
-    }
-}
-
-/* Wider screens: allow multi-column layout, larger paddings */
-@media (min-width: 901px) {
-    footer#footer{ padding: 48px 12px; }
-    .footer-container{ padding: 0 20px; grid-template-columns: 1fr 3fr; align-items: start; }
-    .footer-main{ gap: 36px; }
-}
-
-/* Narrow screens: stack columns and make CTA full width; enforce left-alignment for mobile per request */
-@media (max-width: 900px) {
-    .footer-cta{ width: 100%; text-align: center; align-items: center; }
-    .footer-cta .cta-content{ text-align: center; }
-    .cta-btn-footer{ width: 90%; min-width: 0; }
-    .footer-main{ flex-direction: column; gap: 18px; }
-    .footer-column{ width: 100%; }
-    .footer-bottom{ flex-direction: column; align-items: center; text-align: center; }
-}
-
-@media (max-width: 600px) {
-    footer#footer{ padding: 18px 10px; }
-    .footer-container{ padding-left: 12px; padding-right: 12px; }
-    /* Force left-alignment of container and CTA on very small phones (user requested) */
-    footer#footer .footer-container{ width:100%; margin-left:0; text-align:left; }
-    footer#footer .footer-cta{ align-items:flex-start; text-align:left; }
-    .cta-btn-footer{ width:100%; }
-    .footer-main{ gap: 14px; }
-    .footer-bottom{ align-items:flex-start; text-align:left; }
-}
 
 /*Initializing everything to default*/
 *{
@@ -268,32 +479,33 @@ h1{
 
 /*Start of the Hero Section*/
 .herobody{
-    width: 100vw !important;
-    max-height: 100vh !important;
+    width: 100%;
+    min-height: 100vh;
     background-color: #112240 !important;
-    z-index: -1 !important;
+    /* z-index: -1 !important; */
 }
 
 
 .herosection {
     /* height: 100% !important; */
     /* background-color: var(--secondary-color); */
-    padding-top: 50px !important;
+    /* padding-top: 50px !important; */
     padding-bottom: 200px !important;/*Large padding to extend the pink area */
     display: grid !important;
     grid-template-columns: 1fr 1fr !important; /* Two main columns */
-    max-width: 1200px !important;
-    margin: 0 auto !important;
+    max-width: 90% !important;
+    max-height: 100% !important;
+    /* margin: 0 auto !important; */
     gap: 40px !important;
     /* position: relative; */
-    z-index: 1 !important;
+    /* z-index: 1 !important; */
     overflow: hidden !important; /* Contains the absolute/relative boxes */
 }
 
 /* Hero Content (Left Side) */
 .hero-content {
     max-width: 5100px !important;
-    margin-top: 280px !important;
+    margin-top: 170px !important;
     /* padding: 0 20px; */
     z-index: 2 !important; /* Ensure content is above the boxes */
 }
@@ -318,7 +530,7 @@ h1{
 .hero-text {
     font-size: var(--font) !important;
     line-height: 1.6 !important;
-    margin-bottom: 30px !important;
+    /* margin-bottom: 30px !important; */
     color: var(--main-color) !important;
     font-family: var(--font-family) !important;
     font-weight: 300 !important;
@@ -338,6 +550,7 @@ h1{
     font-size: 12px !important;
     /* border: 1px solid transparen !important; */
     font-family: var(--font-family) !important;
+    margin-top: 10px !important;
 }
 
 
@@ -353,12 +566,32 @@ h1{
     border-color: #ccc !important;
 }
 
+.herosection .hero-actions .btn-primary {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.herosection .hero-actions .btn-primary:hover {
+    background: var(--main-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid #ccc !important;
+}
+
+.herosection .hero-actions .btn-secondary {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.herosection .hero-actions .btn-secondary:hover {
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
 /* Hero Visuals (Right Side Boxes) */
 .hero-visuals {
     position: relative !important;
     height: 700px !important; /* Set a height to contain the absolute boxes */
     padding-right: 20px !important;
-    margin-top: 190px !important;
+    margin-top: 100px !important;
     z-index: 1 !important; /* Keep the boxes behind the content (if they overlap) */
 }
 
@@ -394,7 +627,7 @@ h1{
 .box-small-1 {
     width: 450px !important;
     height: 400px !important;
-    bottom: -130px !important; /* Position it lower than the hero section */
+    bottom: -150px !important; /*Position it lower than the hero section */
     left: -640px !important;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2) !important;
     border-radius: 20px !important;
@@ -429,30 +662,32 @@ h1{
 }
 /*End of the Hero Section */
 
+
 /* Start of the Why Working With Us section */
 .workingsection{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh !important;
     background-color: #112240 !important;
-    margin-top: 370px;
+    margin-top: 0px !important;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .workingsection .working{
     width: 95%;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 100%;
+    margin: 100px !important;
     background-color: #0a192f !important;
     border-radius: 5px;
-    height: auto;
-    padding: 20px;
+    /* height: auto; */
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 
 .workingsection .working .workingheader{
     text-align: center;
-    margin-top: 10px;
+    /* margin-top: 0px; */
 }
 
 .workingsection .working .workingheader h1{
@@ -521,9 +756,11 @@ h1{
 .teamcommentsection{
     width: 100%;
     min-height: 70vh !important;
-    background-color: var(--main-color);
+    background-color: #112240 !important;
     display: flex;
+    margin-top: 0px !important;
     align-items: center;
+    overflow: hidden !important;
 }
 
 .teamcommentsection .teamcomments{
@@ -584,11 +821,29 @@ h1{
     padding: 20px; /* reduced padding to fit better on small screens */
 }
 
+.teamcomments .commentsinfo:not(.active){
+    display: none;
+}
+
+.teamcomments .commentsinfo.active{
+    animation: testimonial-in 220ms ease-out;
+}
+
+@keyframes testimonial-in{
+    from{ opacity: 0; transform: translateX(12px); }
+    to{ opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .teamcomments .commentsinfo.active{ animation: none; }
+}
+
 .teamcomments .commentsinfo .commentimage{
-    width: 70px !important;
-    height: 70px !important;
+    width: 84px !important;
+    height: 84px !important;
     background-color: var(--mini-color);
-    /* border-radius: 5px !important; */
+    border-radius: 50% !important;
+    overflow: hidden !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -596,11 +851,17 @@ h1{
 }
 
 .teamcomments .commentsinfo .commentimage img{
-    width: 70px !important;
-    height: 70px !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
     object-fit: cover !important;
+    object-position: center !important;
     z-index: 1 !important;
     border-radius: 50% !important;
+}
+
+.teamcomments .commentsinfo .commentimage img.first-testimonial-image{
+    object-position: center 12% !important;
 }
 
 .teamcomments .commentsinfo h2{
@@ -638,6 +899,7 @@ h1{
     background-color: #112240 !important;
     display: flex;
     justify-content: center;
+    overflow: hidden !important;
 }
 
 .positionsection .positions{
@@ -672,7 +934,7 @@ h1{
 .positionsection .positions .positionbuttons button{
     width: 150px;
     height: 45px;
-    background-color: grad;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     color: var(--main-color);
@@ -735,21 +997,7 @@ h1{
 }
 /* End of Positions Navigation */
 
-/* .footer div{
-    display: flex;
-    flex-direction: column;
-}
-.footer div a{
-    color: white;
-    margin-top: 10px;
-} */
-/* End of the Footer Section */
-/* Responsive tweaks (re-inserted)
-   Breakpoints: 1200px, 900px, 600px
-   These rules adjust layout/typography and stack columns for smaller screens.
-   NOTE: This block intentionally does NOT include any hamburger/mobile-nav rules
-   (no JS required). It only adjusts sizes and flow so the page is usable on phones.
-*/
+
 @media (max-width: 1200px) {
     header {
         padding: 0 20px;
@@ -994,6 +1242,402 @@ h1{
         margin: 0 auto;
         padding: 8px;
     }
+}
+
+/* Match the hero primary button while the project CTA is hovered. */
+.working .workingbutton button {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.working .workingbutton button:hover {
+    background: linear-gradient(136deg, #00f0ff 0%, #8b5cf6 100%) !important;
+    background-color: transparent !important;
+    color: var(--main-color) !important;
+    border: none !important;
+}
+
+/* Position buttons use the secondary hero button style while hovered. */
+.positionsection .positions .positionbuttons button {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.positionsection .positions .positionbuttons button:hover {
+    background: var(--main-color) !important;
+    background-color: var(--main-color) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid #ccc !important;
+}
+
+/* Footer responsive layout */
+footer#footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer#footer .footer-container,
+footer#footer .footer-main,
+footer#footer .footer-bottom {
+    width: 100%;
+    max-width: 100%;
+}
+
+footer#footer .footer-cta {
+    margin: 0 20px;
+}
+
+footer#footer .footer-column,
+footer#footer .cta-content {
+    min-width: 0;
+}
+
+footer#footer .footer-column ul li a,
+footer#footer .contact-item span,
+footer#footer .badge-item span {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+    footer#footer {
+        padding: 0 !important;
+    }
+
+    footer#footer .footer-main {
+        gap: 32px;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer#footer .footer-cta {
+        margin: 0 12px;
+        padding: 36px 20px;
+        align-items: stretch;
+    }
+
+    footer#footer .cta-content {
+        min-width: 0;
+    }
+
+    footer#footer .cta-content h2 {
+        font-size: clamp(1.5rem, 7vw, 1.8rem);
+        line-height: 1.2;
+    }
+
+    footer#footer .cta-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    footer#footer .cta-btn-footer {
+        align-self: center;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    footer#footer .footer-main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 20px 32px;
+    }
+
+    footer#footer .footer-about,
+    footer#footer .footer-newsletter {
+        width: 100%;
+    }
+
+    footer#footer .footer-stats,
+    footer#footer .trust-badges {
+        flex-wrap: wrap;
+    }
+
+    footer#footer .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 24px 20px 88px;
+    }
+
+    footer#footer .footer-bottom-left,
+    footer#footer .legal-links,
+    footer#footer .footer-social {
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    footer#footer .legal-links {
+        gap: 8px 12px;
+    }
+
+    footer#footer .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer#footer .footer-cta {
+        margin: 0 8px;
+        padding: 30px 16px;
+        border-radius: 12px;
+    }
+
+    footer#footer .footer-main {
+        padding: 40px 16px 28px;
+        gap: 28px;
+    }
+
+    footer#footer .footer-stats {
+        justify-content: flex-start;
+        gap: 18px;
+    }
+
+    footer#footer .contact-item {
+        align-items: flex-start;
+        padding: 10px 12px;
+    }
+
+    footer#footer .footer-bottom {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    footer#footer .social-links-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Include tablet-sized viewports just above the original 900px breakpoint. */
+@media (min-width: 901px) and (max-width: 960px) {
+    .herobody,
+    .herosection {
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .herosection {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 90px 16px 36px !important;
+        overflow: visible !important;
+    }
+
+    .herosection .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    .herosection .hero-content .hero-text {
+        width: 100% !important;
+        max-width: 720px !important;
+        margin: 6px auto !important;
+    }
+
+    .herosection .hero-content .hero-actions {
+        justify-content: center !important;
+        flex-wrap: wrap;
+        margin-top: 8px !important;
+    }
+
+    .herosection .hero-visuals {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 48vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px;
+        margin: 12px auto !important;
+        padding: 0 12px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        scroll-behavior: smooth;
+    }
+
+    .herosection .hero-visuals div {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: min(92%, 520px) !important;
+        height: auto !important;
+        max-height: calc(48vh - 24px) !important;
+        aspect-ratio: 5 / 4 !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Last-resort mobile layout corrections */
+@media (max-width: 900px){
+    .herosection{ max-height: none !important; overflow: visible !important; }
+    .herosection .hero-visuals{ max-height: none !important; overflow: visible !important; }
+    .workingsection .working,
+    .positionsection .positions{ width: 100% !important; margin: 0 !important; }
+    .working .workinginfo .information,
+    .developmentpart .openpositions .position1{ width: 100% !important; max-width: none !important; }
+}
+
+@media (max-width: 600px){
+    .herosection{ padding: 32px 12px 28px !important; }
+    .hero-actions{ flex-direction: column; align-items: stretch; }
+    .hero-actions button{ width: 100% !important; }
+    .workingheader p br,
+    .commentsintro p br,
+    .positions > p br,
+    .position1 p br{ display: none; }
+    .positionsection .positions .positionbuttons{ width: 100%; gap: 10px; }
+    .positionsection .positions .positionbuttons button{ flex: 1 1 120px; margin-right: 0; }
+}
+
+/* Final responsive overrides for the portfolio page */
+@media (max-width: 900px){
+    .herobody,
+    .herosection{
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .herosection{
+        width: 100% !important;
+        padding: 90px 16px 36px !important;
+        overflow: visible !important;
+    }
+
+    .herosection .hero-visuals{
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .herosection .hero-visuals div{
+        width: min(100%, 520px) !important;
+        max-height: none !important;
+        aspect-ratio: 5 / 4 !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        min-height: 0 !important;
+        padding: 48px 16px !important;
+    }
+
+    .workingsection .working,
+    .positionsection .positions{
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 !important;
+    }
+
+    .workingsection .working{
+        height: auto !important;
+        padding: 28px 16px !important;
+    }
+
+    .working .workinginfo .information{
+        width: 100% !important;
+        height: auto !important;
+        min-height: 120px;
+        padding: 20px !important;
+    }
+
+    .working .workinginfo .information h2,
+    .working .workinginfo .information p{
+        margin-left: 0 !important;
+    }
+
+    .teamcommentsection .teamcomments{
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        width: min(100%, 520px) !important;
+        max-width: 520px !important;
+    }
+
+    .teamcomments .commentsinfo{
+        margin: 0 !important;
+    }
+
+    .developmentpart .openpositions,
+    .developmentpart .openpositions .position1{
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .developmentpart .openpositions .position1 .positionsnavigation nav{
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 600px){
+    .herosection{
+        padding: 32px 12px 28px !important;
+    }
+
+    .hero-actions{
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 340px;
+    }
+
+    .hero-actions button{
+        width: 100% !important;
+    }
+
+    .workingsection,
+    .teamcommentsection,
+    .positionsection{
+        padding: 36px 12px !important;
+    }
+
+    .workingsection .working{
+        padding: 22px 12px !important;
+    }
+
+    .workingheader p br,
+    .commentsintro p br,
+    .positions > p br,
+    .position1 p br{
+        display: none;
+    }
+
+    .teamcomments .commentsintro,
+    .teamcomments .commentsinfo{
+        max-width: 100% !important;
+    }
+
+    .teamcomments .commentsinfo .commentsline{
+        width: 100% !important;
+    }
+
+    .positionsection .positions .positionbuttons{
+        width: 100%;
+        gap: 10px;
+    }
+
+    .positionsection .positions .positionbuttons button{
+        flex: 1 1 120px;
+        margin-right: 0;
+    }
+
 }
 
 
@@ -1269,10 +1913,11 @@ img{
 }
 
 .teamcomments .commentsinfo .commentimage{
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     background-color: var(--mini-color);
-    border-radius: 5px;
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1280,9 +1925,12 @@ img{
 }
 
 .teamcomments .commentsinfo .commentimage img{
-    width: 50px;
-    height: 50px;
-    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
 }
 
 .teamcomments .commentsinfo h2{
