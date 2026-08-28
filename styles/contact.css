@@ -89,16 +89,26 @@ nav a{
 
 .wordings{
     width: min(100%, 1100px);
+    height: auto;
     text-align: center;
     margin-top: 0;
     color: var(--white);
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    
 }
 
 .wordings h1{
-    font-size: var(--font-size-x-large);
+    font: size 0.9rem;
 }
 .wordings p{
-    margin-top: 15px;
+    font-size: var(--font-size-basel);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    line-height: 1.6;
 }
 .span001{
     width: 50px;
@@ -112,11 +122,11 @@ nav a{
 .cards{
     width: min(100%, 1100px);
     min-height: auto;
+    border: 2px solid var(--text-accent);
     margin-top: 50px;
     display: flex;
     gap: 20px;
     border-radius: 5px;
-    border: 1px solid var(--bg-primary);
     padding: 40px;
     /* background: var(--bg-secondary); */
     background-color: var(--bg-primary);
@@ -327,8 +337,8 @@ label{
     color: var(--white);
 }
 
-.questionheading p{
-    color: var(--text-secondary);
+.faq-item p{
+  
 }
 .questionwords{
     display: flex;
@@ -339,6 +349,7 @@ label{
 }
 .questionwords p{
     margin-top: 10px;
+    color:var(--text--accent);
 }
 
 /* sectionthree starts from here */

@@ -221,9 +221,12 @@ nav a:hover {
 
 .wordings p {
     font-size: var(--text-base) !important;
+    width: 100%;
     max-width: 600px;
     line-height: 1.6;
-    margin-top: var(--space-sm) !important;
+    margin: var(--space-sm) auto 0 auto !important;
+    text-align: center !important;
+    overflow-wrap: break-word;
 }
 
 .span001 {
@@ -724,6 +727,14 @@ textarea {
     .wordings h1 {
         font-size: var(--text-2xl) !important;
     }
+
+    /* Keep the intro paragraph centered and full-width on tablets */
+    .wordings p {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
     
     /* Contact card - Stack vertically */
     .card, .cards {
@@ -831,6 +842,15 @@ textarea {
     
     .questioncard {
         padding: var(--space-lg);
+    }
+
+    /* Intro paragraph on small phones - centered and comfortably readable */
+    .wordings p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-top: var(--space-sm) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .adress {
