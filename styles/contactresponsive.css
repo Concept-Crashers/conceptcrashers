@@ -236,8 +236,9 @@ nav a:hover {
     height: auto !important;
 }
 
-/* Contact Card - Using CSS Grid for better control */
-.card {
+/* Contact Card - Using CSS Grid for better control
+   Support both `.card` and legacy `.cards` class names used in HTML */
+.card, .cards {
     background: var(--bg-secondary) !important;
     border-radius: 8px !important;
     padding: var(--space-xl) !important;
@@ -246,6 +247,12 @@ nav a:hover {
     gap: var(--space-lg) !important;
     align-items: start;
     overflow: visible !important;
+}
+
+/* Limit overall width so columns don't shrink too small on narrow viewports */
+.cards {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
 }
 
 .content {
@@ -719,15 +726,16 @@ textarea {
     }
     
     /* Contact card - Stack vertically */
-    .card {
-        grid-template-columns: 1fr !important;
-        padding: var(--space-lg) !important;
-        gap: var(--space-xl) !important;
-    }
+    .card, .cards {
+            grid-template-columns: 1fr !important;
+            padding: var(--space-lg) !important;
+            gap: var(--space-xl) !important;
+        }
     
     .input00 {
         grid-template-columns: 1fr !important;
         gap: var(--space-md) !important;
+        width: 100% !important;
     }
     
     .btn00 {
@@ -813,7 +821,7 @@ textarea {
         font-size: 0.8rem;
     }
     
-    .card {
+    .card, .cards {
         padding: var(--space-md);
     }
 
@@ -923,4 +931,24 @@ html {
 /* Prevent horizontal scroll */
 body {
     overflow-x: hidden;
+}
+
+/* Ensure there's visible space between the primary and secondary buttons when stacked */
+@media (max-width: 768px) {
+    .btn000 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--space-sm) !important;
+        align-items: stretch !important;
+        width: 100% !important;
+    }
+
+    .btn000 .btn00,
+    .btn000 .btn01 {
+        width: 100% !important;
+    }
+
+    .btn000 .btn01 button {
+        margin-top: 0 !important; /* gap handles spacing; keep button top margin neutral */
+    }
 }
