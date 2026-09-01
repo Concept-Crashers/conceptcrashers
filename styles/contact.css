@@ -103,20 +103,27 @@ nav a{
     font: size 0.9rem;
 }
 .wordings p{
+<<<<<<< HEAD
     font-size: var(--font-size-basel);
     text-align: center;
     width: 100%;
     max-width: 600px;
     margin: 15px auto 0 auto;
     line-height: 1.6;
+=======
+    margin: 15px auto 0;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+>>>>>>> 6c5fd76 (worked on the responsiveness)
 }
 .span001{
     width: 50px;
-    height: 30px;
+    height: 20px;
     background-color: var(--bg-secondary);
     background: var(--gradient-primary);
     color: var(--white);
-    font-size: 30px;
+    font-size: 25px;
     font-size: var(--font-size-x-large);
 }
 .cards{
@@ -127,8 +134,11 @@ nav a{
     display: flex;
     gap: 20px;
     border-radius: 5px;
+<<<<<<< HEAD
+=======
+    border: 1.5px solid var(--text-accent);
+>>>>>>> 6c5fd76 (worked on the responsiveness)
     padding: 40px;
-    /* background: var(--bg-secondary); */
     background-color: var(--bg-primary);
     overflow: hidden;
     flex-wrap: wrap;
@@ -349,7 +359,13 @@ label{
 }
 .questionwords p{
     margin-top: 10px;
+<<<<<<< HEAD
     color:var(--text--accent);
+=======
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+>>>>>>> 6c5fd76 (worked on the responsiveness)
 }
 
 /* sectionthree starts from here */
@@ -397,9 +413,11 @@ label{
     color: var(--white);
 }
 .officesadress{
-    width: 100%;
-    min-height: 50vh;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    padding: var(--space-2xl) var(--space-md) !important;
+    display: flex;
+    align-items: stretch;
     background-color: var(--bg-secondary);
     display: flex;
     gap: 20px; 
@@ -410,8 +428,11 @@ label{
 }
 .plainoffices{
     width: 50%;
-    min-height: 100%;
-    height: auto;
+    min-height: 320px;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    flex: 1 1 50%;
     background-color: var(--bg-primary);
 }
 
@@ -429,6 +450,7 @@ label{
     border: 1px solid black;
     text-align: center;
     padding: 10px;
+    flex: 1 1 50%;
 } 
 .adress h1{
     margin-top: 10px;
