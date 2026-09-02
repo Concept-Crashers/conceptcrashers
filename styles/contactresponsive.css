@@ -370,14 +370,20 @@ textarea {
 }
 
 .email, .tele-phone {
-    color: var(--text-secondary);
-    font-size: var(--text-xs);
+    color: var(--white) !important;
+    font-size: clamp(0.72rem, 1.8vw, 0.85rem) !important;
+    line-height: 1.6 !important;
+    word-break: break-word !important;
 }
 
 .line001 {
-    border-color: var(--text-secondary);
-    opacity: 0.3;
-    margin: var(--space-lg) 0;
+    border: 0 !important;
+    border-top: 1px solid var(--white) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    margin: var(--space-lg) 0 !important;
+    width: 100% !important;
+    height: 1px !important;
 }
 
 /* ==============================================
@@ -480,7 +486,7 @@ textarea {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--space-md);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 18px;
 }
 
 .svgwords p {
@@ -529,37 +535,47 @@ textarea {
 }
 
 .adress {
-    background-color: #fff !important;
-    padding: var(--space-xl) !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--white) !important;
+    padding: 12px 14px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    gap: var(--space-md) !important;
+    gap: 8px !important;
     width: 100% !important;
     height: 100% !important;
-    border-left: 1px solid #e5e5e5 !important;
+    border-left: 1px solid var(--text-accent) !important;
 }
 
 .adress h1 {
-    color: var(--bg-primary);
+    color: var(--white);
     font-size: var(--text-xl);
 }
 
 .adress p {
-    color: var(--bg-secondary);
+    color: var(--white);
     font-size: var(--text-sm);
     line-height: 1.6;
 }
 
+.adress h3,
+.adress h4 {
+    color: var(--white);
+}
+
 .Endline {
-    border-color: #e5e5e5;
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    height: 1px;
+    width: 100%;
     margin: var(--space-md) 0;
 }
 
 .adress h3 {
-    color: var(--bg-primary);
+    color: var(--white);
     font-size: var(--text-lg);
     margin-bottom: var(--space-xs);
 }
@@ -976,49 +992,3 @@ body {
     }
 }
 
-/* Ensure header remains visible and usable on small screens for this page */
-@media (max-width: 991px) {
-    /* Override global rule that hides header on some pages */
-    #header, header {
-        display: flex !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        z-index: 1000 !important;
-        padding: 12px 16px !important;
-        height: auto !important;
-        background: rgba(2,6,23,0.95) !important;
-    }
-
-    /* Hide desktop nav links and action button to reduce clutter */
-    header nav .navLinks {
-        display: none !important;
-    }
-    header .navBtn {
-        display: none !important;
-    }
-
-    /* Show hamburger icon */
-    #menuIcon, .fa-bars {
-        display: block !important;
-        font-size: 1.2rem !important;
-        color: var(--white) !important;
-        cursor: pointer !important;
-    }
-
-    /* Hide social icons in header on small screens */
-    .social-nav {
-        display: none !important;
-    }
-
-    /* Mobile overlay should be available */
-    .mobile-nav-overlay {
-        display: block !important;
-    }
-
-    /* Prevent page content from being hidden under fixed header */
-    body {
-        padding-top: 70px !important;
-    }
-}
