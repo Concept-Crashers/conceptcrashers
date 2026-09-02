@@ -89,39 +89,56 @@ nav a{
 
 .wordings{
     width: min(100%, 1100px);
+    height: auto;
     text-align: center;
-    margin-top: 0;
     color: var(--white);
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom: 40px;
+    
 }
 
 .wordings h1{
-    font-size: var(--font-size-x-large);
+    font: size 0.9rem;
 }
 .wordings p{
-    margin-top: 15px;
+<<<<<<< HEAD
+    font-size: var(--font-size-basel);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    line-height: 1.6;
+=======
+    margin: 15px auto 0;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+>>>>>>> 6c5fd76 (worked on the responsiveness)
 }
 .span001{
     width: 50px;
-    height: 30px;
+    height: 20px;
     background-color: var(--bg-secondary);
     background: var(--gradient-primary);
     color: var(--white);
-    font-size: 30px;
+    font-size: 25px;
     font-size: var(--font-size-x-large);
 }
 .cards{
     width: min(100%, 1100px);
     min-height: auto;
-    margin-top: 50px;
+    border: 2px solid var(--text-accent);
     display: flex;
     gap: 20px;
     border-radius: 5px;
-    border: 1px solid var(--bg-primary);
+    border: 1.5px solid var(--text-accent);
     padding: 40px;
-    /* background: var(--bg-secondary); */
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary); 
     overflow: hidden;
     flex-wrap: wrap;
+    margin-top: 0;
 }
 .content{
     width: calc(50% - 10px);
@@ -281,12 +298,16 @@ label{
 
 .email{
     margin: 20px 0;
-    color: var(--text-secondary);
+    color: var(--white);
     font-size: .75em;
+}
+.line001 {
+    border: 1px solid var(--white);
 }
 
 /* section-two starts from here */
 .sect2{
+    background-color: var(red);
     width: 100%;
     min-height: auto;
      /* background-color: aqua;  */
@@ -321,24 +342,30 @@ label{
     padding: 30px;
 }
 .questionheading{
-    padding: 20px;
+    width: min(100%, 1100px);
+    min-height: auto;
+    padding: 10px;
 }
 .questionheading h1{
     color: var(--white);
 }
 
-.questionheading p{
-    color: var(--text-secondary);
+.faq-item p{
+  
 }
 .questionwords{
     display: flex;
     align-items: center;
     justify-content: space-between;
-     margin-bottom: 25px; 
+    margin-bottom: 25px; 
     
 }
 .questionwords p{
     margin-top: 10px;
+    color:var(--text--accent);
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
 /* sectionthree starts from here */
@@ -379,6 +406,7 @@ label{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 18px;
 }
 
 .svgwords p{
@@ -386,21 +414,26 @@ label{
     color: var(--white);
 }
 .officesadress{
-    width: 100%;
-    min-height: 50vh;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    padding: var(--space-2xl) var(--space-md) !important;
+    display: flex;
+    align-items: stretch;
     background-color: var(--bg-secondary);
     display: flex;
     gap: 20px; 
-    margin-top: 30px;
+    margin-top: 0;
     overflow: hidden;
     margin-bottom: 20px;
 
 }
 .plainoffices{
     width: 50%;
-    min-height: 100%;
-    height: auto;
+    min-height: 320px;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    flex: 1 1 50%;
     background-color: var(--bg-primary);
 }
 
@@ -412,37 +445,39 @@ label{
 }
  .adress{
     width: 50%;
-    min-height: 100%;
+    min-height: 50%;
     height: auto;
-    background-color: var(--bg-primary);
-    border: 1px solid black;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--text-accent);
     text-align: center;
-    padding: 10px;
+    padding: 12px 10px;
+    flex: 1 1 50%;
+    color: var(--white);
 } 
 .adress h1{
     margin-top: 10px;
-    color: white;
+    color: var(--white);
 }
 
 
 .adress p{
     margin-top: 10px;
-    color: white;
+    color: var(--white);
 }
 .adress h4{
     margin-bottom: 5px;
-    color: var(--bg-secondary);
+    color: var(--white);
 }
 .contactinformation h3{
     margin-top: 10px;
-    color: var(--text-accent);
+    color: var(--white);
 }
 
 .contactinformation {
     width: 100%;
     min-height: auto;
     height: auto;
-    /* background-color: var(--bg-secondary); */
+    /* background-color: var(--bg-secondary);  */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -452,79 +487,32 @@ label{
 .contactinformation p{
     margin-top: 10px;
     margin-bottom: 10px;
+    color: white;
 }
 
-/* my footer css */
+.email,
+.tele-phone {
+    color: var(--white);
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+    word-break: break-word;
+}
 
-.sect02{
+.line001 {
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    height: 1px;
     width: 100%;
-    background-color: black;
-    color: white;
-    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 3rem);
+    margin: 15px 0;
+    opacity: 1;
 }
 
-span{
-    /* background-color: red; */
-    border-radius: 8px;
-    padding: 0 0.5rem;
+.Endline {
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    height: 1px;
+    width: 100%;
+    margin: 15px 0;
 }
-
-
-
-.concept02{
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.bttn01, .bttn02{
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.bttn01{
-    color: black;
-    background-color: white;
-}
-
-.bttn02{
-    color: white;
-    background-color: rgba(190, 188, 188, 0.24);
-}
-
-.bttn01:hover, .bttn02:hover {
-    transform: translateY(-2px);
-}
-
-
-
-.typein{
-    color: black;
-    width: 200px;
-    height: 32px;
-    border: none;
-    border-radius: 3px;
-    font-weight: bold;
-    padding-left: 5px;
-    margin-right: 0.5rem;
-}
-
-.btn{
-    color: white;
-    width: 100px;
-    height: 32px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.line{
-    margin: 2rem 0;
-    border-color: rgba(255, 255, 255, 0.1);
-}
-

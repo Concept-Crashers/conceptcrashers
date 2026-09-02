@@ -221,9 +221,12 @@ nav a:hover {
 
 .wordings p {
     font-size: var(--text-base) !important;
+    width: 100%;
     max-width: 600px;
     line-height: 1.6;
-    margin-top: var(--space-sm) !important;
+    margin: var(--space-sm) auto 0 auto !important;
+    text-align: center !important;
+    overflow-wrap: break-word;
 }
 
 .span001 {
@@ -245,7 +248,7 @@ nav a:hover {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg) !important;
-    align-items: start;
+    align-items: stretch !important;
     overflow: visible !important;
 }
 
@@ -367,14 +370,20 @@ textarea {
 }
 
 .email, .tele-phone {
-    color: var(--text-secondary);
-    font-size: var(--text-xs);
+    color: var(--white) !important;
+    font-size: clamp(0.72rem, 1.8vw, 0.85rem) !important;
+    line-height: 1.6 !important;
+    word-break: break-word !important;
 }
 
 .line001 {
-    border-color: var(--text-secondary);
-    opacity: 0.3;
-    margin: var(--space-lg) 0;
+    border: 0 !important;
+    border-top: 1px solid var(--white) !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    margin: var(--space-lg) 0 !important;
+    width: 100% !important;
+    height: 1px !important;
 }
 
 /* ==============================================
@@ -439,8 +448,9 @@ textarea {
 
 .questionwords p {
     font-size: var(--text-base);
-    color: #333;
+    color: var(--accent-color) !important;
     margin: 0;
+    font-weight: 600;
 }
 
 .horizontal {
@@ -476,7 +486,7 @@ textarea {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--space-md);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 18px;
 }
 
 .svgwords p {
@@ -510,50 +520,62 @@ textarea {
     width: 100% !important;
     height: 100% !important;
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: var(--space-lg) !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 .plainoffices iframe {
     width: 100% !important;
     height: 100% !important;
-    min-height: 320px;
-    display: block;
+    min-height: 320px !important;
+    display: block !important;
+    border: 0 !important;
 }
 
 .adress {
-    background-color: #fff !important;
-    padding: var(--space-xl) !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--white) !important;
+    padding: 12px 14px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    gap: var(--space-md) !important;
+    gap: 8px !important;
     width: 100% !important;
     height: 100% !important;
-    border-left: 1px solid #e5e5e5 !important;
+    border-left: 1px solid var(--text-accent) !important;
 }
 
 .adress h1 {
-    color: var(--bg-primary);
+    color: var(--white);
     font-size: var(--text-xl);
 }
 
 .adress p {
-    color: var(--bg-secondary);
+    color: var(--white);
     font-size: var(--text-sm);
     line-height: 1.6;
 }
 
+.adress h3,
+.adress h4 {
+    color: var(--white);
+}
+
 .Endline {
-    border-color: #e5e5e5;
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    height: 1px;
+    width: 100%;
     margin: var(--space-md) 0;
 }
 
 .adress h3 {
-    color: var(--bg-primary);
+    color: var(--white);
     font-size: var(--text-lg);
     margin-bottom: var(--space-xs);
 }
@@ -724,6 +746,14 @@ textarea {
     .wordings h1 {
         font-size: var(--text-2xl) !important;
     }
+
+    /* Keep the intro paragraph centered and full-width on tablets */
+    .wordings p {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
     
     /* Contact card - Stack vertically */
     .card, .cards {
@@ -831,6 +861,15 @@ textarea {
     
     .questioncard {
         padding: var(--space-lg);
+    }
+
+    /* Intro paragraph on small phones - centered and comfortably readable */
+    .wordings p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-top: var(--space-sm) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .adress {
@@ -952,3 +991,4 @@ body {
         margin-top: 0 !important; /* gap handles spacing; keep button top margin neutral */
     }
 }
+
